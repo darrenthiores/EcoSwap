@@ -36,6 +36,11 @@ object Deps {
     const val ktorSerializationJson = "io.ktor:ktor-serialization-kotlinx-json:$ktorVersion"
     const val ktorAndroid = "io.ktor:ktor-client-android:$ktorVersion"
     const val ktorIOS = "io.ktor:ktor-client-ios:$ktorVersion"
+    const val ktorAuth = "io.ktor:ktor-client-auth:$ktorVersion"
+    const val ktorClientLogging = "io.ktor:ktor-client-logging:$ktorVersion"
+
+    private const val logBackClassicVersion = "1.2.3"
+    const val logBackClassic = "ch.qos.logback:logback-classic:$logBackClassicVersion"
 
     // GRADLE PLUGINS
     const val kotlinVersion = "1.8.21"
