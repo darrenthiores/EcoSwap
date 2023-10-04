@@ -15,9 +15,19 @@ android {
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
+
+        testInstrumentationRunner = "com.darrenthiores.ecoswap.TestHiltRunner"
+
+        buildConfigField("String", "PREF_NAME", "\"ECO_SWAP_PREFERENCE\"")
+        buildConfigField("String", "ENCRYPTED_PREF_NAME", "\"TOKEN_PREFRENCE\"")
+        buildConfigField("String", "USER_TOKEN_KEY", "\"USER_TOKEN\"")
+        buildConfigField("String", "USER_REFRESH_TOKEN_KEY", "\"USER_REFRESH_TOKEN\"")
+        buildConfigField("String", "SHOW_ON_BOARDING_KEY", "\"SHOW_ON_BOARDING\"")
+
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.7"
@@ -58,12 +68,19 @@ dependencies {
     implementation(Deps.composeNavigation)
     implementation(Deps.coilCompose)
 
+    implementation(Deps.viewModel)
+    implementation(Deps.viewModelCompose)
+    implementation(Deps.hiltViewModel)
+
     implementation(Deps.hiltAndroid)
     kapt(Deps.hiltAndroidCompiler)
     kapt(Deps.hiltCompiler)
-    implementation(Deps.hiltNavigationCompose)
 
     implementation(Deps.ktorAndroid)
+
+    implementation(Deps.encPreferences)
+
+    implementation(Deps.timber)
 
     androidTestImplementation(Deps.testRunner)
     androidTestImplementation(Deps.jUnit)

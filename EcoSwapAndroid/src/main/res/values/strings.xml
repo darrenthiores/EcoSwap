@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ecoswap_logo">EcoSwap Logo</string>
+    <string name="boarding_cd">boarding %d</string>
+    <string name="boarding_label">Boarding Content</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="start">Get Started</string>
+    <string name="dummy_text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu</string>
+    <string name="boarding_title_1">Listing and Matching</string>
+    <string name="boarding_title_2">Safety and Trust</string>
+    <string name="boarding_title_3">Tracking &amp; Challenge</string>
+</resources>

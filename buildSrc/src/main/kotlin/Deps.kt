@@ -11,6 +11,10 @@ object Deps {
     const val composeMaterial = "androidx.compose.material:material:$composeVersion"
     const val composeIconsExtended = "androidx.compose.material:material-icons-extended:$composeVersion"
 
+    private const val lifecycleVersion = "2.6.2"
+    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion"
+
     private const val composeNavigationVersion = "2.5.3"
     const val composeNavigation = "androidx.navigation:navigation-compose:$composeNavigationVersion"
 
@@ -22,12 +26,13 @@ object Deps {
     const val kotlinDateTime = "org.jetbrains.kotlinx:kotlinx-datetime:$dateTimeVersion"
 
     // HILT
-    private const val hiltVersion = "2.42"
+    private const val hiltVersion = "2.48"
     private const val hiltCompilerVersion = "1.0.0"
+    private const val hiltViewModelVersion = "1.0.0"
     const val hiltAndroid = "com.google.dagger:hilt-android:$hiltVersion"
     const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
     const val hiltCompiler = "androidx.hilt:hilt-compiler:$hiltCompilerVersion"
-    const val hiltNavigationCompose = "androidx.hilt:hilt-navigation-compose:$hiltCompilerVersion"
+    const val hiltViewModel = "androidx.hilt:hilt-navigation-compose:$hiltViewModelVersion"
 
     // KTOR
     private const val ktorVersion = "2.1.3"
@@ -60,6 +65,14 @@ object Deps {
     const val sqlDelightAndroidDriver = "com.squareup.sqldelight:android-driver:$sqlDelightVersion"
     const val sqlDelightNativeDriver = "com.squareup.sqldelight:native-driver:$sqlDelightVersion"
     const val sqlDelightCoroutinesExtensions = "com.squareup.sqldelight:coroutines-extensions:$sqlDelightVersion"
+
+    // ENC PREFERENCES
+    private const val encPreferencesVersion = "1.0.0"
+    const val encPreferences = "androidx.security:security-crypto:$encPreferencesVersion"
+
+    // LOGGER
+    private const val timberVersion = "4.7.1"
+    const val timber = "com.jakewharton.timber:timber:$timberVersion"
 
     // TESTING
     private const val assertKVersion = "0.25"
