@@ -10,4 +10,22 @@
     <string name="boarding_title_1">Listing and Matching</string>
     <string name="boarding_title_2">Safety and Trust</string>
     <string name="boarding_title_3">Tracking &amp; Challenge</string>
+    <string name="login_title">Welcome EcoSwap 👋🏻</string>
+    <string name="login_headline">Enter your Email &amp; Password to Sign in</string>
+    <string name="email_placeholder">Your email</string>
+    <string name="password_placeholder">Password</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="dont_have_acc">"Don’t Have an Account? "</string>
+    <string name="register_headline">Sign up and enjoy our app</string>
+    <string name="username_placeholder">Username</string>
+    <string name="text_before_tos">"By continuing you agree to our "</string>
+    <string name="tos">Terms of Service</string>
+    <string name="tos_tag">term</string>
+    <string name="text_before_pp">" and "</string>
+    <string name="pp">Privacy Policy</string>
+    <string name="pp_tag">policy</string>
+    <string name="create_acc">Create Account</string>
+    <string name="have_acc">"Already Have an Account? "</string>
 </resources>

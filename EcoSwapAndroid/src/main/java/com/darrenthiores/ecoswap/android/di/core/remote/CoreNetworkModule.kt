@@ -1,6 +1,6 @@
 package com.darrenthiores.ecoswap.android.di.core.remote
 
-import com.darrenthiores.ecoswap.data.core.local.TokenPreferences
+import com.darrenthiores.ecoswap.domain.core.preferences.TokenPreferences
 import com.darrenthiores.ecoswap.data.core.remote.client.HttpClientFactory
 import dagger.Module
 import dagger.Provides

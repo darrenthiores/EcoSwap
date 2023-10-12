@@ -19,4 +19,14 @@ class DefaultPreferences @Inject constructor(
 
     override fun loadShouldShowOnBoarding(): Boolean =
         sharedPref.getBoolean(Preferences.SHOULD_SHOW_ON_BOARDING, true)
+
+    override fun saveShouldShowAuth(shouldShow: Boolean) {
+        sharedPref
+            .edit()
+            .putBoolean(Preferences.SHOULD_SHOW_AUTH, shouldShow)
+            .apply()
+    }
+
+    override fun loadShouldShowAuth(): Boolean =
+        sharedPref.getBoolean(Preferences.SHOULD_SHOW_AUTH, true)
 }

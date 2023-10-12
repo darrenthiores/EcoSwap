@@ -18,7 +18,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             EcoSwapTheme {
                 EcoSwap(
-                    shouldShowOnBoarding = preferences.loadShouldShowOnBoarding()
+                    shouldShowOnBoarding = preferences.loadShouldShowOnBoarding(),
+                    shouldShowAuth = preferences.loadShouldShowAuth()
                 )
             }
         }

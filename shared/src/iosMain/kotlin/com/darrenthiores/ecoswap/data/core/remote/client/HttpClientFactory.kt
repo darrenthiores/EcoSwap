@@ -1,6 +1,6 @@
 package com.darrenthiores.ecoswap.data.core.remote.client
 
-import com.darrenthiores.ecoswap.data.core.local.TokenPreferences
+import com.darrenthiores.ecoswap.domain.core.preferences.TokenPreferences
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.darwin.Darwin
 import io.ktor.client.plugins.auth.Auth

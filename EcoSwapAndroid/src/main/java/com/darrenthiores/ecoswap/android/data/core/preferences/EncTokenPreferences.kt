@@ -3,7 +3,7 @@ package com.darrenthiores.ecoswap.android.data.core.preferences
 import android.content.SharedPreferences
 import androidx.core.content.edit
 import com.darrenthiores.ecoswap.android.BuildConfig
-import com.darrenthiores.ecoswap.data.core.local.TokenPreferences
+import com.darrenthiores.ecoswap.domain.core.preferences.TokenPreferences
 import javax.inject.Inject
 import javax.inject.Named
 import javax.inject.Singleton

@@ -23,6 +23,7 @@ android {
         buildConfigField("String", "USER_TOKEN_KEY", "\"USER_TOKEN\"")
         buildConfigField("String", "USER_REFRESH_TOKEN_KEY", "\"USER_REFRESH_TOKEN\"")
         buildConfigField("String", "SHOW_ON_BOARDING_KEY", "\"SHOW_ON_BOARDING\"")
+        buildConfigField("String", "SHOW_AUTH_KEY", "\"SHOW_AUTH\"")
 
     }
     buildFeatures {

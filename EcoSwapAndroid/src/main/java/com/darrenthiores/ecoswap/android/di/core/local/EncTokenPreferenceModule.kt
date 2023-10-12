@@ -1,7 +1,7 @@
 package com.darrenthiores.ecoswap.android.di.core.local
 
 import com.darrenthiores.ecoswap.android.data.core.preferences.EncTokenPreferences
-import com.darrenthiores.ecoswap.data.core.local.TokenPreferences
+import com.darrenthiores.ecoswap.domain.core.preferences.TokenPreferences
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

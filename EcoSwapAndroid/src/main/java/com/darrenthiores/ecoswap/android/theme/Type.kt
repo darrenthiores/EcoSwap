@@ -95,49 +95,49 @@ val Title2B = TextStyle(
 )
 val Title3B = TextStyle(
     fontFamily = sfProDisplayFont,
-    fontWeight = FontWeight.Medium,
+    fontWeight = FontWeight.Bold,
     fontSize = 20.sp,
     lineHeight = 25.sp
 )
 val HeadlineB = TextStyle(
     fontFamily = sfProDisplayFont,
-    fontWeight = FontWeight.Medium,
+    fontWeight = FontWeight.Bold,
     fontSize = 17.sp,
     lineHeight = 22.sp
 )
 val BodyB = TextStyle(
     fontFamily = sfProDisplayFont,
-    fontWeight = FontWeight.Medium,
+    fontWeight = FontWeight.Bold,
     fontSize = 17.sp,
     lineHeight = 22.sp
 )
 val CallOutB = TextStyle(
     fontFamily = sfProDisplayFont,
-    fontWeight = FontWeight.Medium,
+    fontWeight = FontWeight.Bold,
     fontSize = 16.sp,
     lineHeight = 21.sp
 )
 val SubHeadlineB = TextStyle(
     fontFamily = sfProDisplayFont,
-    fontWeight = FontWeight.Medium,
+    fontWeight = FontWeight.Bold,
     fontSize = 15.sp,
     lineHeight = 20.sp
 )
 val FootnoteB = TextStyle(
     fontFamily = sfProDisplayFont,
-    fontWeight = FontWeight.Medium,
+    fontWeight = FontWeight.Bold,
     fontSize = 13.sp,
     lineHeight = 18.sp
 )
 val Caption1B = TextStyle(
     fontFamily = sfProDisplayFont,
-    fontWeight = FontWeight.Medium,
+    fontWeight = FontWeight.Bold,
     fontSize = 12.sp,
     lineHeight = 16.sp
 )
 val Caption2B = TextStyle(
     fontFamily = sfProDisplayFont,
-    fontWeight = FontWeight.Medium,
+    fontWeight = FontWeight.Bold,
     fontSize = 11.sp,
     lineHeight = 13.sp
 )

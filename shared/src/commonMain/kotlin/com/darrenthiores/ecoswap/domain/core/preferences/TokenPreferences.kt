@@ -1,4 +1,4 @@
-package com.darrenthiores.ecoswap.data.core.local
+package com.darrenthiores.ecoswap.domain.core.preferences
 
 interface TokenPreferences {
     fun getAccessToken(): String
