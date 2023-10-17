@@ -28,4 +28,14 @@
     <string name="pp_tag">policy</string>
     <string name="create_acc">Create Account</string>
     <string name="have_acc">"Already Have an Account? "</string>
+    <string name="search_placeholder">Search for swap and trade items</string>
+    <string name="notification_desc">Notifications</string>
+    <string name="rating_placeholder">Rating</string>
+    <string name="item_category">Items Category</string>
+    <string name="view_all">View All</string>
+    <string name="view_less">View Less</string>
+    <string name="item_recommend">Recommended for you</string>
+    <string name="item_nearby">Items nearby</string>
+    <string name="see_all">See All</string>
+    <string name="shimmer_label">Shimmer Loading</string>
 </resources>
