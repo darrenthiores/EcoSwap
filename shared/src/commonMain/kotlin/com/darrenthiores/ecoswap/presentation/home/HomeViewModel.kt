@@ -1,6 +1,7 @@
 package com.darrenthiores.ecoswap.presentation.home
 
 import com.darrenthiores.ecoswap.domain.item.use_cases.GetItems
+import com.darrenthiores.ecoswap.domain.store.use_cases.GetStores
 import com.darrenthiores.ecoswap.domain.utils.Resource
 import com.darrenthiores.ecoswap.utils.flow.toCommonStateFlow
 import kotlinx.coroutines.CoroutineScope
@@ -11,6 +12,7 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel(
     private val getItems: GetItems,
+    private val getStores: GetStores,
     coroutineScope: CoroutineScope? = null
 ) {
     private val viewModelScope = coroutineScope ?: CoroutineScope(Dispatchers.Main)
@@ -77,6 +79,38 @@ class HomeViewModel(
                         it.copy(
                             nearby = result.data ?: emptyList(),
                             isNearbyLoading = false
+                        )
+                    }
+                }
+            }
+        }
+
+        viewModelScope.launch {
+            _state.update {
+                it.copy(
+                    isStoreLoading = true
+                )
+            }
+
+            val result = getStores(
+                page = 1
+            )
+
+            when (result) {
+                is Resource.Error -> {
+                    _state.update {
+                        it.copy(
+                            storeError = result.message,
+                            isStoreLoading = false
+                        )
+                    }
+                }
+                is Resource.Loading -> Unit
+                is Resource.Success -> {
+                    _state.update {
+                        it.copy(
+                            stores = result.data ?: emptyList(),
+                            isStoreLoading = false
                         )
                     }
                 }

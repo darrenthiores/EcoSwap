@@ -16,20 +16,20 @@ enum class TopLevelDestination(
     val unselectedIcon: ImageVector,
 ) {
     Home(
-        selectedIcon = Icons.Outlined.Home,
-        unselectedIcon = Icons.Rounded.Home
+        selectedIcon = Icons.Rounded.Home,
+        unselectedIcon = Icons.Outlined.Home
     ),
     Sustainability(
-        selectedIcon = Icons.Outlined.InsertChart,
-        unselectedIcon = Icons.Rounded.InsertChart
+        selectedIcon = Icons.Rounded.InsertChart,
+        unselectedIcon = Icons.Outlined.InsertChart
     ),
     Message(
         selectedIcon = Icons.Rounded.Mail,
         unselectedIcon = Icons.Rounded.MailOutline,
     ),
     Profile(
-        selectedIcon = Icons.Outlined.AccountCircle,
-        unselectedIcon = Icons.Default.AccountCircle
+        selectedIcon = Icons.Default.AccountCircle,
+        unselectedIcon = Icons.Outlined.AccountCircle
     );
 
     companion object{

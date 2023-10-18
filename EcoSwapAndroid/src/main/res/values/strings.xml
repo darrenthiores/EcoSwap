@@ -36,6 +36,7 @@
     <string name="view_less">View Less</string>
     <string name="item_recommend">Recommended for you</string>
     <string name="item_nearby">Items nearby</string>
+    <string name="store_subtitle">Eco-Friendly Stores for you</string>
     <string name="see_all">See All</string>
     <string name="shimmer_label">Shimmer Loading</string>
 </resources>

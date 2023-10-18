@@ -13,6 +13,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.darrenthiores.ecoswap.android.presentation.boarding.AndroidBoardingViewModel
 import com.darrenthiores.ecoswap.android.presentation.boarding.BoardingScreen
+import com.darrenthiores.ecoswap.android.presentation.home.AndroidHomeViewModel
+import com.darrenthiores.ecoswap.android.presentation.home.HomeScreen
 import com.darrenthiores.ecoswap.android.presentation.login.AndroidLoginViewModel
 import com.darrenthiores.ecoswap.android.presentation.login.LoginScreen
 import com.darrenthiores.ecoswap.android.presentation.register.AndroidRegisterViewModel
@@ -132,6 +134,27 @@ fun EcoSwap(
                     onEvent = viewModel::onEvent,
                     onSignIn = {
                         navController.navigateUp()
+                    }
+                )
+            }
+
+            composable(TopLevelDestination.Home.name) {
+                val viewModel: AndroidHomeViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+                val searchText = viewModel.searchText
+
+                HomeScreen(
+                    state = state,
+                    searchText = searchText,
+                    onAndroidEvent = viewModel::onEvent,
+                    onEvent = viewModel::onEvent,
+                    onCategoryClick = {  },
+                    onSearch = {  },
+                    onItemClick = {
+
+                    },
+                    onStoreClick = {
+
                     }
                 )
             }

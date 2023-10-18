@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import com.darrenthiores.ecoswap.android.theme.EcoSwapTheme
 
 @Composable
-fun HorizontalItemPlaceholder(
+fun HorizontalStorePlaceholder(
     modifier: Modifier = Modifier,
     padding: PaddingValues = PaddingValues(
         horizontal = 24.dp
@@ -81,17 +81,6 @@ fun HorizontalItemPlaceholder(
                                     brush = shimmerBrush()
                                 )
                         )
-
-                        Spacer(modifier = Modifier.height(6.dp))
-
-                        Box(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .height(15.dp)
-                                .background(
-                                    brush = shimmerBrush()
-                                )
-                        )
                     }
                 }
             }
@@ -101,8 +90,8 @@ fun HorizontalItemPlaceholder(
 
 @Preview
 @Composable
-private fun HorizontalItemPlaceholderPreview() {
+private fun HorizontalStorePlaceholderPreview() {
     EcoSwapTheme {
-        HorizontalItemPlaceholder()
+        HorizontalStorePlaceholder()
     }
 }

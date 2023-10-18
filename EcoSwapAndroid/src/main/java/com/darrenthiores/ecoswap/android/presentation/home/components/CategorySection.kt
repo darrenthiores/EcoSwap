@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -56,6 +57,8 @@ fun CategorySection(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         SectionHeader(
+            modifier = Modifier
+                .padding(horizontal = 24.dp),
             title = stringResource(id = R.string.item_category),
             endAction = if (viewAll) stringResource(id = R.string.view_less) else stringResource(id = R.string.view_all),
             onActionClick = onToggleViewAll
@@ -66,7 +69,10 @@ fun CategorySection(
                 modifier = Modifier
                     .fillMaxWidth(),
                 state = pagerState,
-                pageCount = pageCount
+                pageCount = pageCount,
+                contentPadding = PaddingValues(
+                    horizontal = 24.dp
+                )
             ) { page ->
                 val index = page + 1
                 val lastIndex = (index * 4) - 1
@@ -98,7 +104,10 @@ fun CategorySection(
         } else {
             FlowRow(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .padding(
+                        horizontal = 24.dp
+                    ),
                 maxItemsInEachRow = 4,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {

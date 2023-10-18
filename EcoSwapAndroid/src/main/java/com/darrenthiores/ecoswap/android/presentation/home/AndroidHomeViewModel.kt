@@ -6,6 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.darrenthiores.ecoswap.domain.item.use_cases.GetItems
+import com.darrenthiores.ecoswap.domain.store.use_cases.GetStores
 import com.darrenthiores.ecoswap.presentation.home.HomeEvent
 import com.darrenthiores.ecoswap.presentation.home.HomeViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -13,11 +14,13 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AndroidHomeViewModel @Inject constructor(
-    private val getItems: GetItems
+    private val getItems: GetItems,
+    private val getStores: GetStores
 ): ViewModel() {
     private val viewModel by lazy {
         HomeViewModel(
             getItems = getItems,
+            getStores = getStores,
             coroutineScope = viewModelScope
         )
     }

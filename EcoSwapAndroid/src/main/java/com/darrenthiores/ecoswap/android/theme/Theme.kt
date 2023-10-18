@@ -14,6 +14,7 @@ fun EcoSwapTheme(
     val colors = if (darkTheme) {
         darkColors(
             primary = Primary,
+            secondary = Secondary,
             background = Black,
             surface = Black,
             onPrimary = White,
@@ -25,6 +26,7 @@ fun EcoSwapTheme(
     } else {
         lightColors(
             primary = Primary,
+            secondary = Secondary,
             background = White,
             surface = White,
             onPrimary = White,

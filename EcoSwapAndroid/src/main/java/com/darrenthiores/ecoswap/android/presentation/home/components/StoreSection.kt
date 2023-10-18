@@ -13,19 +13,19 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.darrenthiores.ecoswap.android.R
 import com.darrenthiores.ecoswap.android.presentation.components.header.SectionHeader
-import com.darrenthiores.ecoswap.android.presentation.components.loading.HorizontalItemPlaceholder
-import com.darrenthiores.ecoswap.android.presentation.model_components.item.HorizontalItemList
+import com.darrenthiores.ecoswap.android.presentation.components.loading.HorizontalStorePlaceholder
+import com.darrenthiores.ecoswap.android.presentation.model_components.store.HorizontalStoreList
 import com.darrenthiores.ecoswap.android.theme.EcoSwapTheme
-import com.darrenthiores.ecoswap.domain.item.model.Item
+import com.darrenthiores.ecoswap.domain.store.model.Store
 
 @Composable
-fun ItemSection(
+fun StoreSection(
     modifier: Modifier = Modifier,
     title: String,
-    items: List<Item>,
+    stores: List<Store>,
     state: LazyListState,
     onSeeAllClick: () -> Unit,
-    onItemClick: (Item) -> Unit,
+    onStoreClick: (Store) -> Unit,
     isLoading: Boolean
 ) {
     Column(
@@ -44,11 +44,11 @@ fun ItemSection(
         )
 
         if (isLoading) {
-            HorizontalItemPlaceholder()
+            HorizontalStorePlaceholder()
         } else {
-            HorizontalItemList(
-                items = items,
-                onClick = onItemClick,
+            HorizontalStoreList(
+                stores = stores,
+                onClick = onStoreClick,
                 state = state
             )
         }
@@ -57,14 +57,14 @@ fun ItemSection(
 
 @Preview
 @Composable
-private fun ItemSectionPreview() {
+private fun StoreSectionPreview() {
     EcoSwapTheme {
-        ItemSection(
+        StoreSection(
             title = "Recommended for you",
-            items = emptyList(),
+            stores = emptyList(),
             state = rememberLazyListState(),
             onSeeAllClick = { },
-            onItemClick = {  },
+            onStoreClick = {  },
             isLoading = true
         )
     }
