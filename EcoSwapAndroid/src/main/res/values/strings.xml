@@ -39,4 +39,6 @@
     <string name="store_subtitle">Eco-Friendly Stores for you</string>
     <string name="see_all">See All</string>
     <string name="shimmer_label">Shimmer Loading</string>
+    <string name="back">Back</string>
+    <string name="all_items">All Items</string>
 </resources>

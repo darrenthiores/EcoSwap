@@ -18,13 +18,23 @@ class KtorStoreService(
     }
 
     override suspend fun searchStores(page: Int, text: String, categoryId: String?): List<Store> {
-        return Dummy
-            .stores
-            .filter {
-                it.name.lowercase().contains(
-                    text.lowercase()
-                ) && it.categoryId == categoryId
-            }
+        if (categoryId != null) {
+            return Dummy
+                .stores
+                .filter {
+                    it.name.lowercase().contains(
+                        text.lowercase()
+                    ) && it.categoryId == categoryId
+                }
+        } else {
+            return Dummy
+                .stores
+                .filter {
+                    it.name.lowercase().contains(
+                        text.lowercase()
+                    )
+                }
+        }
     }
 
 }

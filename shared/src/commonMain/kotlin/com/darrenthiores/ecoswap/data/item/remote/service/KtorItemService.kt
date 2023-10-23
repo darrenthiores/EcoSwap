@@ -22,13 +22,23 @@ class KtorItemService(
         text: String,
         categoryId: String?
     ): List<Item> {
-        return Dummy
-            .items
-            .filter {
-                it.name.lowercase().contains(
-                    text.lowercase()
-                ) && it.categoryId == categoryId
-            }
+        if (categoryId != null) {
+            return Dummy
+                .items
+                .filter {
+                    it.name.lowercase().contains(
+                        text.lowercase()
+                    ) && it.categoryId == categoryId
+                }
+        } else {
+            return Dummy
+                .items
+                .filter {
+                    it.name.lowercase().contains(
+                        text.lowercase()
+                    )
+                }
+        }
     }
 
 }

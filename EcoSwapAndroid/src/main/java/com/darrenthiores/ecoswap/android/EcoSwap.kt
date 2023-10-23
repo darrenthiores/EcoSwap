@@ -9,8 +9,10 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
 import com.darrenthiores.ecoswap.android.presentation.boarding.AndroidBoardingViewModel
 import com.darrenthiores.ecoswap.android.presentation.boarding.BoardingScreen
 import com.darrenthiores.ecoswap.android.presentation.home.AndroidHomeViewModel
@@ -19,6 +21,8 @@ import com.darrenthiores.ecoswap.android.presentation.login.AndroidLoginViewMode
 import com.darrenthiores.ecoswap.android.presentation.login.LoginScreen
 import com.darrenthiores.ecoswap.android.presentation.register.AndroidRegisterViewModel
 import com.darrenthiores.ecoswap.android.presentation.register.RegisterScreen
+import com.darrenthiores.ecoswap.android.presentation.search.AndroidSearchViewModel
+import com.darrenthiores.ecoswap.android.presentation.search.SearchScreen
 import com.darrenthiores.ecoswap.android.presentation.splash.SplashScreen
 import com.darrenthiores.ecoswap.android.utils.AppBottomBar
 import com.darrenthiores.ecoswap.android.utils.AppState
@@ -148,13 +152,53 @@ fun EcoSwap(
                     searchText = searchText,
                     onAndroidEvent = viewModel::onEvent,
                     onEvent = viewModel::onEvent,
-                    onCategoryClick = {  },
-                    onSearch = {  },
+                    onCategoryClick = {
+                        navController.navigate(Route.Search.name + "?categoryId=$it")
+                    },
+                    onSearch = {
+                        navController.navigate(Route.Search.name + "?searchText=$it")
+                    },
                     onItemClick = {
 
                     },
                     onStoreClick = {
 
+                    }
+                )
+            }
+
+            composable(
+                route = Route.Search.name + "?searchText={searchText}&categoryId={categoryId}",
+                arguments = listOf(
+                    navArgument("searchText") {
+                        NavType.StringType
+                        nullable = true
+                        defaultValue = null
+                    },
+                    navArgument("categoryId") {
+                        NavType.StringType
+                        nullable = true
+                        defaultValue = null
+                    }
+                )
+            ) {
+                val viewModel: AndroidSearchViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+                val searchText = viewModel.searchText
+
+                SearchScreen(
+                    state = state,
+                    searchText = searchText,
+                    onEvent = viewModel::onEvent,
+                    onAndroidEvent = viewModel::onEvent,
+                    onItemClick = {
+
+                    },
+                    onStoreClick = {
+
+                    },
+                    onBackClicked = {
+                        navController.navigateUp()
                     }
                 )
             }
