@@ -47,7 +47,8 @@ class SearchViewModel(
             _state.update {
                 it.copy(
                     items = it.items.copy(
-                        error = error
+                        error = error,
+                        endReached = true
                     )
                 )
             }
@@ -90,7 +91,8 @@ class SearchViewModel(
             _state.update {
                 it.copy(
                     stores = it.stores.copy(
-                        error = error
+                        error = error,
+                        endReached = true
                     )
                 )
             }

@@ -41,4 +41,13 @@
     <string name="shimmer_label">Shimmer Loading</string>
     <string name="back">Back</string>
     <string name="all_items">All Items</string>
+    <string name="description_prod">Description Product</string>
+    <string name="detail_prod">Detail Product</string>
+    <string name="see_more">See More</string>
+    <string name="see_less">See Less</string>
+    <string name="category">Category :</string>
+    <string name="total">Total :</string>
+    <string name="condition">Condition :</string>
+    <string name="brand">Brand :</string>
+    <string name="message">Message</string>
 </resources>

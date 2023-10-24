@@ -17,6 +17,8 @@ import com.darrenthiores.ecoswap.android.presentation.boarding.AndroidBoardingVi
 import com.darrenthiores.ecoswap.android.presentation.boarding.BoardingScreen
 import com.darrenthiores.ecoswap.android.presentation.home.AndroidHomeViewModel
 import com.darrenthiores.ecoswap.android.presentation.home.HomeScreen
+import com.darrenthiores.ecoswap.android.presentation.item_detail.AndroidItemDetailViewModel
+import com.darrenthiores.ecoswap.android.presentation.item_detail.ItemDetailScreen
 import com.darrenthiores.ecoswap.android.presentation.login.AndroidLoginViewModel
 import com.darrenthiores.ecoswap.android.presentation.login.LoginScreen
 import com.darrenthiores.ecoswap.android.presentation.register.AndroidRegisterViewModel
@@ -158,8 +160,8 @@ fun EcoSwap(
                     onSearch = {
                         navController.navigate(Route.Search.name + "?searchText=$it")
                     },
-                    onItemClick = {
-
+                    onItemClick = { id ->
+                        navController.navigate(Route.ItemDetail.name + "/$id")
                     },
                     onStoreClick = {
 
@@ -191,13 +193,36 @@ fun EcoSwap(
                     searchText = searchText,
                     onEvent = viewModel::onEvent,
                     onAndroidEvent = viewModel::onEvent,
-                    onItemClick = {
-
+                    onItemClick = { id ->
+                        navController.navigate(Route.ItemDetail.name + "/$id")
                     },
                     onStoreClick = {
 
                     },
                     onBackClicked = {
+                        navController.navigateUp()
+                    }
+                )
+            }
+
+            composable(
+                route = Route.ItemDetail.name + "/{itemId}",
+                arguments = listOf(
+                    navArgument("itemId") {
+                        NavType.StringType
+                    }
+                )
+            ) {
+                val viewModel: AndroidItemDetailViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                ItemDetailScreen(
+                    state = state,
+                    onEvent = viewModel::onEvent,
+                    onSettingClick = {  },
+                    onUserClick = { },
+                    onMessageClick = {  },
+                    onBackClick = {
                         navController.navigateUp()
                     }
                 )
