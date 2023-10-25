@@ -3,6 +3,9 @@ package com.darrenthiores.ecoswap.android.di.item
 import com.darrenthiores.ecoswap.domain.item.repository.ItemRepository
 import com.darrenthiores.ecoswap.domain.item.use_cases.GetItemById
 import com.darrenthiores.ecoswap.domain.item.use_cases.GetItems
+import com.darrenthiores.ecoswap.domain.item.use_cases.GetMyItems
+import com.darrenthiores.ecoswap.domain.item.use_cases.GetStoreItems
+import com.darrenthiores.ecoswap.domain.item.use_cases.GetUserItems
 import com.darrenthiores.ecoswap.domain.item.use_cases.SearchItems
 import dagger.Module
 import dagger.Provides
@@ -40,6 +43,36 @@ object ItemUseCasesModule {
         repository: ItemRepository
     ): SearchItems {
         return SearchItems(
+            repository = repository
+        )
+    }
+
+    @Provides
+    @ViewModelScoped
+    fun provideGetMyItemsUseCase(
+        repository: ItemRepository
+    ): GetMyItems {
+        return GetMyItems(
+            repository = repository
+        )
+    }
+
+    @Provides
+    @ViewModelScoped
+    fun provideGetUserItemsUseCase(
+        repository: ItemRepository
+    ): GetUserItems {
+        return GetUserItems(
+            repository = repository
+        )
+    }
+
+    @Provides
+    @ViewModelScoped
+    fun provideGetStoreItemsUseCase(
+        repository: ItemRepository
+    ): GetStoreItems {
+        return GetStoreItems(
             repository = repository
         )
     }

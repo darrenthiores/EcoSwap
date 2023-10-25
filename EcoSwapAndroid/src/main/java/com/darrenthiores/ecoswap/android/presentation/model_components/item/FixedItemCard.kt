@@ -76,7 +76,7 @@ fun FixedItemCard(
                     contentScale = ContentScale.Crop,
                     model = ImageRequest
                         .Builder(context)
-                        .data(item.imgUrl)
+                        .data(item.imgUrl.getOrNull(0))
                         .crossfade(true)
                         .build(),
                     placeholder = painterResource(id = R.drawable.ic_no_picture),

@@ -1,6 +1,7 @@
 package com.darrenthiores.ecoswap.data.item.remote.service
 
 import com.darrenthiores.ecoswap.domain.item.model.Item
+import com.darrenthiores.ecoswap.domain.item.model.StoreItem
 
 interface ItemService {
     suspend fun getItems(
@@ -12,6 +13,20 @@ interface ItemService {
         text: String,
         categoryId: String?
     ): List<Item>
+
+    suspend fun getMyItems(
+        page: Int
+    ): List<Item>
+
+    suspend fun getUserItems(
+        page: Int,
+        id: String
+    ): List<Item>
+
+    suspend fun getStoreItems(
+        page: Int,
+        id: String
+    ): List<StoreItem>
 
     companion object {
         private const val BASE_URL = ""

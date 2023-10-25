@@ -1,8 +1,12 @@
 package com.darrenthiores.ecoswap.domain.core.utils
 
 import com.darrenthiores.ecoswap.domain.item.model.Item
+import com.darrenthiores.ecoswap.domain.item.model.StoreItem
+import com.darrenthiores.ecoswap.domain.reviews.model.Review
+import com.darrenthiores.ecoswap.domain.reviews.model.StoreReview
 import com.darrenthiores.ecoswap.domain.store.model.Store
 import com.darrenthiores.ecoswap.domain.user.model.User
+import kotlinx.datetime.Clock
 
 object Dummy {
     val items: List<Item> = listOf(
@@ -76,6 +80,65 @@ object Dummy {
         )
     )
 
+    val storeItems: List<StoreItem> = listOf(
+        StoreItem(
+            id = "1",
+            categoryId = "1",
+            name = "Walter Kelley",
+            imgUrl = listOf(
+                ""
+            ),
+            description = "scripta",
+            location = "ancillae",
+            storeName = "Merle McIntyre",
+            storeImgUrl = "https://search.yahoo.com/search?p=tation",
+            storeId = "1",
+            rating = 6.7
+        ),
+        StoreItem(
+            id = "2",
+            categoryId = "2",
+            name = "Walter Kelley",
+            imgUrl = listOf(
+                ""
+            ),
+            description = "scripta",
+            location = "ancillae",
+            storeName = "Merle McIntyre",
+            storeImgUrl = "https://search.yahoo.com/search?p=tation",
+            storeId = "2",
+            rating = 6.7
+        ),
+        StoreItem(
+            id = "3",
+            categoryId = "3",
+            name = "Walter Kelley",
+            imgUrl = listOf(
+                ""
+            ),
+            description = "scripta",
+            location = "ancillae",
+            storeName = "Merle McIntyre",
+            storeImgUrl = "https://search.yahoo.com/search?p=tation",
+            storeId = "3",
+            rating = 6.7
+        ),
+        StoreItem(
+            id = "4",
+            categoryId = "4",
+            name = "Walter Kelley",
+            imgUrl = listOf(
+                ""
+            ),
+            description = "scripta",
+            location = "ancillae",
+            storeName = "Merle McIntyre",
+            storeImgUrl = "https://search.yahoo.com/search?p=tation",
+            storeId = "4",
+            rating = 6.7
+        )
+    )
+
     val stores: List<Store> = listOf(
         Store(
             id = "1",
@@ -143,6 +206,52 @@ object Dummy {
             rating = 3.0,
             totalReview = 3613,
             location = "sagittis"
+        )
+    )
+
+    val reviews: List<Review> = listOf(
+        Review(
+            id = "1",
+            review = "vocibus",
+            reviewedUserId = "2",
+            userId = "1",
+            username = "Olga Bartlett",
+            rating = 5.0,
+            date = Clock.System.now().toEpochMilliseconds(),
+            userImgUrl = ""
+        ),
+        Review(
+            id = "2",
+            review = "vocibus",
+            reviewedUserId = "1",
+            userId = "2",
+            username = "Olga Bartlett",
+            rating = 4.5,
+            date = Clock.System.now().toEpochMilliseconds(),
+            userImgUrl = ""
+        )
+    )
+
+    val storeReviews: List<StoreReview> = listOf(
+        StoreReview(
+            id = "1",
+            review = "velit",
+            storeId = "1",
+            userId = "1",
+            username = "Cora Whitfield",
+            userImgUrl = "http://www.bing.com/search?q=dicunt",
+            rating = 2.3,
+            date = 7483
+        ),
+        StoreReview(
+            id = "2",
+            review = "velit",
+            storeId = "2",
+            userId = "2",
+            username = "Cora Whitfield",
+            userImgUrl = "http://www.bing.com/search?q=dicunt",
+            rating = 2.3,
+            date = 7483
         )
     )
 }
