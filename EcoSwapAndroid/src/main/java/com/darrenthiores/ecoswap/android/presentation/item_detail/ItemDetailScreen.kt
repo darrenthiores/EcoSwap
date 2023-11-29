@@ -39,7 +39,8 @@ fun ItemDetailScreen(
     Scaffold(
         bottomBar = {
             BottomAppBar(
-                backgroundColor = MaterialTheme.colors.background
+                backgroundColor = MaterialTheme.colors.background,
+                elevation = 0.dp
             ) {
                 DefaultButton(
                     modifier = Modifier

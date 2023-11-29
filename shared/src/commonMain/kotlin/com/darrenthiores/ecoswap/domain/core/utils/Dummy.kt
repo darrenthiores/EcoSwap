@@ -25,7 +25,8 @@ object Dummy {
             description = "simul",
             conditionId = "1",
             total = 2725,
-            brand = "mentitum"
+            brand = "mentitum",
+            statusId = "1"
         ),
         Item(
             id = "2",
@@ -42,7 +43,8 @@ object Dummy {
             description = "simul",
             conditionId = "2",
             total = 2725,
-            brand = "mentitum"
+            brand = "mentitum",
+            statusId = "1"
         ),
         Item(
             id = "3",
@@ -59,7 +61,8 @@ object Dummy {
             description = "simul",
             conditionId = "2",
             total = 2725,
-            brand = "mentitum"
+            brand = "mentitum",
+            statusId = "1"
         ),
         Item(
             id = "4",
@@ -76,7 +79,44 @@ object Dummy {
             description = "simul",
             conditionId = "1",
             total = 2725,
-            brand = "mentitum"
+            brand = "mentitum",
+            statusId = "1"
+        ),
+        Item(
+            id = "5",
+            categoryId = "3",
+            name = "Taylor Michael",
+            location = "libero",
+            username = "Pablo Tucker",
+            userImgUrl = "https://search.yahoo.com/search?p=noluisse",
+            userId = "3",
+            rating = 4.5,
+            imgUrl = listOf(
+                "https://www.google.com/#q=ignota"
+            ),
+            description = "simul",
+            conditionId = "2",
+            total = 2725,
+            brand = "mentitum",
+            statusId = "1"
+        ),
+        Item(
+            id = "6",
+            categoryId = "4",
+            name = "Taylor Michael",
+            location = "libero",
+            username = "Pablo Tucker",
+            userImgUrl = "https://search.yahoo.com/search?p=noluisse",
+            userId = "4",
+            rating = 4.5,
+            imgUrl = listOf(
+                "https://www.google.com/#q=ignota"
+            ),
+            description = "simul",
+            conditionId = "1",
+            total = 2725,
+            brand = "mentitum",
+            statusId = "1"
         )
     )
 

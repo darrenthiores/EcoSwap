@@ -21,6 +21,8 @@ import com.darrenthiores.ecoswap.android.presentation.item_detail.AndroidItemDet
 import com.darrenthiores.ecoswap.android.presentation.item_detail.ItemDetailScreen
 import com.darrenthiores.ecoswap.android.presentation.login.AndroidLoginViewModel
 import com.darrenthiores.ecoswap.android.presentation.login.LoginScreen
+import com.darrenthiores.ecoswap.android.presentation.profile.AndroidProfileViewModel
+import com.darrenthiores.ecoswap.android.presentation.profile.ProfileScreen
 import com.darrenthiores.ecoswap.android.presentation.register.AndroidRegisterViewModel
 import com.darrenthiores.ecoswap.android.presentation.register.RegisterScreen
 import com.darrenthiores.ecoswap.android.presentation.search.AndroidSearchViewModel
@@ -166,6 +168,24 @@ fun EcoSwap(
                     onStoreClick = {
 
                     }
+                )
+            }
+
+            composable(TopLevelDestination.Profile.name) {
+                val viewModel: AndroidProfileViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                ProfileScreen(
+                    state = state,
+                    onEvent = viewModel::onEvent,
+                    onItemClick = { id ->
+                        navController.navigate(Route.ItemDetail.name + "/$id")
+                    },
+                    onUserClick = { id -> },
+                    onBackClick = {
+                        navController.navigateUp()
+                    },
+                    onSettingClick = {  }
                 )
             }
 

@@ -13,5 +13,6 @@ data class Item(
     val username: String,
     val userImgUrl: String,
     val userId: String,
-    val rating: Double
+    val rating: Double,
+    val statusId: String
 )

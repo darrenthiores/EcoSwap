@@ -50,4 +50,7 @@
     <string name="condition">Condition :</string>
     <string name="brand">Brand :</string>
     <string name="message">Message</string>
+    <string name="rating">rating</string>
+    <string name="total_reviews">(%d Reviews)</string>
+    <string name="my_profile">My Profile</string>
 </resources>
