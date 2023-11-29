@@ -7,5 +7,6 @@ data class Store(
     val imgUrl: String,
     val location: String,
     val rating: Double,
-    val description: String
+    val description: String,
+    val totalReview: Int
 )

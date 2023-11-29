@@ -73,4 +73,22 @@ class ReviewRemoteDataSource(
             }
         }
     }
+
+    suspend fun addStoreReview(
+        rating: Int,
+        message: String,
+        storeId: String
+    ): ApiResponse<Unit> {
+        return withContext(dispatchers.io) {
+            tryCatch {
+                val result = apiService.addStoreReview(
+                    rating = rating,
+                    message = message,
+                    storeId = storeId
+                )
+
+                ApiResponse.Success(result)
+            }
+        }
+    }
 }

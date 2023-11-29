@@ -3,19 +3,19 @@ package com.darrenthiores.ecoswap.domain.reviews.use_cases
 import com.darrenthiores.ecoswap.domain.reviews.repository.ReviewRepository
 import com.darrenthiores.ecoswap.domain.utils.Resource
 
-class AddReview(
+class AddStoreReview(
     private val repository: ReviewRepository
 ) {
     suspend operator fun invoke(
         rating: Int,
         message: String,
-        userId: String
+        storeId: String
     ): Resource<Unit> {
         return repository
-            .addReview(
+            .addStoreReview(
                 rating = rating,
                 message = message,
-                userId = userId
+                storeId = storeId
             )
     }
 }

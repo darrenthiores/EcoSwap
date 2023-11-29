@@ -1,9 +1,9 @@
-package com.darrenthiores.ecoswap.presentation.other_profile
+package com.darrenthiores.ecoswap.presentation.store_profile
 
-import com.darrenthiores.ecoswap.domain.item.use_cases.GetUserItems
-import com.darrenthiores.ecoswap.domain.reviews.use_cases.AddUserReview
-import com.darrenthiores.ecoswap.domain.reviews.use_cases.GetUserReviews
-import com.darrenthiores.ecoswap.domain.user.use_cases.GetUserById
+import com.darrenthiores.ecoswap.domain.item.use_cases.GetStoreItems
+import com.darrenthiores.ecoswap.domain.reviews.use_cases.AddStoreReview
+import com.darrenthiores.ecoswap.domain.reviews.use_cases.GetStoreReviews
+import com.darrenthiores.ecoswap.domain.store.use_cases.GetStoreById
 import com.darrenthiores.ecoswap.domain.utils.Resource
 import com.darrenthiores.ecoswap.domain.utils.UiEvent
 import com.darrenthiores.ecoswap.presentation.utils.DefaultPaginator
@@ -17,16 +17,16 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-class OtherProfileViewModel(
-    private val getUserById: GetUserById,
-    private val getUserItems: GetUserItems,
-    private val getUserReviews: GetUserReviews,
-    private val addUserReview: AddUserReview,
+class StoreProfileViewModel(
+    private val getStoreById: GetStoreById,
+    private val getStoreItems: GetStoreItems,
+    private val getStoreReviews: GetStoreReviews,
+    private val addStoreReview: AddStoreReview,
     coroutineScope: CoroutineScope? = null
 ) {
     private val viewModelScope = coroutineScope ?: CoroutineScope(Dispatchers.Main)
 
-    private val _state = MutableStateFlow(OtherProfileState())
+    private val _state = MutableStateFlow(StoreProfileState())
     val state = _state.toCommonStateFlow()
 
     private val _uiEvent = Channel<UiEvent>()
@@ -46,8 +46,8 @@ class OtherProfileViewModel(
             }
         },
         onRequest = { nextPage ->
-            state.value.user?.id?.let { id ->
-                getUserItems(
+            state.value.store?.id?.let { id ->
+                getStoreItems(
                     page = nextPage,
                     id = id
                 )
@@ -91,8 +91,8 @@ class OtherProfileViewModel(
             }
         },
         onRequest = { nextPage ->
-            state.value.user?.id?.let { id ->
-                getUserReviews(
+            state.value.store?.id?.let { id ->
+                getStoreReviews(
                     page = nextPage,
                     id = id
                 )
@@ -130,43 +130,43 @@ class OtherProfileViewModel(
         )
     }
 
-    fun onEvent(event: OtherProfileEvent) {
+    fun onEvent(event: StoreProfileEvent) {
         when (event) {
-            OtherProfileEvent.LoadItemNextPage -> {
+            StoreProfileEvent.LoadItemNextPage -> {
                 viewModelScope.launch {
                     itemPaginator.loadNextItems()
                 }
             }
-            OtherProfileEvent.LoadReviewNextPage -> {
+            StoreProfileEvent.LoadReviewNextPage -> {
                 viewModelScope.launch {
                     reviewPaginator.loadNextItems()
                 }
             }
-            OtherProfileEvent.AddReview -> {
+            StoreProfileEvent.AddReview -> {
                 addReview()
             }
-            is OtherProfileEvent.OnMessageChange -> {
+            is StoreProfileEvent.OnMessageChange -> {
                 _state.update {
                     it.copy(
                         message = event.message
                     )
                 }
             }
-            is OtherProfileEvent.OnPickRating -> {
+            is StoreProfileEvent.OnPickRating -> {
                 _state.update {
                     it.copy(
                         rating = event.rating
                     )
                 }
             }
-            OtherProfileEvent.Reset -> {
+            StoreProfileEvent.Reset -> {
                 _state.update {
                     it.copy(
                         isSuccess = false
                     )
                 }
             }
-            OtherProfileEvent.HideError -> {
+            StoreProfileEvent.HideError -> {
                 _state.update {
                     it.copy(
                         showError = false
@@ -182,11 +182,11 @@ class OtherProfileViewModel(
         viewModelScope.launch {
             _state.update {
                 it.copy(
-                    isUserLoading = true
+                    isStoreLoading = true
                 )
             }
 
-            val result = getUserById(
+            val result = getStoreById(
                 id = id
             )
 
@@ -194,8 +194,8 @@ class OtherProfileViewModel(
                 is Resource.Error -> {
                     _state.update {
                         it.copy(
-                            isUserLoading = false,
-                            userError = result.message
+                            isStoreLoading = false,
+                            storeError = result.message
                         )
                     }
                 }
@@ -203,8 +203,8 @@ class OtherProfileViewModel(
                 is Resource.Success -> {
                     _state.update {
                         it.copy(
-                            isUserLoading = false,
-                            user = result.data
+                            isStoreLoading = false,
+                            store = result.data
                         )
                     }
 
@@ -236,10 +236,10 @@ class OtherProfileViewModel(
                 )
             }
 
-            val result = addUserReview(
+            val result = addStoreReview(
                 rating = state.value.rating,
                 message = state.value.message,
-                userId = state.value.user?.id ?: return@launch
+                storeId = state.value.store?.id ?: return@launch
             )
 
             when (result) {

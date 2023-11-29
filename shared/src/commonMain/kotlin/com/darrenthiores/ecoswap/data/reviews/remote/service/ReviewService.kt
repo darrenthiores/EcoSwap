@@ -22,11 +22,18 @@ interface ReviewService {
         userId: String
     )
 
+    suspend fun addStoreReview(
+        rating: Int,
+        message: String,
+        storeId: String
+    )
+
     companion object {
         private const val BASE_URL = ""
         const val GET_MY_REVIEWS = "$BASE_URL/"
         const val GET_USER_REVIEWS = "$BASE_URL/"
         const val GET_STORE_REVIEWS = "$BASE_URL/"
-        const val ADD_REVIEW = "$BASE_URL/"
+        const val ADD_USER_REVIEW = "$BASE_URL/"
+        const val ADD_STORE_REVIEW = "$BASE_URL/"
     }
 }

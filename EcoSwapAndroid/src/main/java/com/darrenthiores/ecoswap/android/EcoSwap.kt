@@ -30,6 +30,8 @@ import com.darrenthiores.ecoswap.android.presentation.register.RegisterScreen
 import com.darrenthiores.ecoswap.android.presentation.search.AndroidSearchViewModel
 import com.darrenthiores.ecoswap.android.presentation.search.SearchScreen
 import com.darrenthiores.ecoswap.android.presentation.splash.SplashScreen
+import com.darrenthiores.ecoswap.android.presentation.store_profile.AndroidStoreProfileViewModel
+import com.darrenthiores.ecoswap.android.presentation.store_profile.StoreProfileScreen
 import com.darrenthiores.ecoswap.android.utils.AppBottomBar
 import com.darrenthiores.ecoswap.android.utils.AppState
 import com.darrenthiores.ecoswap.android.utils.Route
@@ -167,8 +169,8 @@ fun EcoSwap(
                     onItemClick = { id ->
                         navController.navigate(Route.ItemDetail.name + "/$id")
                     },
-                    onStoreClick = {
-
+                    onStoreClick = { id ->
+                        navController.navigate(Route.StoreProfile.name + "/$id")
                     }
                 )
             }
@@ -220,8 +222,8 @@ fun EcoSwap(
                     onItemClick = { id ->
                         navController.navigate(Route.ItemDetail.name + "/$id")
                     },
-                    onStoreClick = {
-
+                    onStoreClick = { id ->
+                        navController.navigate(Route.StoreProfile.name + "/$id")
                     },
                     onBackClicked = {
                         navController.navigateUp()
@@ -270,6 +272,38 @@ fun EcoSwap(
                 val state by viewModel.state.collectAsState()
 
                 OtherProfileScreen(
+                    state = state,
+                    uiEvent = viewModel.uiEvent,
+                    onEvent = viewModel::onEvent,
+                    onItemClick = { id ->
+                        navController.navigate(Route.ItemDetail.name + "/$id")
+                    },
+                    onUserClick = { id ->
+                        navController.navigate(Route.OtherProfile.name + "/$id")
+                    },
+                    onMessageClick = {  },
+                    onSettingClick = {  },
+                    showSnackBar = { message ->
+                        appState.showSnackBar(message)
+                    },
+                    onBackClick = {
+                        navController.navigateUp()
+                    }
+                )
+            }
+
+            composable(
+                route = Route.StoreProfile.name + "/{storeId}",
+                arguments = listOf(
+                    navArgument("storeId") {
+                        NavType.StringType
+                    }
+                )
+            ) {
+                val viewModel: AndroidStoreProfileViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                StoreProfileScreen(
                     state = state,
                     uiEvent = viewModel.uiEvent,
                     onEvent = viewModel::onEvent,

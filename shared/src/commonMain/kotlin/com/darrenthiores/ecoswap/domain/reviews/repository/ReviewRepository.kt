@@ -17,9 +17,15 @@ interface ReviewRepository {
         id: String
     ): Resource<List<StoreReview>>
 
-    suspend fun addReview(
+    suspend fun addUserReview(
         rating: Int,
         message: String,
         userId: String
+    ): Resource<Unit>
+
+    suspend fun addStoreReview(
+        rating: Int,
+        message: String,
+        storeId: String
     ): Resource<Unit>
 }

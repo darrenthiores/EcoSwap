@@ -1,4 +1,4 @@
-package com.darrenthiores.ecoswap.android.presentation.other_profile.components
+package com.darrenthiores.ecoswap.android.presentation.store_profile.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -7,28 +7,34 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.PagerState
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
 import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import com.darrenthiores.ecoswap.android.presentation.model_components.item.ItemList
-import com.darrenthiores.ecoswap.android.presentation.model_components.review.ReviewList
-import com.darrenthiores.ecoswap.android.presentation.other_profile.model.OtherProfileTab
-import com.darrenthiores.ecoswap.presentation.other_profile.OtherProfileState
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import com.darrenthiores.ecoswap.android.presentation.model_components.item.StoreItemList
+import com.darrenthiores.ecoswap.android.presentation.model_components.review.StoreReviewList
+import com.darrenthiores.ecoswap.android.presentation.store_profile.model.StoreProfileTab
+import com.darrenthiores.ecoswap.android.theme.SubHeadlineR
+import com.darrenthiores.ecoswap.presentation.store_profile.StoreProfileState
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun OtherProfileContent(
+fun StoreProfileContent(
     modifier: Modifier = Modifier,
-    state: OtherProfileState,
+    state: StoreProfileState,
     listState: LazyListState,
     reviewListState: LazyListState,
     itemListState: LazyGridState,
@@ -47,8 +53,8 @@ fun OtherProfileContent(
             state = listState
         ) {
             item {
-                OtherProfileTopSection(
-                    user = state.user
+                StoreProfileTopSection(
+                    store = state.store
                 )
             }
 
@@ -56,12 +62,12 @@ fun OtherProfileContent(
                 Column(
                     modifier = Modifier.height(screenHeight)
                 ) {
-                    OtherProfileTabRow(
+                    StoreProfileTabRow(
                         pagerState = pagerState
                     )
 
                     HorizontalPager(
-                        pageCount = OtherProfileTab.values().size,
+                        pageCount = StoreProfileTab.values().size,
                         state = pagerState,
                         modifier = Modifier
                             .fillMaxWidth()
@@ -92,7 +98,7 @@ fun OtherProfileContent(
 
                                     }
                                     else -> {
-                                        ItemList(
+                                        StoreItemList(
                                             items = state.items.items,
                                             onClick = {
                                                 onItemClick(it.id)
@@ -111,7 +117,7 @@ fun OtherProfileContent(
 
                                     }
                                     else -> {
-                                        ReviewList(
+                                        StoreReviewList(
                                             items = state.reviews.items,
                                             onUserClick = { id ->
                                                 onUserClick(id)
@@ -119,6 +125,21 @@ fun OtherProfileContent(
                                             state = reviewListState
                                         )
                                     }
+                                }
+                            }
+                            2 -> {
+                                Column(
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                        .padding(64.dp),
+                                    horizontalAlignment = Alignment.CenterHorizontally
+                                ) {
+                                    Text(
+                                        text = "This feature is not yet available :(",
+                                        style = SubHeadlineR.copy(
+                                            textAlign = TextAlign.Center
+                                        )
+                                    )
                                 }
                             }
                         }

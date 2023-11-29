@@ -42,4 +42,12 @@ class KtorReviewService(
         // should add review
     }
 
+    override suspend fun addStoreReview(
+        rating: Int,
+        message: String,
+        storeId: String
+    ) {
+        // should add review
+    }
+
 }

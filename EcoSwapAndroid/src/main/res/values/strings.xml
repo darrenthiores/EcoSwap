@@ -56,6 +56,9 @@
     <string name="profile">Profile</string>
     <string name="add_review">Add Review</string>
     <string name="review_user_header">Review User</string>
-    <string name="review_user_body">Write a Review on this Business and share your Experience</string>
+    <string name="review_user_body">Write a Review on this User and share your Experience</string>
+    <string name="review_store_header">Review Store</string>
+    <string name="review_store_body">Write a Review on this Business and share your Experience</string>
     <string name="review_placeholder">Add your review here...</string>
+    <string name="store">Store</string>
 </resources>

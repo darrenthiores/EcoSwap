@@ -51,7 +51,7 @@ class ReviewRepositoryImpl(
         }
     }
 
-    override suspend fun addReview(
+    override suspend fun addUserReview(
         rating: Int,
         message: String,
         userId: String
@@ -61,6 +61,25 @@ class ReviewRepositoryImpl(
                 rating = rating,
                 message = message,
                 userId = userId
+            )
+
+        return when (result) {
+            ApiResponse.Empty -> Resource.Error("Unknown Error")
+            is ApiResponse.Error -> Resource.Error(result.errorMessage)
+            is ApiResponse.Success -> Resource.Success(result.data)
+        }
+    }
+
+    override suspend fun addStoreReview(
+        rating: Int,
+        message: String,
+        storeId: String
+    ): Resource<Unit> {
+        val result = remoteDataSource
+            .addStoreReview(
+                rating = rating,
+                message = message,
+                storeId = storeId
             )
 
         return when (result) {

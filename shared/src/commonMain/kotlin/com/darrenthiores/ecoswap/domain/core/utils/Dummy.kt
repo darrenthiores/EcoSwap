@@ -129,7 +129,7 @@ object Dummy {
                 ""
             ),
             description = "scripta",
-            location = "ancillae",
+            location = "Jl. Janur Asri, Kelapa Gading Timur, Jakarta Utara, DKI Jakarta 14250",
             storeName = "Merle McIntyre",
             storeImgUrl = "https://search.yahoo.com/search?p=tation",
             storeId = "1",
@@ -143,7 +143,7 @@ object Dummy {
                 ""
             ),
             description = "scripta",
-            location = "ancillae",
+            location = "Jl. Janur Asri, Kelapa Gading Timur, Jakarta Utara, DKI Jakarta 14250",
             storeName = "Merle McIntyre",
             storeImgUrl = "https://search.yahoo.com/search?p=tation",
             storeId = "2",
@@ -157,7 +157,7 @@ object Dummy {
                 ""
             ),
             description = "scripta",
-            location = "ancillae",
+            location = "Jl. Janur Asri, Kelapa Gading Timur, Jakarta Utara, DKI Jakarta 14250",
             storeName = "Merle McIntyre",
             storeImgUrl = "https://search.yahoo.com/search?p=tation",
             storeId = "3",
@@ -171,7 +171,7 @@ object Dummy {
                 ""
             ),
             description = "scripta",
-            location = "ancillae",
+            location = "Jl. Janur Asri, Kelapa Gading Timur, Jakarta Utara, DKI Jakarta 14250",
             storeName = "Merle McIntyre",
             storeImgUrl = "https://search.yahoo.com/search?p=tation",
             storeId = "4",
@@ -185,36 +185,40 @@ object Dummy {
             categoryId = "1",
             name = "Deanna Houston",
             imgUrl = "https://www.google.com/#q=noster",
-            location = "fugit",
+            location = "Jl. Janur Asri, Kelapa Gading Timur, Jakarta Utara, DKI Jakarta 14250",
             rating = 4.5,
-            description = "mucius"
+            description = "mucius",
+            totalReview = 3613
         ),
         Store(
             id = "2",
             categoryId = "2",
             name = "Deanna Houston",
             imgUrl = "https://www.google.com/#q=noster",
-            location = "fugit",
+            location = "Jl. Janur Asri, Kelapa Gading Timur, Jakarta Utara, DKI Jakarta 14250",
             rating = 4.5,
-            description = "mucius"
+            description = "mucius",
+            totalReview = 3613
         ),
         Store(
             id = "3",
             categoryId = "3",
             name = "Deanna Houston",
             imgUrl = "https://www.google.com/#q=noster",
-            location = "fugit",
+            location = "Jl. Janur Asri, Kelapa Gading Timur, Jakarta Utara, DKI Jakarta 14250",
             rating = 4.5,
-            description = "mucius"
+            description = "mucius",
+            totalReview = 3613
         ),
         Store(
             id = "4",
             categoryId = "4",
             name = "Deanna Houston",
             imgUrl = "https://www.google.com/#q=noster",
-            location = "fugit",
+            location = "Jl. Janur Asri, Kelapa Gading Timur, Jakarta Utara, DKI Jakarta 14250",
             rating = 4.5,
-            description = "mucius"
+            description = "mucius",
+            totalReview = 3613
         )
     )
 
