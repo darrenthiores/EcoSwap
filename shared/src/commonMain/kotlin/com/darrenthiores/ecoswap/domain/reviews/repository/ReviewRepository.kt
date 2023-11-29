@@ -6,12 +6,20 @@ import com.darrenthiores.ecoswap.domain.utils.Resource
 
 interface ReviewRepository {
     suspend fun getMyReviews(page: Int): Resource<List<Review>>
+
     suspend fun getUserReviews(
         page: Int,
         id: String
     ): Resource<List<Review>>
+
     suspend fun getStoreReviews(
         page: Int,
         id: String
     ): Resource<List<StoreReview>>
+
+    suspend fun addReview(
+        rating: Int,
+        message: String,
+        userId: String
+    ): Resource<Unit>
 }

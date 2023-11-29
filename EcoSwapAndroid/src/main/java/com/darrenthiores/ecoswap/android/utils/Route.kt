@@ -6,5 +6,6 @@ enum class Route {
     Login,
     Register,
     Search,
-    ItemDetail
+    ItemDetail,
+    OtherProfile
 }

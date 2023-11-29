@@ -21,6 +21,8 @@ import com.darrenthiores.ecoswap.android.presentation.item_detail.AndroidItemDet
 import com.darrenthiores.ecoswap.android.presentation.item_detail.ItemDetailScreen
 import com.darrenthiores.ecoswap.android.presentation.login.AndroidLoginViewModel
 import com.darrenthiores.ecoswap.android.presentation.login.LoginScreen
+import com.darrenthiores.ecoswap.android.presentation.other_profile.AndroidOtherProfileViewModel
+import com.darrenthiores.ecoswap.android.presentation.other_profile.OtherProfileScreen
 import com.darrenthiores.ecoswap.android.presentation.profile.AndroidProfileViewModel
 import com.darrenthiores.ecoswap.android.presentation.profile.ProfileScreen
 import com.darrenthiores.ecoswap.android.presentation.register.AndroidRegisterViewModel
@@ -181,7 +183,9 @@ fun EcoSwap(
                     onItemClick = { id ->
                         navController.navigate(Route.ItemDetail.name + "/$id")
                     },
-                    onUserClick = { id -> },
+                    onUserClick = { id ->
+                        navController.navigate(Route.OtherProfile.name + "/$id")
+                    },
                     onBackClick = {
                         navController.navigateUp()
                     },
@@ -240,8 +244,46 @@ fun EcoSwap(
                     state = state,
                     onEvent = viewModel::onEvent,
                     onSettingClick = {  },
-                    onUserClick = { },
+                    onUserClick = {
+                        val id = state.user?.id
+
+                        id?.let {
+                            navController.navigate(Route.OtherProfile.name + "/$id")
+                        }
+                    },
                     onMessageClick = {  },
+                    onBackClick = {
+                        navController.navigateUp()
+                    }
+                )
+            }
+
+            composable(
+                route = Route.OtherProfile.name + "/{userId}",
+                arguments = listOf(
+                    navArgument("userId") {
+                        NavType.StringType
+                    }
+                )
+            ) {
+                val viewModel: AndroidOtherProfileViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                OtherProfileScreen(
+                    state = state,
+                    uiEvent = viewModel.uiEvent,
+                    onEvent = viewModel::onEvent,
+                    onItemClick = { id ->
+                        navController.navigate(Route.ItemDetail.name + "/$id")
+                    },
+                    onUserClick = { id ->
+                        navController.navigate(Route.OtherProfile.name + "/$id")
+                    },
+                    onMessageClick = {  },
+                    onSettingClick = {  },
+                    showSnackBar = { message ->
+                        appState.showSnackBar(message)
+                    },
                     onBackClick = {
                         navController.navigateUp()
                     }

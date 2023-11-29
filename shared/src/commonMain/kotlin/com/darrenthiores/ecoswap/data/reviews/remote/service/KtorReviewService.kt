@@ -34,4 +34,12 @@ class KtorReviewService(
             }
     }
 
+    override suspend fun addUserReview(
+        rating: Int,
+        message: String,
+        userId: String
+    ) {
+        // should add review
+    }
+
 }

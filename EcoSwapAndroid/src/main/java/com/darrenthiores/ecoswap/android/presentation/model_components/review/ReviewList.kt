@@ -33,7 +33,7 @@ fun ReviewList(
             ReviewItem(
                 review = item,
                 onUserClick = {
-                    onUserClick(item.id)
+                    onUserClick(item.userId)
                 }
             )
         }

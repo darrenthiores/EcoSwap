@@ -1,6 +1,7 @@
 package com.darrenthiores.ecoswap.android.di.review
 
 import com.darrenthiores.ecoswap.domain.reviews.repository.ReviewRepository
+import com.darrenthiores.ecoswap.domain.reviews.use_cases.AddReview
 import com.darrenthiores.ecoswap.domain.reviews.use_cases.GetMyReviews
 import com.darrenthiores.ecoswap.domain.reviews.use_cases.GetStoreReviews
 import com.darrenthiores.ecoswap.domain.reviews.use_cases.GetUserReviews
@@ -39,6 +40,16 @@ object ReviewUseCasesModule {
         repository: ReviewRepository
     ): GetStoreReviews {
         return GetStoreReviews(
+            repository = repository
+        )
+    }
+
+    @Provides
+    @ViewModelScoped
+    fun provideAddReviewUseCase(
+        repository: ReviewRepository
+    ): AddReview {
+        return AddReview(
             repository = repository
         )
     }

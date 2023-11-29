@@ -37,6 +37,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.max
 import com.darrenthiores.ecoswap.android.theme.EcoSwapTheme
 import com.darrenthiores.ecoswap.android.theme.SubHeadlineR
 
@@ -67,6 +68,7 @@ fun DefaultTextField(
     val textStyle = SubHeadlineR
     val iconSize = 20.dp
     val textFieldHeight = 48.dp
+    val textHeight = 32.dp
 
     BasicTextField(
         value = text,
@@ -99,7 +101,10 @@ fun DefaultTextField(
                     )
                     .padding(horizontal = 16.dp)
                     .height(
-                        (textFieldHeight.times(lineLimit))
+                        max(
+                            a = textFieldHeight,
+                            b = (textHeight.times(lineLimit))
+                        )
                     ),
                 verticalAlignment = Alignment.CenterVertically
             ) {

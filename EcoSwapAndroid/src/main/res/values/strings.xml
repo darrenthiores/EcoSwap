@@ -53,4 +53,9 @@
     <string name="rating">rating</string>
     <string name="total_reviews">(%d Reviews)</string>
     <string name="my_profile">My Profile</string>
+    <string name="profile">Profile</string>
+    <string name="add_review">Add Review</string>
+    <string name="review_user_header">Review User</string>
+    <string name="review_user_body">Write a Review on this Business and share your Experience</string>
+    <string name="review_placeholder">Add your review here...</string>
 </resources>

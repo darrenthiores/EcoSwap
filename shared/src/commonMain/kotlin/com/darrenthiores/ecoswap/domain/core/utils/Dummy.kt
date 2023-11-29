@@ -240,7 +240,7 @@ object Dummy {
         ),
         User(
             id = "2",
-            name = "Carroll Warner",
+            name = "Olga Bartlett",
             imageUrl = "https://duckduckgo.com/?q=euripidis",
             email = "junior.guerra@example.com",
             rating = 3.0,
@@ -255,7 +255,7 @@ object Dummy {
             review = "vocibus",
             reviewedUserId = "2",
             userId = "1",
-            username = "Olga Bartlett",
+            username = "Carroll Warner",
             rating = 5.0,
             date = Clock.System.now().toEpochMilliseconds(),
             userImgUrl = ""

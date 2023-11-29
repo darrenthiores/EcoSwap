@@ -1,4 +1,4 @@
-package com.darrenthiores.ecoswap.android.presentation.profile.components
+package com.darrenthiores.ecoswap.android.presentation.other_profile.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.pager.PagerState
@@ -11,14 +11,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.darrenthiores.ecoswap.android.presentation.profile.model.ProfileTab
+import com.darrenthiores.ecoswap.android.presentation.other_profile.model.OtherProfileTab
 import com.darrenthiores.ecoswap.android.theme.Caption1B
 import com.darrenthiores.ecoswap.android.theme.EcoSwapTheme
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun ProfileTabRow(
+fun OtherProfileTabRow(
     modifier: Modifier = Modifier,
     pagerState: PagerState
 ) {
@@ -31,12 +31,12 @@ fun ProfileTabRow(
         contentColor = MaterialTheme.colors.primary,
         divider = {  }
     ) {
-        ProfileTab.values().forEachIndexed { index, screen ->
+        OtherProfileTab.values().forEachIndexed { index, tab ->
             Tab(
                 modifier = Modifier,
                 text = {
                     Text(
-                        text = screen.title,
+                        text = tab.name,
                         style = Caption1B
                     )
                 },
@@ -56,10 +56,10 @@ fun ProfileTabRow(
 @OptIn(ExperimentalFoundationApi::class)
 @Preview
 @Composable
-private fun ProfileTabRowPreview() {
+private fun OtherProfileTabRowPreview() {
     EcoSwapTheme {
         val pagerState = rememberPagerState(0)
 
-        ProfileTabRow(pagerState = pagerState)
+        OtherProfileTabRow(pagerState = pagerState)
     }
 }
