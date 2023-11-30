@@ -13,9 +13,11 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material.Card
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.LocationOn
+import androidx.compose.material.icons.rounded.Star
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -24,6 +26,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -31,7 +34,6 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.darrenthiores.ecoswap.android.R
 import com.darrenthiores.ecoswap.android.presentation.components.labels.DistanceLabel
-import com.darrenthiores.ecoswap.android.presentation.model_components.user.UserHorizontal
 import com.darrenthiores.ecoswap.android.theme.Caption1B
 import com.darrenthiores.ecoswap.android.theme.Caption2R
 import com.darrenthiores.ecoswap.android.theme.EcoSwapTheme
@@ -120,6 +122,11 @@ fun FixedStoreItemCard(
                     )
 
                     Text(
+                        modifier = Modifier
+                            .weight(
+                                weight = 1f,
+                                fill = false
+                            ),
                         text = item.location,
                         style = Caption2R.copy(
                             color = Color.LightGray
@@ -127,15 +134,34 @@ fun FixedStoreItemCard(
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )
+
+                    Text(
+                        text = "•",
+                        style = Caption2R.copy(
+                            color = Color.LightGray
+                        )
+                    )
+
+                    Row(
+                        horizontalArrangement = Arrangement.spacedBy(2.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(
+                            modifier = Modifier
+                                .size(10.dp),
+                            imageVector = Icons.Rounded.Star,
+                            contentDescription = stringResource(id = R.string.rating_placeholder),
+                            tint = MaterialTheme.colors.primary
+                        )
+
+                        Text(
+                            text = item.rating.toString(),
+                            style = Caption2R.copy(
+                                color = Color.Gray
+                            )
+                        )
+                    }
                 }
-
-                Spacer(modifier = Modifier.height(6.dp))
-
-                UserHorizontal(
-                    name = item.storeName,
-                    imageUrl = item.storeImgUrl,
-                    rating = item.rating
-                )
             }
         }
     }

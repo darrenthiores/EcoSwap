@@ -36,6 +36,19 @@ class ItemRepositoryImpl(
         }
     }
 
+    override suspend fun getStoreItemById(id: String): Resource<StoreItem?> {
+        val result = remoteDataSource
+            .getStoreItemById(
+                id = id
+            )
+
+        return when (result) {
+            ApiResponse.Empty -> Resource.Error("Unknown Error")
+            is ApiResponse.Error -> Resource.Error(result.errorMessage)
+            is ApiResponse.Success -> Resource.Success(result.data)
+        }
+    }
+
     override suspend fun searchItems(
         page: Int,
         text: String,

@@ -30,6 +30,8 @@ import com.darrenthiores.ecoswap.android.presentation.register.RegisterScreen
 import com.darrenthiores.ecoswap.android.presentation.search.AndroidSearchViewModel
 import com.darrenthiores.ecoswap.android.presentation.search.SearchScreen
 import com.darrenthiores.ecoswap.android.presentation.splash.SplashScreen
+import com.darrenthiores.ecoswap.android.presentation.store_item_detail.AndroidStoreItemDetailViewModel
+import com.darrenthiores.ecoswap.android.presentation.store_item_detail.StoreItemDetailScreen
 import com.darrenthiores.ecoswap.android.presentation.store_profile.AndroidStoreProfileViewModel
 import com.darrenthiores.ecoswap.android.presentation.store_profile.StoreProfileScreen
 import com.darrenthiores.ecoswap.android.utils.AppBottomBar
@@ -261,6 +263,35 @@ fun EcoSwap(
             }
 
             composable(
+                route = Route.StoreItemDetail.name + "/{itemId}",
+                arguments = listOf(
+                    navArgument("itemId") {
+                        NavType.StringType
+                    }
+                )
+            ) {
+                val viewModel: AndroidStoreItemDetailViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                StoreItemDetailScreen(
+                    state = state,
+                    onEvent = viewModel::onEvent,
+                    onSettingClick = {  },
+                    onStoreClick = {
+                        val id = state.store?.id
+
+                        id?.let {
+                            navController.navigate(Route.StoreProfile.name + "/$id")
+                        }
+                    },
+                    onMessageClick = {  },
+                    onBackClick = {
+                        navController.navigateUp()
+                    }
+                )
+            }
+
+            composable(
                 route = Route.OtherProfile.name + "/{userId}",
                 arguments = listOf(
                     navArgument("userId") {
@@ -308,7 +339,7 @@ fun EcoSwap(
                     uiEvent = viewModel.uiEvent,
                     onEvent = viewModel::onEvent,
                     onItemClick = { id ->
-                        navController.navigate(Route.ItemDetail.name + "/$id")
+                        navController.navigate(Route.StoreItemDetail.name + "/$id")
                     },
                     onUserClick = { id ->
                         navController.navigate(Route.OtherProfile.name + "/$id")

@@ -36,6 +36,18 @@ class ItemRemoteDataSource(
         }
     }
 
+    suspend fun getStoreItemById(id: String): ApiResponse<StoreItem?> {
+        return withContext(dispatchers.io) {
+            tryCatch {
+                val result = apiService.getStoreItemById(
+                    id = id
+                )
+
+                ApiResponse.Success(result)
+            }
+        }
+    }
+
     suspend fun searchItems(
         page: Int,
         text: String,

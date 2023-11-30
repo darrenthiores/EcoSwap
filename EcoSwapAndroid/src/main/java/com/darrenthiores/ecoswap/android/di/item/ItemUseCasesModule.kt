@@ -4,6 +4,7 @@ import com.darrenthiores.ecoswap.domain.item.repository.ItemRepository
 import com.darrenthiores.ecoswap.domain.item.use_cases.GetItemById
 import com.darrenthiores.ecoswap.domain.item.use_cases.GetItems
 import com.darrenthiores.ecoswap.domain.item.use_cases.GetMyItems
+import com.darrenthiores.ecoswap.domain.item.use_cases.GetStoreItemById
 import com.darrenthiores.ecoswap.domain.item.use_cases.GetStoreItems
 import com.darrenthiores.ecoswap.domain.item.use_cases.GetUserItems
 import com.darrenthiores.ecoswap.domain.item.use_cases.SearchItems
@@ -33,6 +34,16 @@ object ItemUseCasesModule {
         repository: ItemRepository
     ): GetItemById {
         return GetItemById(
+            repository = repository
+        )
+    }
+
+    @Provides
+    @ViewModelScoped
+    fun provideGetStoreItemByIdUseCase(
+        repository: ItemRepository
+    ): GetStoreItemById {
+        return GetStoreItemById(
             repository = repository
         )
     }

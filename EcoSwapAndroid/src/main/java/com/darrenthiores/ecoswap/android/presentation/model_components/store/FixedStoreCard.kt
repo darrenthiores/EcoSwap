@@ -110,6 +110,8 @@ fun FixedStoreCard(
                 Spacer(modifier = Modifier.height(4.dp))
 
                 Row(
+                    modifier = Modifier
+                        .fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(4.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
@@ -122,6 +124,11 @@ fun FixedStoreCard(
                     )
 
                     Text(
+                        modifier = Modifier
+                            .weight(
+                                weight = 1f,
+                                fill = false
+                            ),
                         text = store.location,
                         style = Caption2R.copy(
                             color = Color.LightGray

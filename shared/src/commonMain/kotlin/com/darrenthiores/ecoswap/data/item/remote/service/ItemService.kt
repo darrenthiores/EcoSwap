@@ -8,6 +8,9 @@ interface ItemService {
         page: Int
     ): List<Item>
     suspend fun getItemById(id: String): Item?
+
+    suspend fun getStoreItemById(id: String): StoreItem?
+
     suspend fun searchItems(
         page: Int,
         text: String,

@@ -74,7 +74,7 @@ private fun DetailProduct(
         id = item?.categoryId ?: ""
     )
     val condition = Constant.conditionById(
-        id = item?.categoryId ?: ""
+        id = item?.conditionId ?: ""
     )
 
     Card(

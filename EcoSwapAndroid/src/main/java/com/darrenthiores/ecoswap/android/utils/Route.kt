@@ -8,5 +8,6 @@ enum class Route {
     Search,
     ItemDetail,
     OtherProfile,
-    StoreProfile
+    StoreProfile,
+    StoreItemDetail
 }

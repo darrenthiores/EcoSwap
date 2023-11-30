@@ -7,6 +7,7 @@ import com.darrenthiores.ecoswap.domain.utils.Resource
 interface ItemRepository {
     suspend fun getItems(page: Int): Resource<List<Item>>
     suspend fun getItemById(id: String): Resource<Item?>
+    suspend fun getStoreItemById(id: String): Resource<StoreItem?>
     suspend fun searchItems(
         page: Int,
         text: String,

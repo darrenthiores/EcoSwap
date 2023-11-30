@@ -18,6 +18,13 @@ class KtorItemService(
             .firstOrNull { it.id == id }
     }
 
+
+    override suspend fun getStoreItemById(id: String): StoreItem? {
+        return Dummy
+            .storeItems
+            .firstOrNull { it.id == id }
+    }
+
     override suspend fun searchItems(
         page: Int,
         text: String,
