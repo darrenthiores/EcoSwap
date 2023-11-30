@@ -8,11 +8,14 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.darrenthiores.ecoswap.android.presentation.add_item.AddItemScreen
+import com.darrenthiores.ecoswap.android.presentation.add_item.AndroidAddItemViewModel
 import com.darrenthiores.ecoswap.android.presentation.boarding.AndroidBoardingViewModel
 import com.darrenthiores.ecoswap.android.presentation.boarding.BoardingScreen
 import com.darrenthiores.ecoswap.android.presentation.home.AndroidHomeViewModel
@@ -173,6 +176,9 @@ fun EcoSwap(
                     },
                     onStoreClick = { id ->
                         navController.navigate(Route.StoreProfile.name + "/$id")
+                    },
+                    onAddClick = {
+                        navController.navigate(Route.AddItem.name)
                     }
                 )
             }
@@ -348,6 +354,47 @@ fun EcoSwap(
                     onSettingClick = {  },
                     showSnackBar = { message ->
                         appState.showSnackBar(message)
+                    },
+                    onBackClick = {
+                        navController.navigateUp()
+                    }
+                )
+            }
+
+            composable(Route.AddItem.name) {
+                val viewModel: AndroidAddItemViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+                val photos = viewModel.photos
+
+                val message = stringResource(id = R.string.success_message)
+
+                LaunchedEffect(key1 = true) {
+                    viewModel.uiEvent.collect { event ->
+                        when(event) {
+                            is UiEvent.Success -> {
+                                navController.navigateUp()
+                                appState.showSnackBar(message)
+                            }
+                            else -> Unit
+                        }
+                    }
+                }
+
+                AddItemScreen(
+                    state = state,
+                    onEvent = viewModel::onEvent,
+                    photos = photos,
+                    onPickPhotos = {
+                        viewModel.onSelectPhoto(it)
+                    },
+                    onSelectPhoto = {
+                        viewModel.onSelectPhoto(it)
+                    },
+                    onAddPhoto = {
+                        viewModel.onAddPhoto(it)
+                    },
+                    onUpload = {
+                        viewModel.upload()
                     },
                     onBackClick = {
                         navController.navigateUp()

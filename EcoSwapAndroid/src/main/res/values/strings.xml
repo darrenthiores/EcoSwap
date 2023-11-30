@@ -62,4 +62,25 @@
     <string name="review_placeholder">Add your review here...</string>
     <string name="store">Store</string>
     <string name="product_rating">Rating :</string>
+    <string name="add_item">Add Item</string>,
+    <string name="upload">Upload</string>
+    <string name="add">Add</string>
+    <string name="add_photo">Add Photos*</string>
+    <string name="add_name">Add Item Name*</string>
+    <string name="add_desc">Item Description*</string>
+    <string name="add_category">Item Category*</string>
+    <string name="add_total">Item Total*</string>
+    <string name="add_condition">Condition*</string>
+    <string name="add_brand">Item Brand*</string>
+    <string name="add_location">Location*</string>
+    <string name="add_name_placeholder">Your Item or Product</string>
+    <string name="add_desc_placeholder">Description Item here...</string>
+    <string name="add_total_placeholder">Total Items</string>
+    <string name="add_brand_placeholder">Brand Item</string>
+    <string name="add_location_placeholder">Input Location Item</string>
+    <string name="select_category">Select Category</string>
+    <string name="select_condition">Select Condition</string>
+    <string name="close">Close</string>
+    <string name="open">Open</string>
+    <string name="success_message">Upload Success!</string>
 </resources>

@@ -2,12 +2,27 @@ package com.darrenthiores.ecoswap.data.item.remote.service
 
 import com.darrenthiores.ecoswap.domain.core.utils.Dummy
 import com.darrenthiores.ecoswap.domain.item.model.Item
+import com.darrenthiores.ecoswap.domain.item.model.ItemCategory
+import com.darrenthiores.ecoswap.domain.item.model.ItemCondition
 import com.darrenthiores.ecoswap.domain.item.model.StoreItem
 import io.ktor.client.HttpClient
 
 class KtorItemService(
     private val client: HttpClient
 ): ItemService {
+    override suspend fun addItem(
+        photos: List<String>,
+        name: String,
+        description: String,
+        category: ItemCategory,
+        total: Int,
+        condition: ItemCondition,
+        brand: String,
+        location: String
+    ) {
+        // should add item
+    }
+
     override suspend fun getItems(page: Int): List<Item> {
         return Dummy.items
     }

@@ -1,9 +1,22 @@
 package com.darrenthiores.ecoswap.data.item.remote.service
 
 import com.darrenthiores.ecoswap.domain.item.model.Item
+import com.darrenthiores.ecoswap.domain.item.model.ItemCategory
+import com.darrenthiores.ecoswap.domain.item.model.ItemCondition
 import com.darrenthiores.ecoswap.domain.item.model.StoreItem
 
 interface ItemService {
+    suspend fun addItem(
+        photos: List<String>,
+        name: String,
+        description: String,
+        category: ItemCategory,
+        total: Int,
+        condition: ItemCondition,
+        brand: String,
+        location: String
+    )
+
     suspend fun getItems(
         page: Int
     ): List<Item>
@@ -33,6 +46,7 @@ interface ItemService {
 
     companion object {
         private const val BASE_URL = ""
+        const val ADD_ITEM_URL = "$BASE_URL/"
         const val GET_ITEMS_URL = "$BASE_URL/"
         const val GET_ITEM_BY_ID_URL = "$BASE_URL/"
         const val SEARCH_ITEMS_URL = "$BASE_URL/"

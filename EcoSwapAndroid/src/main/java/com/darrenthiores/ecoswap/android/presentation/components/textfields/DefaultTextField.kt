@@ -68,7 +68,7 @@ fun DefaultTextField(
     val textStyle = SubHeadlineR
     val iconSize = 20.dp
     val textFieldHeight = 48.dp
-    val textHeight = 32.dp
+    val textHeight = 24.dp
 
     BasicTextField(
         value = text,
@@ -100,13 +100,16 @@ fun DefaultTextField(
                         shape = RoundedCornerShape(20.dp)
                     )
                     .padding(horizontal = 16.dp)
+                    .padding(
+                        vertical = if (lineLimit == 1) 0.dp else 16.dp
+                    )
                     .height(
                         max(
                             a = textFieldHeight,
-                            b = (textHeight.times(lineLimit))
+                            b = (textHeight.times(lineLimit) - 16.dp)
                         )
                     ),
-                verticalAlignment = Alignment.CenterVertically
+                verticalAlignment = if (lineLimit == 1) Alignment.CenterVertically else Alignment.Top
             ) {
                 startIcon?.let {
                     Icon(

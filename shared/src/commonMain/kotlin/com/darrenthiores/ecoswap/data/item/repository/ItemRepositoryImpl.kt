@@ -3,6 +3,8 @@ package com.darrenthiores.ecoswap.data.item.repository
 import com.darrenthiores.ecoswap.data.item.remote.ItemRemoteDataSource
 import com.darrenthiores.ecoswap.data.utils.ApiResponse
 import com.darrenthiores.ecoswap.domain.item.model.Item
+import com.darrenthiores.ecoswap.domain.item.model.ItemCategory
+import com.darrenthiores.ecoswap.domain.item.model.ItemCondition
 import com.darrenthiores.ecoswap.domain.item.model.StoreItem
 import com.darrenthiores.ecoswap.domain.item.repository.ItemRepository
 import com.darrenthiores.ecoswap.domain.utils.Resource
@@ -10,6 +12,35 @@ import com.darrenthiores.ecoswap.domain.utils.Resource
 class ItemRepositoryImpl(
     private val remoteDataSource: ItemRemoteDataSource
 ): ItemRepository {
+    override suspend fun addItem(
+        photos: List<String>,
+        name: String,
+        description: String,
+        category: ItemCategory,
+        total: Int,
+        condition: ItemCondition,
+        brand: String,
+        location: String
+    ): Resource<Unit> {
+        val result = remoteDataSource
+            .addItem(
+                photos = photos,
+                name = name,
+                description = description,
+                category = category,
+                total = total,
+                condition = condition,
+                brand = brand,
+                location = location
+            )
+
+        return when (result) {
+            ApiResponse.Empty -> Resource.Error("Unknown Error")
+            is ApiResponse.Error -> Resource.Error(result.errorMessage)
+            is ApiResponse.Success -> Resource.Success(result.data)
+        }
+    }
+
     override suspend fun getItems(page: Int): Resource<List<Item>> {
         val result = remoteDataSource
             .getItems(

@@ -5,10 +5,17 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.material.FabPosition
+import androidx.compose.material.FloatingActionButton
+import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Add
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -31,7 +38,8 @@ fun HomeScreen(
     onCategoryClick: (String) -> Unit,
     onSearch: () -> Unit,
     onItemClick: (String) -> Unit,
-    onStoreClick: (String) -> Unit
+    onStoreClick: (String) -> Unit,
+    onAddClick: () -> Unit
 ) {
     val categoryPagingState = rememberPagerState()
     val recommendationListState = rememberLazyListState()
@@ -48,7 +56,22 @@ fun HomeScreen(
                 onNotificationClick = { },
                 onSearch = onSearch
             )
-        }
+        },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = onAddClick,
+                backgroundColor = MaterialTheme.colors.primary
+            ) {
+                Icon(
+                    modifier = Modifier
+                        .size(32.dp),
+                    imageVector = Icons.Rounded.Add,
+                    contentDescription = stringResource(id = R.string.add_item),
+                    tint = MaterialTheme.colors.onPrimary
+                )
+            }
+        },
+        floatingActionButtonPosition = FabPosition.End
     ) { contentPadding ->
         LazyColumn(
             modifier = Modifier

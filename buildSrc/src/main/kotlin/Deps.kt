@@ -2,6 +2,7 @@ object Deps {
     // COMPOSE
     private const val activityComposeVersion = "1.7.2"
     const val activityCompose = "androidx.activity:activity-compose:$activityComposeVersion"
+    const val activity = "androidx.activity:activity-ktx:$activityComposeVersion"
 
     const val composeVersion = "1.4.0"
     const val composeUi = "androidx.compose.ui:ui:$composeVersion"

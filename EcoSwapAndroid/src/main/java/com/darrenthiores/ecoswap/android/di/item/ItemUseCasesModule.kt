@@ -1,6 +1,7 @@
 package com.darrenthiores.ecoswap.android.di.item
 
 import com.darrenthiores.ecoswap.domain.item.repository.ItemRepository
+import com.darrenthiores.ecoswap.domain.item.use_cases.AddItem
 import com.darrenthiores.ecoswap.domain.item.use_cases.GetItemById
 import com.darrenthiores.ecoswap.domain.item.use_cases.GetItems
 import com.darrenthiores.ecoswap.domain.item.use_cases.GetMyItems
@@ -17,6 +18,16 @@ import dagger.hilt.android.scopes.ViewModelScoped
 @Module
 @InstallIn(ViewModelComponent::class)
 object ItemUseCasesModule {
+
+    @Provides
+    @ViewModelScoped
+    fun provideAddItemUseCase(
+        repository: ItemRepository
+    ): AddItem {
+        return AddItem(
+            repository = repository
+        )
+    }
 
     @Provides
     @ViewModelScoped
