@@ -87,3 +87,10 @@ android {
         minSdk = 24
     }
 }
+
+sqldelight {
+    database("ChatDatabase") {
+        packageName = "com.darrenthiores.ecoswap.database"
+        sourceFolders = listOf("sqldelight")
+    }
+}

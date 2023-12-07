@@ -2,6 +2,7 @@ package com.darrenthiores.ecoswap.domain.core.utils
 
 import com.darrenthiores.ecoswap.domain.item.model.Item
 import com.darrenthiores.ecoswap.domain.item.model.StoreItem
+import com.darrenthiores.ecoswap.domain.message.model.Inbox
 import com.darrenthiores.ecoswap.domain.reviews.model.Review
 import com.darrenthiores.ecoswap.domain.reviews.model.StoreReview
 import com.darrenthiores.ecoswap.domain.store.model.Store
@@ -296,6 +297,18 @@ object Dummy {
             userImgUrl = "http://www.bing.com/search?q=dicunt",
             rating = 2.3,
             date = 7483
+        )
+    )
+
+    val inboxes: List<Inbox> = listOf(
+        Inbox(
+            id = "1",
+            sentFromId = "1",
+            sentToId = "2",
+            sentToUsername = "steven",
+            sentToImageUrl = "",
+            lastMessage = "hey bro!",
+            lastSendUserId = "1"
         )
     )
 }

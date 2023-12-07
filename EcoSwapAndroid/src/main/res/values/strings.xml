@@ -83,4 +83,6 @@
     <string name="close">Close</string>
     <string name="open">Open</string>
     <string name="success_message">Upload Success!</string>
+    <string name="username">@%s</string>
+    <string name="inbox">Inbox</string>
 </resources>

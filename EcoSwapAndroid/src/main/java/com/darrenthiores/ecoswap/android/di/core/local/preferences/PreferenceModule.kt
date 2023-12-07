@@ -1,4 +1,4 @@
-package com.darrenthiores.ecoswap.android.di.core.local
+package com.darrenthiores.ecoswap.android.di.core.local.preferences
 
 import com.darrenthiores.ecoswap.android.data.core.preferences.DefaultPreferences
 import com.darrenthiores.ecoswap.android.domain.core.preferences.Preferences

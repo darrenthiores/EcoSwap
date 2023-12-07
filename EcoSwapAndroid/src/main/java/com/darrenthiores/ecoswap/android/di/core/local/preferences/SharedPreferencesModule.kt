@@ -1,4 +1,4 @@
-package com.darrenthiores.ecoswap.android.di.core.local
+package com.darrenthiores.ecoswap.android.di.core.local.preferences
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE

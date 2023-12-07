@@ -1,0 +1,33 @@
+CREATE TABLE inboxEntity (
+    id TEXT NOT NULL PRIMARY KEY,
+    sentFromId TEXT NOT NULL,
+    sentToId TEXT NOT NULL,
+    sentToUsername TEXT NOT NULL,
+    sentToImageUrl TEXT NOT NULL,
+    lastMessage TEXT NOT NULL,
+    lastSendUserId TEXT NOT NULL
+);
+
+getInbox:
+SELECT *
+FROM inboxEntity
+WHERE sentFromId = ?
+ORDER BY id DESC;
+
+createInbox:
+INSERT OR REPLACE
+INTO inboxEntity(
+    id,
+    sentFromId,
+    sentToId,
+    sentToUsername,
+    sentToImageUrl,
+    lastMessage,
+    lastSendUserId
+) VALUES (?, ?, ?, ?, ?, ?, ?);
+
+updateInbox:
+UPDATE inboxEntity
+SET lastMessage = :lastMessage,
+lastSendUserId = :lastSendUserId
+WHERE id = :id;

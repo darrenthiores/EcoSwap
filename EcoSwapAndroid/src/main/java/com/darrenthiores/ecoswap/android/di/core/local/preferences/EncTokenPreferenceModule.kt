@@ -1,4 +1,4 @@
-package com.darrenthiores.ecoswap.android.di.core.local
+package com.darrenthiores.ecoswap.android.di.core.local.preferences
 
 import com.darrenthiores.ecoswap.android.data.core.preferences.EncTokenPreferences
 import com.darrenthiores.ecoswap.domain.core.preferences.TokenPreferences

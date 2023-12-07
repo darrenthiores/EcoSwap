@@ -1,10 +1,30 @@
 package com.darrenthiores.ecoswap.utils.date
 
 import kotlinx.datetime.Instant
+import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toInstant
 import kotlinx.datetime.toLocalDateTime
 
 object DateUtils {
+    fun toLocalDateTime(
+        timestamp: Long
+    ): LocalDateTime {
+        return Instant
+            .fromEpochMilliseconds(timestamp)
+            .toLocalDateTime(
+                TimeZone.currentSystemDefault()
+            )
+    }
+
+    fun toEpochMillis(
+        dateTime: LocalDateTime
+    ): Long {
+        return dateTime
+            .toInstant(TimeZone.currentSystemDefault())
+            .toEpochMilliseconds()
+    }
+
     fun formatDate(
         timestamp: Long
     ): String {

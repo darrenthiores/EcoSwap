@@ -20,6 +20,8 @@ import com.darrenthiores.ecoswap.android.presentation.boarding.AndroidBoardingVi
 import com.darrenthiores.ecoswap.android.presentation.boarding.BoardingScreen
 import com.darrenthiores.ecoswap.android.presentation.home.AndroidHomeViewModel
 import com.darrenthiores.ecoswap.android.presentation.home.HomeScreen
+import com.darrenthiores.ecoswap.android.presentation.inbox.AndroidInboxViewModel
+import com.darrenthiores.ecoswap.android.presentation.inbox.InboxScreen
 import com.darrenthiores.ecoswap.android.presentation.item_detail.AndroidItemDetailViewModel
 import com.darrenthiores.ecoswap.android.presentation.item_detail.ItemDetailScreen
 import com.darrenthiores.ecoswap.android.presentation.login.AndroidLoginViewModel
@@ -235,6 +237,21 @@ fun EcoSwap(
                     },
                     onBackClicked = {
                         navController.navigateUp()
+                    }
+                )
+            }
+
+            composable(TopLevelDestination.Message.name) {
+                val viewModel: AndroidInboxViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                InboxScreen(
+                    state = state,
+                    onBackClick = {
+                        navController.navigateUp()
+                    },
+                    onMessageClick = { sentToId ->
+
                     }
                 )
             }
