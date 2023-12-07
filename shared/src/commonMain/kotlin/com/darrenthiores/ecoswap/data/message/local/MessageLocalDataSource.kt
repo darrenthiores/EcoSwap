@@ -39,7 +39,8 @@ class MessageLocalDataSource(
         sentFromUsername: String,
         sentFromImageUrl: String,
         message: String,
-        mediaUrl: String
+        mediaUrl: String,
+        timestamp: Long
     ) {
         dao
             .insertMessage(
@@ -52,7 +53,8 @@ class MessageLocalDataSource(
                 sentFromUsername = sentFromUsername,
                 sentFromImageUrl = sentFromImageUrl,
                 message = message,
-                mediaUrl = mediaUrl
+                mediaUrl = mediaUrl,
+                timestamp = timestamp
             )
     }
 

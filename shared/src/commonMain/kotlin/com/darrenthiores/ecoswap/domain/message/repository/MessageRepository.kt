@@ -27,7 +27,7 @@ interface MessageRepository {
         message: String,
         mediaUrl: String,
         create: Boolean
-    ): Resource<Unit>
+    ): Resource<Message>
 
     suspend fun getInbox(
         userId: String,

@@ -52,7 +52,7 @@ class MessageRemoteDataSource(
         sentFromImageUrl: String,
         message: String,
         mediaUrl: String
-    ): ApiResponse<String> {
+    ): ApiResponse<Message> {
         return withContext(dispatchers.io) {
             tryCatch {
                 val result = apiService.insertMessage(

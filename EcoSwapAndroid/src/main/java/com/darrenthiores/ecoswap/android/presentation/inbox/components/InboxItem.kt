@@ -62,7 +62,7 @@ fun InboxItem(
                 .build(),
             placeholder = painterResource(id = R.drawable.ic_no_picture),
             error = painterResource(id = R.drawable.ic_no_picture),
-            contentDescription = inbox.sentToUsername + " photo"
+            contentDescription = stringResource(id = R.string.photo_desc, inbox.sentToUsername)
         )
 
         Spacer(modifier = Modifier.width(32.dp))

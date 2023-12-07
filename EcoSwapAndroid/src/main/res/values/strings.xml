@@ -85,4 +85,8 @@
     <string name="success_message">Upload Success!</string>
     <string name="username">@%s</string>
     <string name="inbox">Inbox</string>
+    <string name="message_placeholder">Message...</string>
+    <string name="message_button_desc">Send Message</string>
+    <string name="photo_button_desc">Add Photo</string>
+    <string name="photo_desc">%s photo</string>
 </resources>

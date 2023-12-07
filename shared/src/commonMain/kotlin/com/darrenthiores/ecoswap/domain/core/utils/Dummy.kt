@@ -251,6 +251,15 @@ object Dummy {
             rating = 3.0,
             totalReview = 3613,
             location = "sagittis"
+        ),
+        User(
+            id = "3",
+            name = "Bronski",
+            imageUrl = "https://duckduckgo.com/?q=euripidis",
+            email = "junior.kii@example.com",
+            rating = 4.0,
+            totalReview = 3613,
+            location = "jakarta"
         )
     )
 
@@ -309,6 +318,15 @@ object Dummy {
             sentToImageUrl = "",
             lastMessage = "hey bro!",
             lastSendUserId = "1"
+        ),
+        Inbox(
+            id = "2",
+            sentFromId = "1",
+            sentToId = "3",
+            sentToUsername = "john",
+            sentToImageUrl = "",
+            lastMessage = "hey bro!",
+            lastSendUserId = "3"
         )
     )
 }

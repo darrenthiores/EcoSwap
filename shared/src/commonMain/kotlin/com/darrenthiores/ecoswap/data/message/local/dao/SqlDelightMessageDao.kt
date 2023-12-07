@@ -6,7 +6,6 @@ import com.darrenthiores.ecoswap.domain.message.model.Message
 import com.darrenthiores.ecoswap.utils.date.DateUtils
 import database.ChatEntity
 import database.InboxEntity
-import kotlinx.datetime.Clock
 
 class SqlDelightMessageDao(
     db: ChatDatabase
@@ -44,7 +43,8 @@ class SqlDelightMessageDao(
         sentFromUsername: String,
         sentFromImageUrl: String,
         message: String,
-        mediaUrl: String
+        mediaUrl: String,
+        timestamp: Long
     ) {
         chatQueries.insertMessage(
             id = messageId,
@@ -57,7 +57,7 @@ class SqlDelightMessageDao(
             sentFromImageUrl = sentFromImageUrl,
             content = message,
             mediaUrl = mediaUrl,
-            timestamp = Clock.System.now().toEpochMilliseconds(),
+            timestamp = timestamp,
             isRead = false
         )
     }

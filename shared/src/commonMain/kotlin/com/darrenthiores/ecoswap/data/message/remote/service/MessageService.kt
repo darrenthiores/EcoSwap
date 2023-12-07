@@ -23,7 +23,7 @@ interface MessageService {
         sentFromImageUrl: String,
         message: String,
         mediaUrl: String
-    ): String
+    ): Message
 
     suspend fun getInbox(userId: String): List<Inbox>
 

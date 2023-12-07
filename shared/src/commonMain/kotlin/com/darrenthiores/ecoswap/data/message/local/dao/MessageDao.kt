@@ -25,7 +25,8 @@ interface MessageDao {
         sentFromUsername: String,
         sentFromImageUrl: String,
         message: String,
-        mediaUrl: String
+        mediaUrl: String,
+        timestamp: Long
     )
 
     suspend fun getInbox(userId: String): List<InboxEntity>

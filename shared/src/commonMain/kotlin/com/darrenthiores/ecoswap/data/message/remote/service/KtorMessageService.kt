@@ -2,8 +2,10 @@ package com.darrenthiores.ecoswap.data.message.remote.service
 
 import com.darrenthiores.ecoswap.domain.message.model.Inbox
 import com.darrenthiores.ecoswap.domain.message.model.Message
+import com.darrenthiores.ecoswap.utils.date.DateUtils
 import com.darrenthiores.ecoswap.utils.uuid.randomUUID
 import io.ktor.client.HttpClient
+import kotlinx.datetime.Clock
 
 class KtorMessageService(
     private val client: HttpClient
@@ -26,8 +28,23 @@ class KtorMessageService(
         sentFromImageUrl: String,
         message: String,
         mediaUrl: String,
-    ): String {
-        return randomUUID()
+    ): Message {
+        return Message(
+            id = randomUUID(),
+            inboxId = inboxId,
+            sentToId = sentToId,
+            sentToUsername = sentToUsername,
+            sentToImageUrl = sentToImageUrl,
+            sentFromId = sentFromId,
+            sentFromUsername = sentFromUsername,
+            sentFromImageUrl = sentFromImageUrl,
+            content = message,
+            mediaUrl = mediaUrl,
+            date = DateUtils.toLocalDateTime(
+                timestamp = Clock.System.now().toEpochMilliseconds()
+            ),
+            isRead = false
+        )
     }
 
     override suspend fun getInbox(userId: String): List<Inbox> {

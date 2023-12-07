@@ -10,5 +10,6 @@ enum class Route {
     OtherProfile,
     StoreProfile,
     StoreItemDetail,
-    AddItem
+    AddItem,
+    Message
 }

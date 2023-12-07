@@ -10,6 +10,7 @@ import com.darrenthiores.ecoswap.domain.message.model.Inbox
 import com.darrenthiores.ecoswap.domain.message.model.Message
 import com.darrenthiores.ecoswap.domain.message.repository.MessageRepository
 import com.darrenthiores.ecoswap.domain.utils.Resource
+import com.darrenthiores.ecoswap.utils.date.DateUtils
 
 class MessageRepositoryImpl(
     private val remoteDataSource: MessageRemoteDataSource,
@@ -105,7 +106,7 @@ class MessageRepositoryImpl(
         message: String,
         mediaUrl: String,
         create: Boolean,
-    ): Resource<Unit> {
+    ): Resource<Message> {
         if (create) {
             val result = remoteDataSource
                 .createInbox(
@@ -155,9 +156,11 @@ class MessageRepositoryImpl(
                             return Resource.Error(messageResult.errorMessage)
                         }
                         is ApiResponse.Success -> {
+                            val messageResultData = messageResult.data
+
                             localDataSource
                                 .insertMessage(
-                                    messageId = messageResult.data,
+                                    messageId = messageResultData.id,
                                     inboxId = result.data,
                                     sentToId = sentToId,
                                     sentToUsername = sentToUsername,
@@ -166,10 +169,13 @@ class MessageRepositoryImpl(
                                     sentFromUsername = sentFromUsername,
                                     sentFromImageUrl = sentFromImageUrl,
                                     message = message,
-                                    mediaUrl = mediaUrl
+                                    mediaUrl = mediaUrl,
+                                    timestamp = DateUtils.toEpochMillis(
+                                        dateTime = messageResultData.date
+                                    )
                                 )
 
-                            return Resource.Success(Unit)
+                            return Resource.Success(messageResultData)
                         }
                     }
                 }
@@ -196,9 +202,11 @@ class MessageRepositoryImpl(
                     return Resource.Error(messageResult.errorMessage)
                 }
                 is ApiResponse.Success -> {
+                    val messageResultData = messageResult.data
+
                     localDataSource
                         .insertMessage(
-                            messageId = messageResult.data,
+                            messageId = messageResultData.id,
                             inboxId = inboxId,
                             sentToId = sentToId,
                             sentToUsername = sentToUsername,
@@ -207,7 +215,10 @@ class MessageRepositoryImpl(
                             sentFromUsername = sentFromUsername,
                             sentFromImageUrl = sentFromImageUrl,
                             message = message,
-                            mediaUrl = mediaUrl
+                            mediaUrl = mediaUrl,
+                            timestamp = DateUtils.toEpochMillis(
+                                dateTime = messageResultData.date
+                            )
                         )
 
                     val updateResult = remoteDataSource
@@ -232,7 +243,7 @@ class MessageRepositoryImpl(
                                     message = message
                                 )
 
-                            return Resource.Success(Unit)
+                            return Resource.Success(messageResultData)
                         }
                     }
                 }

@@ -26,6 +26,8 @@ import com.darrenthiores.ecoswap.android.presentation.item_detail.AndroidItemDet
 import com.darrenthiores.ecoswap.android.presentation.item_detail.ItemDetailScreen
 import com.darrenthiores.ecoswap.android.presentation.login.AndroidLoginViewModel
 import com.darrenthiores.ecoswap.android.presentation.login.LoginScreen
+import com.darrenthiores.ecoswap.android.presentation.message.AndroidMessageViewModel
+import com.darrenthiores.ecoswap.android.presentation.message.MessageScreen
 import com.darrenthiores.ecoswap.android.presentation.other_profile.AndroidOtherProfileViewModel
 import com.darrenthiores.ecoswap.android.presentation.other_profile.OtherProfileScreen
 import com.darrenthiores.ecoswap.android.presentation.profile.AndroidProfileViewModel
@@ -251,10 +253,32 @@ fun EcoSwap(
                         navController.navigateUp()
                     },
                     onMessageClick = { sentToId ->
-
+                        navController.navigate(Route.Message.name + "/$sentToId")
                     }
                 )
             }
+
+            composable(
+                route = Route.Message.name + "/{userId}",
+                arguments = listOf(
+                    navArgument("userId") {
+                        NavType.StringType
+                    }
+                )
+            ) {
+                val viewModel: AndroidMessageViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                MessageScreen(
+                    state = state,
+                    onEvent = viewModel::onEvent,
+                    onSettingClick = {  },
+                    onBackClick = {
+                        navController.navigateUp()
+                    }
+                )
+            }
+
 
             composable(
                 route = Route.ItemDetail.name + "/{itemId}",
