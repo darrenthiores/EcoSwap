@@ -89,7 +89,7 @@ android {
 }
 
 sqldelight {
-    database("ChatDatabase") {
+    database("AppDatabase") {
         packageName = "com.darrenthiores.ecoswap.database"
         sourceFolders = listOf("sqldelight")
     }

@@ -1,0 +1,30 @@
+CREATE TABLE carbonEntity (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    categoryId TEXT NOT NULL,
+    taskId TEXT NOT NULL,
+    taskTitle TEXT NOT NULL,
+    date INTEGER AS Long NOT NULL,
+    total REAL AS Double NOT NULL
+);
+
+getCarbonByCategory:
+SELECT SUM(total) AS Double
+FROM carbonEntity
+WHERE categoryId = ?
+AND date >= ?;
+
+insertCarbon:
+INSERT OR REPLACE
+INTO carbonEntity(
+    categoryId,
+    taskId,
+    taskTitle,
+    date,
+    total
+) VALUES (
+?,
+?,
+?,
+?,
+?
+);

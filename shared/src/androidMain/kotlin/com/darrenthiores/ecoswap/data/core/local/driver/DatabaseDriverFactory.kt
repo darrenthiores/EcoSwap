@@ -1,7 +1,7 @@
 package com.darrenthiores.ecoswap.data.core.local.driver
 
 import android.content.Context
-import com.darrenthiores.ecoswap.database.ChatDatabase
+import com.darrenthiores.ecoswap.database.AppDatabase
 import com.squareup.sqldelight.android.AndroidSqliteDriver
 import com.squareup.sqldelight.db.SqlDriver
 
@@ -10,9 +10,9 @@ actual class DatabaseDriverFactory(
 ){
     actual fun create(): SqlDriver {
         return AndroidSqliteDriver(
-            schema = ChatDatabase.Schema,
+            schema = AppDatabase.Schema,
             context = context,
-            name = "chat.db"
+            name = "app.db"
         )
     }
 }

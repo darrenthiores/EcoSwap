@@ -1,5 +1,7 @@
 package com.darrenthiores.ecoswap.domain.core.utils
 
+import com.darrenthiores.ecoswap.domain.carbon.model.Challenge
+import com.darrenthiores.ecoswap.domain.carbon.model.ReducedCarbon
 import com.darrenthiores.ecoswap.domain.item.model.Item
 import com.darrenthiores.ecoswap.domain.item.model.StoreItem
 import com.darrenthiores.ecoswap.domain.message.model.Inbox
@@ -7,6 +9,7 @@ import com.darrenthiores.ecoswap.domain.reviews.model.Review
 import com.darrenthiores.ecoswap.domain.reviews.model.StoreReview
 import com.darrenthiores.ecoswap.domain.store.model.Store
 import com.darrenthiores.ecoswap.domain.user.model.User
+import com.darrenthiores.ecoswap.utils.date.DateUtils
 import kotlinx.datetime.Clock
 
 object Dummy {
@@ -327,6 +330,63 @@ object Dummy {
             sentToImageUrl = "",
             lastMessage = "hey bro!",
             lastSendUserId = "3"
+        )
+    )
+
+    val challenges: List<Challenge> = listOf(
+        Challenge(
+            id = "1",
+            title = "Better Transport",
+            description = "",
+            tasks = listOf(
+                Challenge.Task(
+                    id = "1",
+                    task = "Walking",
+                    carbonReduced = 30.0
+                ),
+                Challenge.Task(
+                    id = "2",
+                    task = "Bike",
+                    carbonReduced = 30.0
+                )
+            ),
+            deadline = DateUtils.now(),
+            goals = 1000.0,
+            progress = 100.0,
+            participants = listOf(
+                Challenge.Participant(
+                    id = "1",
+                    name = "Darren",
+                    progress = 100.0
+                )
+            )
+        )
+    )
+
+    val carbonReductions: List<ReducedCarbon> = listOf(
+        ReducedCarbon(
+            id = "1",
+            categoryId = "1",
+            taskId = "1",
+            taskTitle = "Walking",
+            date = DateUtils.now(),
+            total = 300.0
+        ),
+        ReducedCarbon(
+            id = "2",
+            categoryId = "1",
+            taskId = "6",
+            taskTitle = "Bike",
+            date = DateUtils.now(),
+            total = 500.0
+        ),
+        ReducedCarbon(
+            id = "3",
+            categoryId = "2",
+            taskId = "1",
+            taskTitle = "Turning Light Off",
+            date = DateUtils.now(),
+            total = 50.0
         )
     )
 }

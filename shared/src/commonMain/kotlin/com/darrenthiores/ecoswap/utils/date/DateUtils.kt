@@ -1,5 +1,6 @@
 package com.darrenthiores.ecoswap.utils.date
 
+import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.TimeZone
@@ -7,6 +8,13 @@ import kotlinx.datetime.toInstant
 import kotlinx.datetime.toLocalDateTime
 
 object DateUtils {
+    fun now(): Long {
+        return Clock
+            .System
+            .now()
+            .toEpochMilliseconds()
+    }
+
     fun toLocalDateTime(
         timestamp: Long
     ): LocalDateTime {

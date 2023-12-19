@@ -3,7 +3,7 @@ package com.darrenthiores.ecoswap.android.di.message
 import com.darrenthiores.ecoswap.data.message.local.MessageLocalDataSource
 import com.darrenthiores.ecoswap.data.message.local.dao.MessageDao
 import com.darrenthiores.ecoswap.data.message.local.dao.SqlDelightMessageDao
-import com.darrenthiores.ecoswap.database.ChatDatabase
+import com.darrenthiores.ecoswap.database.AppDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,7 +17,7 @@ object MessageLocalModule {
     @Provides
     @Singleton
     fun provideMessageDao(
-        database: ChatDatabase
+        database: AppDatabase
     ): MessageDao {
         return SqlDelightMessageDao(database)
     }

@@ -2,7 +2,7 @@ package com.darrenthiores.ecoswap.android.di.core.local.database
 
 import android.app.Application
 import com.darrenthiores.ecoswap.data.core.local.driver.DatabaseDriverFactory
-import com.darrenthiores.ecoswap.database.ChatDatabase
+import com.darrenthiores.ecoswap.database.AppDatabase
 import com.squareup.sqldelight.db.SqlDriver
 import dagger.Module
 import dagger.Provides
@@ -13,7 +13,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object ChatDatabaseModule {
+object AppDatabaseModule {
 
     @Provides
     @Singleton
@@ -28,7 +28,7 @@ object ChatDatabaseModule {
     @Singleton
     fun provideDatabase(
         driver: SqlDriver
-    ): ChatDatabase {
-        return ChatDatabase(driver)
+    ): AppDatabase {
+        return AppDatabase(driver)
     }
 }
