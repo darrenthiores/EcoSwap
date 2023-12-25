@@ -357,6 +357,7 @@ object Dummy {
                 Challenge.Participant(
                     id = "1",
                     name = "Darren",
+                    imageUrl = "",
                     progress = 100.0
                 )
             )

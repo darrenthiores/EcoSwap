@@ -22,13 +22,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.darrenthiores.ecoswap.android.theme.CallOutB
+import com.darrenthiores.ecoswap.android.theme.Caption2B
 import com.darrenthiores.ecoswap.android.theme.EcoSwapTheme
 import com.darrenthiores.ecoswap.android.theme.Gray1
 import com.darrenthiores.ecoswap.android.theme.Gray2
 
 @Composable
-fun DefaultButton(
+fun SmallButton(
     modifier: Modifier = Modifier,
     label: String?,
     onClick: () -> Unit,
@@ -40,10 +40,10 @@ fun DefaultButton(
     type: ButtonType = ButtonType.Fill,
     isLoading: Boolean = false
 ) {
-    val buttonHeight = 48.dp
-    val textStyle = CallOutB
+    val buttonHeight = 24.dp
+    val textStyle = Caption2B
     val iconSize =20.dp
-    val cornerRadius = 30.dp
+    val cornerRadius = 8.dp
 
     val bgColor = when(type) {
         ButtonType.Fill -> color
@@ -145,7 +145,7 @@ fun DefaultButton(
 @Composable
 private fun MediumRoundedFillButtonPreview() {
     EcoSwapTheme {
-        DefaultButton(
+        SmallButton(
             label = "Button",
             onClick = { }
         )
@@ -158,7 +158,7 @@ private fun MediumRoundedFillButtonPreview() {
 @Composable
 private fun MediumPillOutlineButtonPreview() {
     EcoSwapTheme {
-        DefaultButton(
+        SmallButton(
             label = "Button",
             onClick = { },
             type = ButtonType.Outline()
@@ -171,7 +171,7 @@ private fun MediumPillOutlineButtonPreview() {
 @Composable
 private fun LoadingButtonPreview() {
     EcoSwapTheme {
-        DefaultButton(
+        SmallButton(
             modifier = Modifier.fillMaxWidth(),
             label = "Button",
             onClick = { },

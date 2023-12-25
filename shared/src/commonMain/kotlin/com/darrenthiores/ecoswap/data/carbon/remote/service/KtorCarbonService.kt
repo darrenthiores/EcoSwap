@@ -50,4 +50,8 @@ class KtorCarbonService(
             .challenges
             .firstOrNull { it.id == request.id }
     }
+
+    override suspend fun joinChallenge(request: IdRequest) {
+        // should join challenge
+    }
 }

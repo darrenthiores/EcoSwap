@@ -22,5 +22,14 @@ enum class CarbonView(
                 else -> Daily
             }
         }
+
+        fun getByIndex(index: Int): CarbonView {
+            return when (index) {
+                0 -> Daily
+                1 -> Weekly
+                2 -> Monthly
+                else -> Daily
+            }
+        }
     }
 }

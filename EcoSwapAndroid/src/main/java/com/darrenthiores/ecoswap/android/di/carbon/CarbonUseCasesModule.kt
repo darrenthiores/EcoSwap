@@ -5,6 +5,7 @@ import com.darrenthiores.ecoswap.domain.carbon.use_cases.GetChallengeById
 import com.darrenthiores.ecoswap.domain.carbon.use_cases.GetChallenges
 import com.darrenthiores.ecoswap.domain.carbon.use_cases.GetFootPrint
 import com.darrenthiores.ecoswap.domain.carbon.use_cases.InsertCarbonReduction
+import com.darrenthiores.ecoswap.domain.carbon.use_cases.JoinChallenge
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -51,6 +52,16 @@ object CarbonUseCasesModule {
         repository: CarbonRepository
     ): GetChallengeById {
         return GetChallengeById(
+            repository = repository
+        )
+    }
+
+    @Provides
+    @ViewModelScoped
+    fun provideJoinChallengeUseCase(
+        repository: CarbonRepository
+    ): JoinChallenge {
+        return JoinChallenge(
             repository = repository
         )
     }

@@ -25,4 +25,8 @@ interface CarbonRepository {
     suspend fun getChallengeById(
         challengeId: String
     ): Resource<Challenge>
+
+    suspend fun joinChallenge(
+        challengeId: String
+    ): Resource<Unit>
 }

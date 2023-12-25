@@ -179,4 +179,26 @@ class CarbonRepositoryImpl(
             }
         }
     }
+
+    override suspend fun joinChallenge(challengeId: String): Resource<Unit> {
+        val request = IdRequest(
+            id = challengeId
+        )
+        val result = remoteDataSource
+            .joinChallenge(
+                request = request
+            )
+
+        return when (result) {
+            ApiResponse.Empty -> {
+                Resource.Error("Unknown Error Just Occurred!")
+            }
+            is ApiResponse.Error -> {
+                Resource.Error(result.errorMessage)
+            }
+            is ApiResponse.Success -> {
+                Resource.Success(result.data)
+            }
+        }
+    }
 }

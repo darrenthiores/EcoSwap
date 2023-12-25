@@ -30,6 +30,10 @@ interface CarbonService {
         request: IdRequest
     ): Challenge?
 
+    suspend fun joinChallenge(
+        request: IdRequest
+    )
+
     companion object {
         private const val BASE_URL = ""
         const val GET_FOOTPRINT_URL = "$BASE_URL/"
@@ -37,5 +41,6 @@ interface CarbonService {
         const val INSERT_CARBON_REDUCTION_URL = "$BASE_URL/"
         const val GET_CHALLENGES_URL = "$BASE_URL/"
         const val GET_CHALLENGE_BY_ID_URL = "$BASE_URL/"
+        const val JOIN_CHALLENGE_URL = "$BASE_URL/"
     }
 }

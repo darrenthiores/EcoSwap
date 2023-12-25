@@ -62,7 +62,8 @@
     <string name="review_placeholder">Add your review here...</string>
     <string name="store">Store</string>
     <string name="product_rating">Rating :</string>
-    <string name="add_item">Add Item</string>,
+    <string name="add_item">Add Item</string>
+    <string name="add_carbon">Add Carbon</string>
     <string name="upload">Upload</string>
     <string name="add">Add</string>
     <string name="add_photo">Add Photos*</string>
@@ -89,4 +90,9 @@
     <string name="message_button_desc">Send Message</string>
     <string name="photo_button_desc">Add Photo</string>
     <string name="photo_desc">%s photo</string>
+    <string name="see_details">See Details</string>
+    <string name="details">Details :</string>
+    <string name="people_joined">People Joined</string>
+    <string name="progress">%d%%</string>
+    <string name="co2">CO2</string>
 </resources>

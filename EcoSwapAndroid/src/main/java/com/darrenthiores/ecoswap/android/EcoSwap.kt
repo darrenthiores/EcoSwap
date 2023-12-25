@@ -41,6 +41,8 @@ import com.darrenthiores.ecoswap.android.presentation.store_item_detail.AndroidS
 import com.darrenthiores.ecoswap.android.presentation.store_item_detail.StoreItemDetailScreen
 import com.darrenthiores.ecoswap.android.presentation.store_profile.AndroidStoreProfileViewModel
 import com.darrenthiores.ecoswap.android.presentation.store_profile.StoreProfileScreen
+import com.darrenthiores.ecoswap.android.presentation.sustainability.AndroidSustainabilityViewModel
+import com.darrenthiores.ecoswap.android.presentation.sustainability.SustainabilityScreen
 import com.darrenthiores.ecoswap.android.utils.AppBottomBar
 import com.darrenthiores.ecoswap.android.utils.AppState
 import com.darrenthiores.ecoswap.android.utils.Route
@@ -184,6 +186,20 @@ fun EcoSwap(
                     onAddClick = {
                         navController.navigate(Route.AddItem.name)
                     }
+                )
+            }
+
+            composable(TopLevelDestination.Sustainability.name) {
+                val viewModel: AndroidSustainabilityViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                SustainabilityScreen(
+                    state = state,
+                    onEvent = viewModel::onEvent,
+                    onChallengeClick = { id ->
+
+                    },
+                    onAddClick = {  }
                 )
             }
 

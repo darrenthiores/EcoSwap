@@ -92,4 +92,18 @@ class CarbonRemoteDataSource(
             }
         }
     }
+
+    suspend fun joinChallenge(
+        request: IdRequest
+    ): ApiResponse<Unit> {
+        return withContext(dispatchers.io) {
+            tryCatch {
+                val result = apiService.joinChallenge(
+                    request = request
+                )
+
+                ApiResponse.Success(result)
+            }
+        }
+    }
 }

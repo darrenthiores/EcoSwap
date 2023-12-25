@@ -19,6 +19,7 @@ data class Challenge(
     data class Participant(
         val id: String,
         val name: String,
+        val imageUrl: String,
         val progress: Double
     )
 }

@@ -109,4 +109,8 @@ object Constant {
     fun conditionById(id: String): ItemCondition? {
         return conditions.firstOrNull { it.id == id }
     }
+
+    fun carbonCategoryById(id: String): CarbonCategory? {
+        return carbonCategories.firstOrNull { it.id == id }
+    }
 }
