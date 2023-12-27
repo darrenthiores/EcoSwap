@@ -27,6 +27,17 @@ enum class ProgressColor(
             }
         }
 
+        fun getColorByIndex(
+            index: Int
+        ): ProgressColor? {
+            return when(index) {
+                0 -> Transport
+                1 -> Energy
+                2 -> Challenge
+                else -> null
+            }
+        }
+
         val defaultColor: Color = Color(0xFFA6A6FF)
     }
 }

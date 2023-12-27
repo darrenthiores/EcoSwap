@@ -337,15 +337,15 @@ object Dummy {
         Challenge(
             id = "1",
             title = "Better Transport",
-            description = "",
+            description = "this is transport challenge",
             tasks = listOf(
                 Challenge.Task(
-                    id = "1",
+                    id = "T1",
                     task = "Walking",
                     carbonReduced = 30.0
                 ),
                 Challenge.Task(
-                    id = "2",
+                    id = "T2",
                     task = "Bike",
                     carbonReduced = 30.0
                 )
@@ -359,8 +359,21 @@ object Dummy {
                     name = "Darren",
                     imageUrl = "",
                     progress = 100.0
+                ),
+                Challenge.Participant(
+                    id = "2",
+                    name = "John",
+                    imageUrl = "",
+                    progress = 100.0
+                ),
+                Challenge.Participant(
+                    id = "3",
+                    name = "Denny",
+                    imageUrl = "",
+                    progress = 100.0
                 )
-            )
+            ),
+            isJoined = false
         )
     )
 

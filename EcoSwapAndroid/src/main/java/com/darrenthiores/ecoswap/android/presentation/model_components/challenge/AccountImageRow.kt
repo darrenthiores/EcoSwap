@@ -20,15 +20,15 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.darrenthiores.ecoswap.android.R
 import com.darrenthiores.ecoswap.android.theme.EcoSwapTheme
-import kotlin.math.max
 
 @Composable
 fun AccountImageRow(
     modifier: Modifier = Modifier,
-    images: List<String>
+    images: List<String>,
+    size: Int = 24
 ) {
     val context = LocalContext.current
-    val width = (max(images.size, 1) * 24) - (images.size - 1 * 8)
+    val width = (images.size * size) - ((images.size - 1) * (size/3))
 
     Box(
         modifier = modifier
@@ -38,7 +38,7 @@ fun AccountImageRow(
         images.getOrNull(0)?.let { image ->
             AsyncImage(
                 modifier = Modifier
-                    .size(24.dp)
+                    .size(size.dp)
                     .clip(CircleShape)
                     .border(
                         width = 1.dp,
@@ -61,9 +61,9 @@ fun AccountImageRow(
             AsyncImage(
                 modifier = Modifier
                     .offset(
-                        x = 24.dp - 8.dp
+                        x = size.dp - (size/3).dp
                     )
-                    .size(24.dp)
+                    .size(size.dp)
                     .clip(CircleShape)
                     .border(
                         width = 1.dp,
@@ -86,9 +86,9 @@ fun AccountImageRow(
             AsyncImage(
                 modifier = Modifier
                     .offset(
-                        x = 24.dp + 8.dp
+                        x = size.dp + (size/3).dp
                     )
-                    .size(24.dp)
+                    .size(size.dp)
                     .clip(CircleShape)
                     .border(
                         width = 1.dp,

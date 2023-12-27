@@ -8,7 +8,8 @@ data class Challenge(
     val deadline: Long,
     val goals: Double,
     val progress: Double,
-    val participants: List<Participant>
+    val participants: List<Participant>,
+    val isJoined: Boolean
 ) {
     data class Task(
         val id: String,

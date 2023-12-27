@@ -47,7 +47,7 @@ fun ChallengeItem(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(
-                    8.dp
+                    16.dp
                 ),
             verticalArrangement = Arrangement.spacedBy(8.dp),
             horizontalAlignment = Alignment.Start

@@ -95,4 +95,10 @@
     <string name="people_joined">People Joined</string>
     <string name="progress">%d%%</string>
     <string name="co2">CO2</string>
+    <string name="challenge_details">Challenge Details</string>
+    <string name="total_tasks">%d Task Challenge</string>
+    <string name="join_challenge">Join Challenge</string>
+    <string name="description">Description :</string>
+    <string name="leaderboards">Leaderboards :</string>
+    <string name="top_leaderboards">Top %d</string>
 </resources>

@@ -19,7 +19,7 @@ import com.darrenthiores.ecoswap.android.theme.EcoSwapTheme
 import com.darrenthiores.ecoswap.android.theme.HeadlineB
 
 @Composable
-fun ProfileHeader(
+fun SettingHeader(
     modifier: Modifier = Modifier,
     text: String,
     onBackClick: () -> Unit,
@@ -58,9 +58,9 @@ fun ProfileHeader(
 
 @Preview
 @Composable
-private fun ProfileHeaderPreview() {
+private fun SettingHeaderPreview() {
     EcoSwapTheme {
-        ProfileHeader(
+        SettingHeader(
             text = "My Profile",
             onBackClick = {  }
         ) {

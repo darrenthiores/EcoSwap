@@ -18,6 +18,8 @@ import com.darrenthiores.ecoswap.android.presentation.add_item.AddItemScreen
 import com.darrenthiores.ecoswap.android.presentation.add_item.AndroidAddItemViewModel
 import com.darrenthiores.ecoswap.android.presentation.boarding.AndroidBoardingViewModel
 import com.darrenthiores.ecoswap.android.presentation.boarding.BoardingScreen
+import com.darrenthiores.ecoswap.android.presentation.challenge_detail.AndroidChallengeDetailViewModel
+import com.darrenthiores.ecoswap.android.presentation.challenge_detail.ChallengeDetailScreen
 import com.darrenthiores.ecoswap.android.presentation.home.AndroidHomeViewModel
 import com.darrenthiores.ecoswap.android.presentation.home.HomeScreen
 import com.darrenthiores.ecoswap.android.presentation.inbox.AndroidInboxViewModel
@@ -197,7 +199,7 @@ fun EcoSwap(
                     state = state,
                     onEvent = viewModel::onEvent,
                     onChallengeClick = { id ->
-
+                        navController.navigate(Route.ChallengeDetail.name + "/$id")
                     },
                     onAddClick = {  }
                 )
@@ -289,6 +291,27 @@ fun EcoSwap(
                     state = state,
                     onEvent = viewModel::onEvent,
                     onSettingClick = {  },
+                    onBackClick = {
+                        navController.navigateUp()
+                    }
+                )
+            }
+
+            composable(
+                route = Route.ChallengeDetail.name + "/{challengeId}",
+                arguments = listOf(
+                    navArgument("challengeId") {
+                        NavType.StringType
+                    }
+                )
+            ) {
+                val viewModel: AndroidChallengeDetailViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                ChallengeDetailScreen(
+                    state = state,
+                    onEvent = viewModel::onEvent,
+                    onAddClick = {  },
                     onBackClick = {
                         navController.navigateUp()
                     }

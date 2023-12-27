@@ -22,7 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.darrenthiores.ecoswap.android.R
-import com.darrenthiores.ecoswap.android.presentation.components.header.ProfileHeader
+import com.darrenthiores.ecoswap.android.presentation.components.header.SettingHeader
 import com.darrenthiores.ecoswap.android.presentation.other_profile.components.OtherProfileBottomBar
 import com.darrenthiores.ecoswap.android.presentation.other_profile.components.OtherProfileContent
 import com.darrenthiores.ecoswap.android.presentation.other_profile.components.ReviewUserSheet
@@ -121,7 +121,7 @@ fun OtherProfileScreen(
     ) {
         Scaffold(
             topBar = {
-                ProfileHeader(
+                SettingHeader(
                     modifier = Modifier
                         .padding(16.dp),
                     text = stringResource(id = R.string.profile),
