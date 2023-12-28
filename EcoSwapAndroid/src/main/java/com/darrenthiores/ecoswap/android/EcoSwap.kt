@@ -16,6 +16,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.darrenthiores.ecoswap.android.presentation.add_item.AddItemScreen
 import com.darrenthiores.ecoswap.android.presentation.add_item.AndroidAddItemViewModel
+import com.darrenthiores.ecoswap.android.presentation.add_progress.AddProgressScreen
+import com.darrenthiores.ecoswap.android.presentation.add_progress.AndroidAddProgressViewModel
 import com.darrenthiores.ecoswap.android.presentation.boarding.AndroidBoardingViewModel
 import com.darrenthiores.ecoswap.android.presentation.boarding.BoardingScreen
 import com.darrenthiores.ecoswap.android.presentation.challenge_detail.AndroidChallengeDetailViewModel
@@ -51,6 +53,7 @@ import com.darrenthiores.ecoswap.android.utils.Route
 import com.darrenthiores.ecoswap.android.utils.TopLevelDestination
 import com.darrenthiores.ecoswap.android.utils.rememberAppState
 import com.darrenthiores.ecoswap.domain.utils.UiEvent
+import com.darrenthiores.ecoswap.presentation.sustainability.SustainabilityEvent
 
 @Composable
 fun EcoSwap(
@@ -195,13 +198,28 @@ fun EcoSwap(
                 val viewModel: AndroidSustainabilityViewModel = hiltViewModel()
                 val state by viewModel.state.collectAsState()
 
+                val shouldRefresh by it
+                    .savedStateHandle
+                    .getStateFlow("shouldRefresh", false)
+                    .collectAsState()
+
+                LaunchedEffect(shouldRefresh) {
+                    if (shouldRefresh) {
+                        viewModel.onEvent(
+                            event = SustainabilityEvent.Refresh
+                        )
+                    }
+                }
+
                 SustainabilityScreen(
                     state = state,
                     onEvent = viewModel::onEvent,
                     onChallengeClick = { id ->
                         navController.navigate(Route.ChallengeDetail.name + "/$id")
                     },
-                    onAddClick = {  }
+                    onAddClick = {
+                        navController.navigate(Route.AddProgress.name)
+                    }
                 )
             }
 
@@ -308,10 +326,77 @@ fun EcoSwap(
                 val viewModel: AndroidChallengeDetailViewModel = hiltViewModel()
                 val state by viewModel.state.collectAsState()
 
+                val shouldRefresh by it
+                    .savedStateHandle
+                    .getStateFlow("shouldRefresh", false)
+                    .collectAsState()
+
+                LaunchedEffect(shouldRefresh) {
+                    if (shouldRefresh) {
+                        navController
+                            .previousBackStackEntry
+                            ?.savedStateHandle
+                            ?.set(
+                                "shouldRefresh",
+                                true
+                            )
+                    }
+                }
+
                 ChallengeDetailScreen(
                     state = state,
                     onEvent = viewModel::onEvent,
-                    onAddClick = {  },
+                    onAddClick = {
+                        if (state.challenge != null) {
+                            navController.navigate(Route.AddProgress.name + "?challengeId=${state.challenge?.id}")
+                        } else {
+                            navController.navigate(Route.AddProgress.name)
+                        }
+                    },
+                    onBackClick = {
+                        navController.navigateUp()
+                    }
+                )
+            }
+
+            composable(
+                route = Route.AddProgress.name + "?challengeId={challengeId}",
+                arguments = listOf(
+                    navArgument("challengeId") {
+                        NavType.StringType
+                        nullable = true
+                        defaultValue = null
+                    }
+                )
+            ) {
+                val viewModel: AndroidAddProgressViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                val message = stringResource(id = R.string.success_message)
+
+                LaunchedEffect(key1 = true) {
+                    viewModel.uiEvent.collect { event ->
+                        when(event) {
+                            is UiEvent.Success -> {
+                                navController
+                                    .previousBackStackEntry
+                                    ?.savedStateHandle
+                                    ?.set(
+                                        "shouldRefresh",
+                                        true
+                                    )
+
+                                navController.navigateUp()
+                                appState.showSnackBar(message)
+                            }
+                            else -> Unit
+                        }
+                    }
+                }
+
+                AddProgressScreen(
+                    state = state,
+                    onEvent = viewModel::onEvent,
                     onBackClick = {
                         navController.navigateUp()
                     }

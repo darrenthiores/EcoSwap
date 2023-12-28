@@ -12,5 +12,6 @@ enum class Route {
     StoreItemDetail,
     AddItem,
     Message,
-    ChallengeDetail
+    ChallengeDetail,
+    AddProgress
 }

@@ -40,17 +40,19 @@ fun ChallengeDetailScreen(
             )
         },
         floatingActionButton = {
-            FloatingActionButton(
-                onClick = onAddClick,
-                backgroundColor = MaterialTheme.colors.primary
-            ) {
-                Icon(
-                    modifier = Modifier
-                        .size(32.dp),
-                    imageVector = Icons.Rounded.Add,
-                    contentDescription = stringResource(id = R.string.add_carbon),
-                    tint = MaterialTheme.colors.onPrimary
-                )
+            if (state.challenge?.isJoined == true) {
+                FloatingActionButton(
+                    onClick = onAddClick,
+                    backgroundColor = MaterialTheme.colors.primary
+                ) {
+                    Icon(
+                        modifier = Modifier
+                            .size(32.dp),
+                        imageVector = Icons.Rounded.Add,
+                        contentDescription = stringResource(id = R.string.add_carbon),
+                        tint = MaterialTheme.colors.onPrimary
+                    )
+                }
             }
         },
         floatingActionButtonPosition = FabPosition.End

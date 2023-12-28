@@ -13,4 +13,5 @@ sealed class SustainabilityEvent {
         val categoryId: String,
         val total: Double
     ): SustainabilityEvent()
+    object Refresh: SustainabilityEvent()
 }

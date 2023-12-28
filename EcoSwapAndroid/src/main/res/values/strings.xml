@@ -101,4 +101,17 @@
     <string name="description">Description :</string>
     <string name="leaderboards">Leaderboards :</string>
     <string name="top_leaderboards">Top %d</string>
+    <string name="add_progress">Add Progress</string>
+    <string name="category_add">Category*</string>
+    <string name="activity">Activity*</string>
+    <string name="challenge">Challenge*</string>
+    <string name="task">Task*</string>
+    <string name="meter">Number (in Meter)*</string>
+    <string name="transport_placeholder">How far you do the task (in Meter)</string>
+    <string name="minute">Number (in Minute)*</string>
+    <string name="energy_placeholder">How long you do the task (in Minute)</string>
+    <string name="select_activity">Select Activity</string>
+    <string name="select_challenge">Select Challenge</string>
+    <string name="select_task">Select Task</string>
+    <string name="select_challenge_title">Active and Joined Challenge</string>
 </resources>

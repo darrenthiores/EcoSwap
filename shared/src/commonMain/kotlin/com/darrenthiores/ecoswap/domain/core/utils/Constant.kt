@@ -113,4 +113,12 @@ object Constant {
     fun carbonCategoryById(id: String): CarbonCategory? {
         return carbonCategories.firstOrNull { it.id == id }
     }
+
+    fun getActivitiesByCategoryId(id: String): List<CarbonActivity> {
+        return when(id) {
+            "1" -> transportActivities
+            "2" -> energyActivities
+            else -> emptyList()
+        }
+    }
 }

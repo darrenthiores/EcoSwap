@@ -106,6 +106,13 @@ class SustainabilityViewModel(
                     )
                 }
             }
+            SustainabilityEvent.Refresh -> {
+                viewModelScope.launch {
+                    fetchFootPrint(
+                        viewMode = state.value.viewMode
+                    )
+                }
+            }
         }
     }
 
