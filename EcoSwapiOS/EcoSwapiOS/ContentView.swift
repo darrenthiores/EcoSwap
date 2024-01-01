@@ -2,8 +2,62 @@ import SwiftUI
 import shared
 
 struct ContentView: View {
+    @AppStorage("isLogin") private var isLogin: Bool = false
+    @State private var selectedTab: TopLevelDestination = .Home
+    
+    let appearance: UITabBarAppearance = UITabBarAppearance()
+    init() {
+        if #available(iOS 15.0, *) {
+            UITabBar.appearance().scrollEdgeAppearance = appearance
+        }
+    }
+    
 	var body: some View {
-		Text("Hello World!")
+        if isLogin {
+            TabView(selection: $selectedTab) {
+                Text("Home")
+                    .tabItem {
+                        Label(
+                            "Home",
+                            systemImage: selectedTab == .Home ? "house.fill" : "house"
+                        )
+                        .labelStyle(.iconOnly)
+                    }
+                    .tag(TopLevelDestination.Home)
+                
+                Text("Sustainability")
+                    .tabItem {
+                        Label(
+                            "Search",
+                            systemImage: selectedTab == .Sustainability ? "chart.bar.fill" : "chart.bar"
+                        )
+                        .labelStyle(.iconOnly)
+                    }
+                    .tag(TopLevelDestination.Sustainability)
+                
+                Text("Message")
+                    .tabItem {
+                        Label(
+                            "History",
+                            systemImage: selectedTab == .Message ? "envelope.fill" : "envelope"
+                        )
+                        .labelStyle(.iconOnly)
+                    }
+                    .tag(TopLevelDestination.Message)
+                
+                Text("Profile")
+                    .tabItem {
+                        Label(
+                            "Profile",
+                            systemImage: selectedTab == .Profile ? "person.crop.circle.fill" : "person.crop.circle"
+                        )
+                        .labelStyle(.iconOnly)
+                    }
+                    .tag(TopLevelDestination.Profile)
+            }
+        } else {
+            Text("Login")
+        }
 	}
 }
 

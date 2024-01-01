@@ -49,7 +49,7 @@ object Deps {
     const val logBackClassic = "ch.qos.logback:logback-classic:$logBackClassicVersion"
 
     // GRADLE PLUGINS
-    const val kotlinVersion = "1.8.21"
+    const val kotlinVersion = "1.9.10"
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
 
     const val gradleVersion = "8.0.0"

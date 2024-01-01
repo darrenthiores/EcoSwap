@@ -13,6 +13,34 @@ extension Color {
     static var Primary: Color {
         Color("Primary")
     }
+    static var OnPrimary: Color {
+        Color("White")
+    }
+    
+    static var Secondary: Color {
+        Color("Secondary")
+    }
+    static var OnSecondary: Color {
+        Color("White")
+    }
+    
+    static var Background: Color {
+        Color("Background")
+    }
+    static var OnBackground: Color {
+        Color("OnBackground")
+    }
+    
+    static var Surface: Color {
+        Color("Surface")
+    }
+    static var OnSurface: Color {
+        Color("OnSurface")
+    }
+    
+    static var OnError: Color {
+        Color("White")
+    }
     
     static var White: Color {
         Color("White")

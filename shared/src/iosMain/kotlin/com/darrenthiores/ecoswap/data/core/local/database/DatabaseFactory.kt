@@ -1,10 +1,10 @@
 package com.darrenthiores.ecoswap.data.core.local.database
 
-import com.darrenthiores.ecoswap.database.ChatDatabase
+import com.darrenthiores.ecoswap.database.AppDatabase
 import com.squareup.sqldelight.db.SqlDriver
 
 class DatabaseFactory {
-    fun createDatabase(driver: SqlDriver): ChatDatabase {
-        return ChatDatabase(driver)
+    fun createDatabase(driver: SqlDriver): AppDatabase {
+        return AppDatabase(driver)
     }
 }
