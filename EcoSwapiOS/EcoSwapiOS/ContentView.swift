@@ -2,6 +2,7 @@ import SwiftUI
 import shared
 
 struct ContentView: View {
+    @AppStorage("showBoarding") private var showBoarding: Bool = true
     @AppStorage("isLogin") private var isLogin: Bool = false
     @State private var selectedTab: TopLevelDestination = .Home
     
@@ -56,7 +57,11 @@ struct ContentView: View {
                     .tag(TopLevelDestination.Profile)
             }
         } else {
-            Text("Login")
+            if showBoarding {
+                BoardingScreen()
+            } else {
+                LoginScreen()
+            }
         }
 	}
 }
