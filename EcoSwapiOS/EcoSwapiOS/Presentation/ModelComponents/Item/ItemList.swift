@@ -36,10 +36,15 @@ struct ItemList: View {
                 spacing: 8
             ) {
                 ForEach(items, id: \.id) { item in
-                    FixedItemCard(
-                        item: item,
-                        geo: geo
-                    )
+                    NavigationLink {
+                        ItemDetailScreen(id: item.id)
+                    } label: {
+                        FixedItemCard(
+                            item: item,
+                            geo: geo
+                        )
+                    }
+                    .buttonStyle(.plain)
                     .onAppear {
                         let index = items.firstIndex(
                             where: { items in items.id == item.id }

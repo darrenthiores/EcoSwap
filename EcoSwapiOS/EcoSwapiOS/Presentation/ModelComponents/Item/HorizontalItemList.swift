@@ -24,7 +24,7 @@ struct HorizontalItemList: View {
                 
                 ForEach(items, id: \.id) { item in
                     NavigationLink {
-                        Text("Item \(item.id)")
+                        ItemDetailScreen(id: item.id)
                     } label: {
                         ItemCard(
                             item: item

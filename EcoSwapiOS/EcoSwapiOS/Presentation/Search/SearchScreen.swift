@@ -81,6 +81,7 @@ struct SearchScreen: View {
             }
         }
         .navigationBarBackButtonHidden()
+        .toolbar(.hidden, for: .tabBar)
         .onAppear {
             viewModel.startObserving()
             

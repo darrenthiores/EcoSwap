@@ -15,7 +15,7 @@ struct HomeScreen: View {
     var body: some View {
         NavigationStack {
             GeometryReader { geo in
-                VStack {
+                VStack(spacing: 0) {
                     HomeHeader(
                         searchText: $viewModel.searchText,
                         onSearch: {

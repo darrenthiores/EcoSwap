@@ -1,0 +1,107 @@
+//
+//  NavigationButtonFill.swift
+//  EcoSwapiOS
+//
+//  Created by Darren Thiores on 05/01/24.
+//  Copyright © 2024 orgName. All rights reserved.
+//
+
+import SwiftUI
+
+struct NavigationButtonFill: View {
+    let label: String?
+    var startIcon: String?
+    var size: ButtonSize = .Default
+    var color: Color = .Primary
+    var textColor: Color?
+    var icColor: Color?
+    var fillWidth: Bool = false
+    var isLoading: Bool = false
+    
+    private var buttonHeight: CGFloat {
+        switch size {
+        case .Small:
+            return 24
+        case .Default:
+            return 48
+        }
+    }
+    private var textFont: Font {
+        switch size {
+        case .Small:
+            return .Caption2B
+        case .Default:
+            return .CalloutB
+        }
+    }
+    private let iconSize: CGFloat = 20
+    
+    private var cornerRadius: CGFloat {
+        switch size {
+        case .Small:
+            return 8
+        case .Default:
+            return 30
+        }
+    }
+    
+    private var bgColor: Color {
+        isLoading ? .Gray1 : color
+    }
+    
+    private var contentColor: Color {
+        textColor ?? .OnPrimary
+    }
+    
+    private let spacing: CGFloat = 8
+    private let paddingHorizontal: CGFloat = 16
+    private let paddingVertical: CGFloat = 8
+    
+    private var iconColor: Color {
+        icColor ?? .OnBackground
+    }
+    
+    var body: some View {
+        HStack {
+            if isLoading {
+                ProgressView()
+            } else {
+                if let icon = startIcon {
+                    Image(systemName: icon)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(
+                            width: iconSize,
+                            height: iconSize
+                        )
+                        .foregroundColor(iconColor)
+                    
+                    if label != nil {
+                        Spacer()
+                            .frame(width: spacing)
+                    }
+                }
+                
+                if let label = label {
+                    Text(label)
+                        .font(textFont)
+                }
+            }
+        }
+        .frame(maxWidth: fillWidth ? .infinity : nil)
+        .padding(.horizontal, paddingHorizontal)
+        .padding(.vertical, paddingVertical)
+        .frame(height: buttonHeight)
+        .background(
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .foregroundColor(bgColor)
+        )
+        .foregroundColor(contentColor)
+    }
+}
+
+#Preview {
+    NavigationButtonFill(
+        label: "Click"
+    )
+}
