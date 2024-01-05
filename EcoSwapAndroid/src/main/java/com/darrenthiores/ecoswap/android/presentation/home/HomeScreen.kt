@@ -97,7 +97,7 @@ fun HomeScreen(
 
             item {
                 ItemSection(
-                    title = stringResource(id = R.string.item_category),
+                    title = stringResource(id = R.string.item_recommend),
                     items = state.recommendations,
                     state = recommendationListState,
                     onSeeAllClick = {  },

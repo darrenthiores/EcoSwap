@@ -16,7 +16,7 @@ struct ContentView: View {
 	var body: some View {
         if isLogin {
             TabView(selection: $selectedTab) {
-                Text("Home")
+                HomeScreen()
                     .tabItem {
                         Label(
                             "Home",

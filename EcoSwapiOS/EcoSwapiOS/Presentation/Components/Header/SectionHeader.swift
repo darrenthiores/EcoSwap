@@ -11,7 +11,7 @@ import SwiftUI
 struct SectionHeader: View {
     let title: String
     var endAction: String?
-    let onActionClick: () -> Void
+    var onActionClick: () -> Void = {  }
     
     var body: some View {
         HStack(alignment: .center) {
@@ -22,7 +22,7 @@ struct SectionHeader: View {
             
             if let action = endAction {
                 Button {
-                    
+                    onActionClick()
                 } label: {
                     Text(action)
                         .font(.CalloutR)

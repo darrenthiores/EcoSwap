@@ -23,9 +23,14 @@ struct HorizontalStoreList: View {
                     .frame(width: horizontalSpace - 8)
                 
                 ForEach(stores, id: \.id) { store in
-                    StoreCard(
-                        store: store
-                    )
+                    NavigationLink {
+                        Text("Store \(store.id)")
+                    } label: {
+                        StoreCard(
+                            store: store
+                        )
+                    }
+                    .buttonStyle(.plain)
                     .onAppear {
                         let index = stores.firstIndex(
                             where: { stores in stores.id == store.id }
@@ -45,6 +50,7 @@ struct HorizontalStoreList: View {
                 Spacer()
                     .frame(width: horizontalSpace - 8)
             }
+            .frame(height: 200 + 1)
         }
         .scrollIndicators(.hidden)
     }

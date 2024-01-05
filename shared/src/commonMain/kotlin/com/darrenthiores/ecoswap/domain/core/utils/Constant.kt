@@ -22,6 +22,10 @@ object Constant {
         ItemCategory(
             id = "4",
             display = "Furniture"
+        ),
+        ItemCategory(
+            id = "5",
+            display = "Test"
         )
     )
 
