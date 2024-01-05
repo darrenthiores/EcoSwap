@@ -46,7 +46,7 @@ struct ContentView: View {
                     }
                     .tag(TopLevelDestination.Message)
                 
-                Text("Profile")
+                ProfileScreen()
                     .tabItem {
                         Label(
                             "Profile",
@@ -56,6 +56,7 @@ struct ContentView: View {
                     }
                     .tag(TopLevelDestination.Profile)
             }
+            .accentColor(.Primary)
         } else {
             if showBoarding {
                 BoardingScreen()

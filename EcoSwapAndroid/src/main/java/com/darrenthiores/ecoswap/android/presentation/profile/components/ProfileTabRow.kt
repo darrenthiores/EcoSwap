@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.darrenthiores.ecoswap.android.presentation.profile.model.ProfileTab
+import com.darrenthiores.ecoswap.presentation.profile.model.ProfileTab
 import com.darrenthiores.ecoswap.android.theme.Caption1B
 import com.darrenthiores.ecoswap.android.theme.EcoSwapTheme
 import kotlinx.coroutines.launch

@@ -50,7 +50,9 @@ struct SearchScreen: View {
                             items: viewModel.state.items.items as? [Item] ?? [],
                             geo: geo,
                             onAppear: {
-                                viewModel.onEvent(event: .LoadItemNextPage())
+                                if !viewModel.state.items.endReached {
+                                    viewModel.onEvent(event: .LoadItemNextPage())
+                                }
                             },
                             spaceToTop: 16,
                             spaceToBottom: 16
@@ -69,7 +71,9 @@ struct SearchScreen: View {
                             stores: viewModel.state.stores.items as? [Store] ?? [],
                             geo: geo,
                             onAppear: {
-                                viewModel.onEvent(event: .LoadStoreNextPage())
+                                if !viewModel.state.stores.endReached {
+                                    viewModel.onEvent(event: .LoadStoreNextPage())
+                                }
                             },
                             spaceToTop: 16,
                             spaceToBottom: 16

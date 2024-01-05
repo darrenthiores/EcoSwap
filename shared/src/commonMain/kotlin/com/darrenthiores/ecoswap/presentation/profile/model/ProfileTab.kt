@@ -1,4 +1,4 @@
-package com.darrenthiores.ecoswap.android.presentation.profile.model
+package com.darrenthiores.ecoswap.presentation.profile.model
 
 enum class ProfileTab(
     val title: String
