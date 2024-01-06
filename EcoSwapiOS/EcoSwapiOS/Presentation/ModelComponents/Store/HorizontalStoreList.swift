@@ -24,7 +24,7 @@ struct HorizontalStoreList: View {
                 
                 ForEach(stores, id: \.id) { store in
                     NavigationLink {
-                        Text("Store \(store.id)")
+                        StoreProfileScreen(storeId: store.id)
                     } label: {
                         StoreCard(
                             store: store

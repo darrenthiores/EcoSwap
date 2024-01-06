@@ -23,7 +23,16 @@ struct StoreItemInformationSection: View {
             Spacer()
                 .frame(height: 8)
             
-            HorizontalStoreCard(store: store)
+            NavigationLink {
+                if let store = store {
+                    StoreProfileScreen(storeId: store.id)
+                } else {
+                    Text("Unkwon Error Just Occurred")
+                }
+            } label: {
+                HorizontalStoreCard(store: store)
+            }
+            .buttonStyle(.plain)
             
             Group {
                 Spacer()

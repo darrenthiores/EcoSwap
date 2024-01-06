@@ -261,9 +261,11 @@ class StoreProfileViewModel(
                         )
                     }
 
-                    _uiEvent.send(
-                        UiEvent.Success
-                    )
+                    viewModelScope.launch {
+                        _uiEvent.send(
+                            UiEvent.Success
+                        )
+                    }
 
                     _state.update {
                         it.copy(

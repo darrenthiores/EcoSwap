@@ -36,10 +36,15 @@ struct StoreList: View {
                 spacing: 8
             ) {
                 ForEach(stores, id: \.id) { store in
-                    FixedStoreCard(
-                        store: store,
-                        geo: geo
-                    )
+                    NavigationLink {
+                        StoreProfileScreen(storeId: store.id)
+                    } label: {
+                        FixedStoreCard(
+                            store: store,
+                            geo: geo
+                        )
+                    }
+                    .buttonStyle(.plain)
                     .onAppear {
                         let index = stores.firstIndex(
                             where: { stores in stores.id == store.id }

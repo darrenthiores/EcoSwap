@@ -295,7 +295,7 @@ object Dummy {
             review = "velit",
             storeId = "1",
             userId = "1",
-            username = "Cora Whitfield",
+            username = "Carroll Warner",
             userImgUrl = "http://www.bing.com/search?q=dicunt",
             rating = 2.3,
             date = 7483
@@ -305,7 +305,7 @@ object Dummy {
             review = "velit",
             storeId = "2",
             userId = "2",
-            username = "Cora Whitfield",
+            username = "Olga Bartlett",
             userImgUrl = "http://www.bing.com/search?q=dicunt",
             rating = 2.3,
             date = 7483

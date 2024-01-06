@@ -83,7 +83,7 @@ struct ProfileScreen: View {
                                     HStack(spacing: 0) {
                                         ForEach(ProfileTab.entries, id: \.name) { tab in
                                             TabButton(
-                                                title: tab.name,
+                                                title: tab.title,
                                                 isSelected: currentTab == tab,
                                                 onClick: {
                                                     currentTab = tab
