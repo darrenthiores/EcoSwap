@@ -119,6 +119,12 @@
 		C79135D22B45C1D800B4276F /* ItemSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79135D12B45C1D800B4276F /* ItemSection.swift */; };
 		C79135D42B45C86200B4276F /* IosHomeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79135D32B45C86200B4276F /* IosHomeState.swift */; };
 		C79135D62B45C8A900B4276F /* IosHomeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79135D52B45C8A900B4276F /* IosHomeEvent.swift */; };
+		C791B7F42B49B4950084E4BC /* OtherProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791B7F32B49B4950084E4BC /* OtherProfileScreen.swift */; };
+		C791B7F62B49B4A30084E4BC /* IosOtherProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791B7F52B49B4A30084E4BC /* IosOtherProfileViewModel.swift */; };
+		C791B7FA2B49BCB30084E4BC /* ProfileBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791B7F92B49BCB30084E4BC /* ProfileBottomBar.swift */; };
+		C791B7FC2B49BCFF0084E4BC /* NavigationButtonOutlined.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791B7FB2B49BCFF0084E4BC /* NavigationButtonOutlined.swift */; };
+		C791B7FE2B49BEE70084E4BC /* ReviewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791B7FD2B49BEE70084E4BC /* ReviewSheet.swift */; };
+		C791B8012B49BF3F0084E4BC /* ReviewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791B8002B49BF3F0084E4BC /* ReviewScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -249,6 +255,12 @@
 		C79135D12B45C1D800B4276F /* ItemSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSection.swift; sourceTree = "<group>"; };
 		C79135D32B45C86200B4276F /* IosHomeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosHomeState.swift; sourceTree = "<group>"; };
 		C79135D52B45C8A900B4276F /* IosHomeEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosHomeEvent.swift; sourceTree = "<group>"; };
+		C791B7F32B49B4950084E4BC /* OtherProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileScreen.swift; sourceTree = "<group>"; };
+		C791B7F52B49B4A30084E4BC /* IosOtherProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosOtherProfileViewModel.swift; sourceTree = "<group>"; };
+		C791B7F92B49BCB30084E4BC /* ProfileBottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBottomBar.swift; sourceTree = "<group>"; };
+		C791B7FB2B49BCFF0084E4BC /* NavigationButtonOutlined.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonOutlined.swift; sourceTree = "<group>"; };
+		C791B7FD2B49BEE70084E4BC /* ReviewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSheet.swift; sourceTree = "<group>"; };
+		C791B8002B49BF3F0084E4BC /* ReviewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +336,7 @@
 		C708D0BE2AC3E20A00ECE707 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C791B7F22B49B48B0084E4BC /* OtherProfile */,
 				C74FDA7D2B4814FE001D732A /* Profile */,
 				C74FDA6F2B480EEA001D732A /* StoreItemDetail */,
 				C74FDA5D2B47FF94001D732A /* ItemDetail */,
@@ -447,6 +460,7 @@
 		C74FDA752B4810F3001D732A /* SharedComponents */ = {
 			isa = PBXGroup;
 			children = (
+				C791B7F82B49BC540084E4BC /* Profile */,
 				C74FDA762B4810FB001D732A /* ItemDetail */,
 			);
 			path = SharedComponents;
@@ -473,7 +487,6 @@
 		C74FDA822B48151A001D732A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C74FDA832B4816AE001D732A /* ProfileTopSection.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -638,6 +651,7 @@
 				C76779EE2B3EB7F300B51EFE /* ButtonOutlined.swift */,
 				C76779F62B3EBBCC00B51EFE /* CircleButton.swift */,
 				C74FDA6D2B480B63001D732A /* NavigationButtonFill.swift */,
+				C791B7FB2B49BCFF0084E4BC /* NavigationButtonOutlined.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -838,6 +852,42 @@
 			path = Wrapping;
 			sourceTree = "<group>";
 		};
+		C791B7F22B49B48B0084E4BC /* OtherProfile */ = {
+			isa = PBXGroup;
+			children = (
+				C791B7F72B49B4A70084E4BC /* Components */,
+				C791B7F32B49B4950084E4BC /* OtherProfileScreen.swift */,
+				C791B7F52B49B4A30084E4BC /* IosOtherProfileViewModel.swift */,
+			);
+			path = OtherProfile;
+			sourceTree = "<group>";
+		};
+		C791B7F72B49B4A70084E4BC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C791B7F82B49BC540084E4BC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C791B7FF2B49BF1F0084E4BC /* Model */,
+				C791B7F92B49BCB30084E4BC /* ProfileBottomBar.swift */,
+				C74FDA832B4816AE001D732A /* ProfileTopSection.swift */,
+				C791B7FD2B49BEE70084E4BC /* ReviewSheet.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C791B7FF2B49BF1F0084E4BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C791B8002B49BF3F0084E4BC /* ReviewScreen.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -953,7 +1003,9 @@
 				C78766BD2B44702C001C92DD /* StoreReviewItem.swift in Sources */,
 				C78766CB2B447586001C92DD /* CategoryItem.swift in Sources */,
 				C75F85B62B3DE4CB005943A5 /* TopLevelDestination.swift in Sources */,
+				C791B7FA2B49BCB30084E4BC /* ProfileBottomBar.swift in Sources */,
 				C74FDA862B4818AA001D732A /* ItemGrid.swift in Sources */,
+				C791B7F62B49B4A30084E4BC /* IosOtherProfileViewModel.swift in Sources */,
 				C75F85AC2B3DE3EA005943A5 /* DependencyInjector.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				C78766A52B4401DB001C92DD /* ItemCard.swift in Sources */,
@@ -984,6 +1036,7 @@
 				C708D0CC2AC3E50100ECE707 /* FontExtension.swift in Sources */,
 				C75F85C72B3DE811005943A5 /* AuthRepositoryModule.swift in Sources */,
 				C74FDA682B480618001D732A /* DetailProductCard.swift in Sources */,
+				C791B8012B49BF3F0084E4BC /* ReviewScreen.swift in Sources */,
 				C7373D742B43B990009D9519 /* IosLoginViewModel.swift in Sources */,
 				C74FDA552B47F031001D732A /* IosSearchEvent.swift in Sources */,
 				C79135CE2B45940100B4276F /* HorizontalStorePlaceholder.swift in Sources */,
@@ -995,6 +1048,7 @@
 				C7677A012B3EC11000B51EFE /* DefaultTag.swift in Sources */,
 				C75F85E92B3DED41005943A5 /* StoreRepositoryModule.swift in Sources */,
 				C78766AF2B441C59001C92DD /* HorizontalUserCard.swift in Sources */,
+				C791B7F42B49B4950084E4BC /* OtherProfileScreen.swift in Sources */,
 				C75F85DB2B3DECE2005943A5 /* MessageNetworkModule.swift in Sources */,
 				C78766AB2B4419FE001C92DD /* StoreItemList.swift in Sources */,
 				C76779ED2B3EB46000B51EFE /* ButtonFill.swift in Sources */,
@@ -1012,6 +1066,7 @@
 				C78766B72B442349001C92DD /* StoreList.swift in Sources */,
 				C74DE17B2B427A2F00E2EBB3 /* BoardingScreen.swift in Sources */,
 				C74FDA532B47EF42001D732A /* IosSearchViewModel.swift in Sources */,
+				C791B7FC2B49BCFF0084E4BC /* NavigationButtonOutlined.swift in Sources */,
 				C78766A72B4402E1001C92DD /* FixedStoreItemCard.swift in Sources */,
 				C76779FB2B3EBE3700B51EFE /* SectionHeader.swift in Sources */,
 				C74FDA7C2B481217001D732A /* StoreProductDetailSection.swift in Sources */,
@@ -1032,6 +1087,7 @@
 				C74FDA7F2B481507001D732A /* ProfileScreen.swift in Sources */,
 				C74DE1802B42801400E2EBB3 /* BoardingPageTab.swift in Sources */,
 				C75F85D32B3DE9E4005943A5 /* ItemNetworkModule.swift in Sources */,
+				C791B7FE2B49BEE70084E4BC /* ReviewSheet.swift in Sources */,
 				C79135D22B45C1D800B4276F /* ItemSection.swift in Sources */,
 				C75F85D52B3DEA29005943A5 /* ItemRepositoryModule.swift in Sources */,
 				C75F85DD2B3DECF7005943A5 /* MessageRepositoryModule.swift in Sources */,

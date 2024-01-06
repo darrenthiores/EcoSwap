@@ -26,7 +26,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.darrenthiores.ecoswap.android.presentation.model_components.item.StoreItemList
 import com.darrenthiores.ecoswap.android.presentation.model_components.review.StoreReviewList
-import com.darrenthiores.ecoswap.android.presentation.store_profile.model.StoreProfileTab
+import com.darrenthiores.ecoswap.presentation.store_profile.model.StoreProfileTab
 import com.darrenthiores.ecoswap.android.theme.SubHeadlineR
 import com.darrenthiores.ecoswap.presentation.store_profile.StoreProfileState
 

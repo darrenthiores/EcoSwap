@@ -99,7 +99,7 @@ struct ButtonOutlined: View {
             .background(
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .strokeBorder(
-                        color,
+                        Color.Gray1,
                         style: StrokeStyle(
                             lineWidth: 1.0
                         )

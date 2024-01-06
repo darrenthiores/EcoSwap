@@ -16,7 +16,7 @@ struct ReviewItem: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             NavigationLink {
-                Text("Review \(review.userId)")
+                OtherProfileScreen(id: review.userId)
             } label: {
                 HStack(spacing: 4) {
                     AsyncImage(

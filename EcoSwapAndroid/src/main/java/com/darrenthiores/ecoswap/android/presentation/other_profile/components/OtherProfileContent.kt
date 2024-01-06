@@ -21,7 +21,7 @@ import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import com.darrenthiores.ecoswap.android.presentation.model_components.item.ItemList
 import com.darrenthiores.ecoswap.android.presentation.model_components.review.ReviewList
-import com.darrenthiores.ecoswap.android.presentation.other_profile.model.OtherProfileTab
+import com.darrenthiores.ecoswap.presentation.other_profile.model.OtherProfileTab
 import com.darrenthiores.ecoswap.presentation.other_profile.OtherProfileState
 
 @OptIn(ExperimentalFoundationApi::class)
