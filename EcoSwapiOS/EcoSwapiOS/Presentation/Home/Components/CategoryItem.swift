@@ -14,7 +14,7 @@ struct CategoryItem: View {
     let geo: GeometryProxy
     
     var width: CGFloat {
-        (geo.size.width / 4) - 24
+        abs((geo.size.width / 4) - 24)
     }
     
     var body: some View {

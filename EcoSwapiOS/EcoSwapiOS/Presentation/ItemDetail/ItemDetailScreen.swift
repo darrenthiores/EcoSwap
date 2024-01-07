@@ -77,7 +77,6 @@ struct ItemDetailScreen: View {
                     .padding(.vertical, 8)
                 }
                 .buttonStyle(.plain)
-                .background(Color.Background)
             }
         }
     }

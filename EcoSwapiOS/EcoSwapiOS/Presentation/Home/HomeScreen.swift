@@ -30,6 +30,7 @@ struct HomeScreen: View {
                             LazyVStack(spacing: 24) {
                                 CategorySection(
                                     currentTab: $currentTab,
+                                    viewAll: viewModel.state.viewAll,
                                     onItemClick: { category in
                                         viewModel.onIosEvent(
                                             event: .OnSelectCategory(
@@ -109,7 +110,7 @@ struct HomeScreen: View {
                 viewModel.dispose()
             }
             .navigationDestination(isPresented: $viewModel.iosState.showAdd) {
-                Text("Add")
+                AddItemScreen()
             }
             .navigationDestination(isPresented: $viewModel.iosState.showSearch) {
                 SearchScreen(

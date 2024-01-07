@@ -38,6 +38,7 @@ import com.darrenthiores.ecoswap.android.theme.Caption1R
 import com.darrenthiores.ecoswap.android.theme.EcoSwapTheme
 import com.darrenthiores.ecoswap.domain.core.utils.Constant
 import com.darrenthiores.ecoswap.domain.item.model.ItemCategory
+import kotlin.math.ceil
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalLayoutApi::class)
 @Composable
@@ -48,7 +49,7 @@ fun CategorySection(
     onItemClick: (ItemCategory) -> Unit,
     onToggleViewAll: () -> Unit
 ) {
-    val pageCount = Constant.categories.size.div(4)
+    val pageCount = ceil(Constant.categories.size.toDouble().div(4)).toInt()
 
     Column(
         modifier = modifier
@@ -72,15 +73,22 @@ fun CategorySection(
                 pageCount = pageCount,
                 contentPadding = PaddingValues(
                     horizontal = 24.dp
-                )
+                ),
+                pageSpacing = 24.dp
             ) { page ->
                 val index = page + 1
                 val lastIndex = (index * 4) - 1
-                val firstIndexCount = (lastIndex - 4)
+                val firstIndexCount = (lastIndex + 1 - 4)
                 val firstIndex = if (firstIndexCount < 0) 0 else firstIndexCount
-                val categories = Constant.categories.slice(
-                    firstIndex..lastIndex
-                )
+                val categories = if (Constant.categories.size - 1 < lastIndex) {
+                    Constant.categories.slice(
+                        firstIndex until Constant.categories.size
+                    )
+                } else {
+                    Constant.categories.slice(
+                        firstIndex..lastIndex
+                    )
+                }
 
                 Row(
                     modifier = Modifier
@@ -114,7 +122,7 @@ fun CategorySection(
                 Constant.categories.forEach { category ->
                     CategoryItem(
                         modifier = Modifier
-                            .padding(bottom = 8.dp)
+                            .padding(bottom = 16.dp)
                             .clickable { onItemClick(category) },
                         category = category
                     )

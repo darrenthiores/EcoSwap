@@ -49,7 +49,7 @@ struct CategorySection: View {
                             (Constant().categories.count - 1) < lastIndex
                         ) ? Constant().categories[firstIndex...(Constant().categories.count - 1)] : Constant().categories[firstIndex...lastIndex]
                         
-                        HStack {
+                        HStack(spacing: 0) {
                             Spacer()
                                 .frame(width: 24)
                             
@@ -94,7 +94,7 @@ struct CategorySection: View {
                         (Constant().categories.count - 1) < lastIndex
                     ) ? Constant().categories[firstIndex...(Constant().categories.count - 1)] : Constant().categories[firstIndex...lastIndex]
                     
-                    HStack {
+                    HStack(spacing: 0) {
                         ForEach(Array(categories.enumerated()), id: \.offset) { index, category in
                             Button {
                                 onItemClick(category)
