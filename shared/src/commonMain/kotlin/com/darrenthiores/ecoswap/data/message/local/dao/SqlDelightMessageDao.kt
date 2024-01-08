@@ -4,8 +4,11 @@ import com.darrenthiores.ecoswap.database.AppDatabase
 import com.darrenthiores.ecoswap.domain.message.model.Inbox
 import com.darrenthiores.ecoswap.domain.message.model.Message
 import com.darrenthiores.ecoswap.utils.date.DateUtils
+import com.squareup.sqldelight.runtime.coroutines.asFlow
+import com.squareup.sqldelight.runtime.coroutines.mapToList
 import database.ChatEntity
 import database.InboxEntity
+import kotlinx.coroutines.flow.Flow
 
 class SqlDelightMessageDao(
     db: AppDatabase
@@ -62,12 +65,13 @@ class SqlDelightMessageDao(
         )
     }
 
-    override suspend fun getInbox(userId: String): List<InboxEntity> {
+    override suspend fun getInbox(userId: String): Flow<List<InboxEntity>> {
         return inboxQueries
             .getInbox(
                 sentFromId = userId
             )
-            .executeAsList()
+            .asFlow()
+            .mapToList()
     }
 
     override suspend fun createInbox(

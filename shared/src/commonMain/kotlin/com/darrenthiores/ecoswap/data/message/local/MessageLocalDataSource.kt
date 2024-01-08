@@ -5,6 +5,7 @@ import com.darrenthiores.ecoswap.domain.message.model.Inbox
 import com.darrenthiores.ecoswap.domain.message.model.Message
 import database.ChatEntity
 import database.InboxEntity
+import kotlinx.coroutines.flow.Flow
 
 class MessageLocalDataSource(
     private val dao: MessageDao
@@ -58,7 +59,7 @@ class MessageLocalDataSource(
             )
     }
 
-    suspend fun getInbox(userId: String): List<InboxEntity> {
+    suspend fun getInbox(userId: String): Flow<List<InboxEntity>> {
         return dao
             .getInbox(
                 userId = userId

@@ -2,10 +2,12 @@ package com.darrenthiores.ecoswap.data.message.remote
 
 import com.darrenthiores.ecoswap.data.message.remote.service.MessageService
 import com.darrenthiores.ecoswap.data.utils.ApiResponse
+import com.darrenthiores.ecoswap.data.utils.flowResponse
 import com.darrenthiores.ecoswap.data.utils.tryCatch
 import com.darrenthiores.ecoswap.domain.message.model.Inbox
 import com.darrenthiores.ecoswap.domain.message.model.Message
 import com.darrenthiores.ecoswap.utils.dispatchers.DispatchersProvider
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 
 class MessageRemoteDataSource(
@@ -72,15 +74,15 @@ class MessageRemoteDataSource(
         }
     }
 
-    suspend fun getInbox(userId: String): ApiResponse<List<Inbox>> {
-        return withContext(dispatchers.io) {
-            tryCatch {
-                val result = apiService.getInbox(
-                    userId = userId
-                )
+    suspend fun getInbox(userId: String): Flow<ApiResponse<List<Inbox>>> {
+        return flowResponse(
+            dispatcher = dispatchers
+        ) {
+            val result = apiService.getInbox(
+                userId = userId
+            )
 
-                ApiResponse.Success(result)
-            }
+            ApiResponse.Success(result)
         }
     }
 

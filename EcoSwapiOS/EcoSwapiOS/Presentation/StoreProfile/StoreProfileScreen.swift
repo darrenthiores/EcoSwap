@@ -165,6 +165,7 @@ struct StoreProfileScreen: View {
             
             ToolbarItem(placement: .bottomBar) {
                 ProfileBottomBar(
+                    id: storeId,
                     onAddReviewClick: {
                         showAddReviewSheet = true
                     }

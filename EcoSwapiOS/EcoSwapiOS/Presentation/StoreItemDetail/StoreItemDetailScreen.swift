@@ -67,7 +67,13 @@ struct StoreItemDetailScreen: View {
         .toolbar {
             ToolbarItem(placement: .bottomBar) {
                 NavigationLink {
-                    Text("Message")
+                    if let storeId = viewModel.state.store?.id {
+                        MessageScreen(
+                            userId: storeId
+                        )
+                    } else {
+                        Text("Unknown Error Just Occurred!")
+                    }
                 } label: {
                     NavigationButtonFill(
                         label: "Message",

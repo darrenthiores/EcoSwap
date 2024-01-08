@@ -4,6 +4,7 @@ import com.darrenthiores.ecoswap.domain.message.model.Inbox
 import com.darrenthiores.ecoswap.domain.message.model.Message
 import database.ChatEntity
 import database.InboxEntity
+import kotlinx.coroutines.flow.Flow
 
 interface MessageDao {
     suspend fun getUnreadCount(
@@ -29,7 +30,7 @@ interface MessageDao {
         timestamp: Long
     )
 
-    suspend fun getInbox(userId: String): List<InboxEntity>
+    suspend fun getInbox(userId: String): Flow<List<InboxEntity>>
 
     suspend fun createInbox(
         inboxId: String,

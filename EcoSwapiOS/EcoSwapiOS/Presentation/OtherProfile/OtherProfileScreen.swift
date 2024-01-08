@@ -150,6 +150,7 @@ struct OtherProfileScreen: View {
             
             ToolbarItem(placement: .bottomBar) {
                 ProfileBottomBar(
+                    id: id,
                     onAddReviewClick: {
                         showAddReviewSheet = true
                     }

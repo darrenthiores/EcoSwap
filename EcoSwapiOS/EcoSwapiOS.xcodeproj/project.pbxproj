@@ -59,6 +59,16 @@
 		C75187862B4BB6D900C0FD78 /* InboxScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75187852B4BB6D900C0FD78 /* InboxScreen.swift */; };
 		C75187882B4BB6E300C0FD78 /* IosInboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75187872B4BB6E300C0FD78 /* IosInboxViewModel.swift */; };
 		C751878B2B4BB75100C0FD78 /* InboxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C751878A2B4BB75100C0FD78 /* InboxItem.swift */; };
+		C751878E2B4BBC2E00C0FD78 /* MessageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C751878D2B4BBC2E00C0FD78 /* MessageScreen.swift */; };
+		C75187912B4BBC3E00C0FD78 /* IosMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75187902B4BBC3E00C0FD78 /* IosMessageViewModel.swift */; };
+		C75187932B4BC25200C0FD78 /* MessageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75187922B4BC25200C0FD78 /* MessageHeader.swift */; };
+		C75187952B4BC27100C0FD78 /* MessageCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75187942B4BC27100C0FD78 /* MessageCircleButton.swift */; };
+		C75187972B4BC5A900C0FD78 /* MessageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75187962B4BC5A900C0FD78 /* MessageTextField.swift */; };
+		C75187992B4BC72D00C0FD78 /* MessageBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75187982B4BC72D00C0FD78 /* MessageBottomBar.swift */; };
+		C751879B2B4BC8D100C0FD78 /* PersonalMessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C751879A2B4BC8D100C0FD78 /* PersonalMessageItem.swift */; };
+		C751879D2B4BCC3A00C0FD78 /* FriendMessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C751879C2B4BCC3A00C0FD78 /* FriendMessageItem.swift */; };
+		C75187A02B4BCE5300C0FD78 /* ReversedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C751879F2B4BCE5200C0FD78 /* ReversedScrollView.swift */; };
+		C75187A22B4BCE7300C0FD78 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75187A12B4BCE7300C0FD78 /* Stack.swift */; };
 		C75F85AC2B3DE3EA005943A5 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75F85AB2B3DE3EA005943A5 /* DependencyInjector.swift */; };
 		C75F85AE2B3DE3FB005943A5 /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75F85AD2B3DE3FB005943A5 /* KeychainSwift.swift */; };
 		C75F85B22B3DE432005943A5 /* IosTokenPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75F85B12B3DE432005943A5 /* IosTokenPreferences.swift */; };
@@ -211,6 +221,16 @@
 		C75187852B4BB6D900C0FD78 /* InboxScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxScreen.swift; sourceTree = "<group>"; };
 		C75187872B4BB6E300C0FD78 /* IosInboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosInboxViewModel.swift; sourceTree = "<group>"; };
 		C751878A2B4BB75100C0FD78 /* InboxItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxItem.swift; sourceTree = "<group>"; };
+		C751878D2B4BBC2E00C0FD78 /* MessageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageScreen.swift; sourceTree = "<group>"; };
+		C75187902B4BBC3E00C0FD78 /* IosMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosMessageViewModel.swift; sourceTree = "<group>"; };
+		C75187922B4BC25200C0FD78 /* MessageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHeader.swift; sourceTree = "<group>"; };
+		C75187942B4BC27100C0FD78 /* MessageCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCircleButton.swift; sourceTree = "<group>"; };
+		C75187962B4BC5A900C0FD78 /* MessageTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextField.swift; sourceTree = "<group>"; };
+		C75187982B4BC72D00C0FD78 /* MessageBottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBottomBar.swift; sourceTree = "<group>"; };
+		C751879A2B4BC8D100C0FD78 /* PersonalMessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalMessageItem.swift; sourceTree = "<group>"; };
+		C751879C2B4BCC3A00C0FD78 /* FriendMessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendMessageItem.swift; sourceTree = "<group>"; };
+		C751879F2B4BCE5200C0FD78 /* ReversedScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversedScrollView.swift; sourceTree = "<group>"; };
+		C75187A12B4BCE7300C0FD78 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		C75F85AB2B3DE3EA005943A5 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
 		C75F85AD2B3DE3FB005943A5 /* KeychainSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainSwift.swift; sourceTree = "<group>"; };
 		C75F85B12B3DE432005943A5 /* IosTokenPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosTokenPreferences.swift; sourceTree = "<group>"; };
@@ -368,6 +388,7 @@
 		C708D0BE2AC3E20A00ECE707 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C751878C2B4BBC2500C0FD78 /* Message */,
 				C75187842B4BB6CE00C0FD78 /* Inbox */,
 				C719678D2B4B034A003CFDD9 /* AddItem */,
 				C791B8022B49D1460084E4BC /* StoreProfile */,
@@ -574,6 +595,38 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		C751878C2B4BBC2500C0FD78 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				C751878F2B4BBC3100C0FD78 /* Components */,
+				C751878D2B4BBC2E00C0FD78 /* MessageScreen.swift */,
+				C75187902B4BBC3E00C0FD78 /* IosMessageViewModel.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		C751878F2B4BBC3100C0FD78 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C75187922B4BC25200C0FD78 /* MessageHeader.swift */,
+				C75187942B4BC27100C0FD78 /* MessageCircleButton.swift */,
+				C75187962B4BC5A900C0FD78 /* MessageTextField.swift */,
+				C75187982B4BC72D00C0FD78 /* MessageBottomBar.swift */,
+				C751879A2B4BC8D100C0FD78 /* PersonalMessageItem.swift */,
+				C751879C2B4BCC3A00C0FD78 /* FriendMessageItem.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C751879E2B4BCE4100C0FD78 /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				C751879F2B4BCE5200C0FD78 /* ReversedScrollView.swift */,
+				C75187A12B4BCE7300C0FD78 /* Stack.swift */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
 		C75F85A92B3DDE17005943A5 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -704,6 +757,7 @@
 		C76779DC2B3EB2EF00B51EFE /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C751879E2B4BCE4100C0FD78 /* ScrollView */,
 				C74FDA892B482112001D732A /* Empty */,
 				C74FDA5A2B47F3A4001D732A /* Tabs */,
 				C78766D12B4479E8001C92DD /* Wrapping */,
@@ -1114,6 +1168,7 @@
 				C76779FF2B3EBF8D00B51EFE /* PageIndicator.swift in Sources */,
 				C719679E2B4B16F4003CFDD9 /* LoadImages.swift in Sources */,
 				C74FDA8B2B48211A001D732A /* TextEmpty.swift in Sources */,
+				C75187A22B4BCE7300C0FD78 /* Stack.swift in Sources */,
 				C74DE17E2B427ADE00E2EBB3 /* BoardingSection.swift in Sources */,
 				C71967962B4B06B6003CFDD9 /* IosAddItemEvent.swift in Sources */,
 				C75F85ED2B3DED54005943A5 /* UserNetworkModule.swift in Sources */,
@@ -1127,9 +1182,11 @@
 				C751878B2B4BB75100C0FD78 /* InboxItem.swift in Sources */,
 				C78766BF2B44709C001C92DD /* ReviewList.swift in Sources */,
 				C7677A092B3EC97900B51EFE /* MultilineTextField.swift in Sources */,
+				C75187992B4BC72D00C0FD78 /* MessageBottomBar.swift in Sources */,
 				C74FDA712B48106D001D732A /* StoreItemDetailScreen.swift in Sources */,
 				C76779F92B3EBD1E00B51EFE /* DefaultHeader.swift in Sources */,
 				C78766B12B442097001C92DD /* FixedStoreCard.swift in Sources */,
+				C751879B2B4BC8D100C0FD78 /* PersonalMessageItem.swift in Sources */,
 				C74FDA662B480507001D732A /* ItemInformationSection.swift in Sources */,
 				C75F85EF2B3DED60005943A5 /* UserRepositoryModule.swift in Sources */,
 				C78766CE2B44760A001C92DD /* ItemCategoryExtension.swift in Sources */,
@@ -1150,6 +1207,8 @@
 				C7373D762B43B9C5009D9519 /* LoginScreen.swift in Sources */,
 				C76779EF2B3EB7F300B51EFE /* ButtonOutlined.swift in Sources */,
 				C75F85E32B3DED15005943A5 /* ReviewRepositoryModule.swift in Sources */,
+				C75187912B4BBC3E00C0FD78 /* IosMessageViewModel.swift in Sources */,
+				C75187952B4BC27100C0FD78 /* MessageCircleButton.swift in Sources */,
 				C78766D02B447789001C92DD /* CategorySection.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				C7677A012B3EC11000B51EFE /* DefaultTag.swift in Sources */,
@@ -1158,6 +1217,7 @@
 				C791B7F42B49B4950084E4BC /* OtherProfileScreen.swift in Sources */,
 				C75F85DB2B3DECE2005943A5 /* MessageNetworkModule.swift in Sources */,
 				C78766AB2B4419FE001C92DD /* StoreItemList.swift in Sources */,
+				C751878E2B4BBC2E00C0FD78 /* MessageScreen.swift in Sources */,
 				C76779ED2B3EB46000B51EFE /* ButtonFill.swift in Sources */,
 				C75F85DF2B3DECFE005943A5 /* MessageUseCasesModule.swift in Sources */,
 				C74FDA782B481121001D732A /* StoreItemInformationSection.swift in Sources */,
@@ -1179,8 +1239,10 @@
 				C76779FB2B3EBE3700B51EFE /* SectionHeader.swift in Sources */,
 				C74FDA7C2B481217001D732A /* StoreProductDetailSection.swift in Sources */,
 				C71967942B4B068C003CFDD9 /* IosAddItemState.swift in Sources */,
+				C75187A02B4BCE5300C0FD78 /* ReversedScrollView.swift in Sources */,
 				C74FDA6C2B480990001D732A /* ProductDetailSection.swift in Sources */,
 				C79135D02B45BE4700B4276F /* StoreSection.swift in Sources */,
+				C75187972B4BC5A900C0FD78 /* MessageTextField.swift in Sources */,
 				C78766B52B44223F001C92DD /* StoreCard.swift in Sources */,
 				C74FDA642B4800F5001D732A /* ItemDetailTopSection.swift in Sources */,
 				C75F85D12B3DE945005943A5 /* CarbonUseCasesModule.swift in Sources */,
@@ -1188,6 +1250,7 @@
 				C75F85EB2B3DED49005943A5 /* StoreUseCasesModule.swift in Sources */,
 				C76779F52B3EB98A00B51EFE /* ButtonSize.swift in Sources */,
 				C78766A12B43FC53001C92DD /* FixedItemCard.swift in Sources */,
+				C751879D2B4BCC3A00C0FD78 /* FriendMessageItem.swift in Sources */,
 				C74FDA612B47FFA7001D732A /* IosItemDetailViewModel.swift in Sources */,
 				C75F85CF2B3DE906005943A5 /* CarbonRepositoryModule.swift in Sources */,
 				C75F85BA2B3DE61F005943A5 /* AppModule.swift in Sources */,
@@ -1205,6 +1268,7 @@
 				C75F85D72B3DEA4F005943A5 /* ItemUseCases.swift in Sources */,
 				C74FDA5C2B47F3AA001D732A /* TabButton.swift in Sources */,
 				C75187862B4BB6D900C0FD78 /* InboxScreen.swift in Sources */,
+				C75187932B4BC25200C0FD78 /* MessageHeader.swift in Sources */,
 				C719678F2B4B0353003CFDD9 /* AddItemScreen.swift in Sources */,
 				C7677A072B3EC76900B51EFE /* PasswordTextField.swift in Sources */,
 				C75F85C92B3DE82A005943A5 /* AuthUseCasesModule.swift in Sources */,

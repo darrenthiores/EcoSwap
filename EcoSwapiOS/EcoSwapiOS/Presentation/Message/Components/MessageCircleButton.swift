@@ -1,14 +1,14 @@
 //
-//  CircleButton.swift
+//  MessageCircleButton.swift
 //  EcoSwapiOS
 //
-//  Created by Darren Thiores on 29/12/23.
-//  Copyright © 2023 orgName. All rights reserved.
+//  Created by Darren Thiores on 08/01/24.
+//  Copyright © 2024 orgName. All rights reserved.
 //
 
 import SwiftUI
 
-struct CircleButton: View {
+struct MessageCircleButton: View {
     let image: String
     let onClick: () -> Void
     
@@ -24,7 +24,7 @@ struct CircleButton: View {
                         width: 20,
                         height: 20
                     )
-                    .foregroundColor(.Primary)
+                    .foregroundColor(.OnPrimary)
             }
             .frame(
                 width: 34,
@@ -33,6 +33,7 @@ struct CircleButton: View {
             .clipShape(Circle())
             .background(
                 Color.White
+                    .opacity(0.2)
                     .clipShape(Circle())
                     .shadow(radius: 1)
             )
@@ -42,7 +43,7 @@ struct CircleButton: View {
 }
 
 #Preview {
-    CircleButton(
+    MessageCircleButton(
         image: "house.fill",
         onClick: {  }
     )

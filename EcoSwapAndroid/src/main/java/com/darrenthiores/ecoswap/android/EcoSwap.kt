@@ -426,7 +426,13 @@ fun EcoSwap(
                             navController.navigate(Route.OtherProfile.name + "/$id")
                         }
                     },
-                    onMessageClick = {  },
+                    onMessageClick = {
+                        val id = state.user?.id
+
+                        id?.let {
+                            navController.navigate(Route.Message.name + "/$id")
+                        }
+                    },
                     onBackClick = {
                         navController.navigateUp()
                     }
@@ -455,7 +461,13 @@ fun EcoSwap(
                             navController.navigate(Route.StoreProfile.name + "/$id")
                         }
                     },
-                    onMessageClick = {  },
+                    onMessageClick = {
+                        val id = state.store?.id
+
+                        id?.let {
+                            navController.navigate(Route.Message.name + "/$id")
+                        }
+                    },
                     onBackClick = {
                         navController.navigateUp()
                     }
@@ -483,7 +495,13 @@ fun EcoSwap(
                     onUserClick = { id ->
                         navController.navigate(Route.OtherProfile.name + "/$id")
                     },
-                    onMessageClick = {  },
+                    onMessageClick = {
+                        val id = state.user?.id
+
+                        id?.let {
+                            navController.navigate(Route.Message.name + "/$id")
+                        }
+                    },
                     onSettingClick = {  },
                     showSnackBar = { message ->
                         appState.showSnackBar(message)
@@ -515,7 +533,13 @@ fun EcoSwap(
                     onUserClick = { id ->
                         navController.navigate(Route.OtherProfile.name + "/$id")
                     },
-                    onMessageClick = {  },
+                    onMessageClick = {
+                        val id = state.store?.id
+
+                        id?.let {
+                            navController.navigate(Route.Message.name + "/$id")
+                        }
+                    },
                     onSettingClick = {  },
                     showSnackBar = { message ->
                         appState.showSnackBar(message)

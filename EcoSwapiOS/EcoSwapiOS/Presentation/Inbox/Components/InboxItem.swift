@@ -46,7 +46,7 @@ struct InboxItem: View {
             Spacer()
                 .frame(width: 32)
             
-            VStack(alignment: .leading, spacing: 0) {
+            VStack(alignment: .leading, spacing: 2) {
                 Text("@\(inbox.sentToUsername)")
                     .font(.Caption1B)
                 

@@ -5,12 +5,17 @@ import com.darrenthiores.ecoswap.data.message.mapper.toInbox
 import com.darrenthiores.ecoswap.data.message.mapper.toMessage
 import com.darrenthiores.ecoswap.data.message.remote.MessageRemoteDataSource
 import com.darrenthiores.ecoswap.data.utils.ApiResponse
+import com.darrenthiores.ecoswap.data.utils.FlowNetworkBoundResource
 import com.darrenthiores.ecoswap.data.utils.NetworkBoundResource
 import com.darrenthiores.ecoswap.domain.message.model.Inbox
 import com.darrenthiores.ecoswap.domain.message.model.Message
 import com.darrenthiores.ecoswap.domain.message.repository.MessageRepository
 import com.darrenthiores.ecoswap.domain.utils.Resource
 import com.darrenthiores.ecoswap.utils.date.DateUtils
+import com.darrenthiores.ecoswap.utils.flow.CommonFlow
+import com.darrenthiores.ecoswap.utils.flow.toCommonFlow
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 
 class MessageRepositoryImpl(
     private val remoteDataSource: MessageRemoteDataSource,
@@ -254,15 +259,17 @@ class MessageRepositoryImpl(
     override suspend fun getInbox(
         userId: String,
         fetch: Boolean
-    ): Resource<List<Inbox>> =
-        object : NetworkBoundResource<List<Inbox>, List<Inbox>>() {
-            override suspend fun loadFromDB(): List<Inbox> {
+    ): CommonFlow<Resource<List<Inbox>>> =
+        object : FlowNetworkBoundResource<List<Inbox>, List<Inbox>>() {
+            override suspend fun loadFromDB(): Flow<List<Inbox>> {
                 return localDataSource
                     .getInbox(
                         userId = userId
                     )
-                    .map {
-                        it.toInbox()
+                    .map { inboxes ->
+                        inboxes.map { inbox ->
+                            inbox.toInbox()
+                        }
                     }
             }
 
@@ -270,7 +277,7 @@ class MessageRepositoryImpl(
                 return fetch
             }
 
-            override suspend fun createCall(): ApiResponse<List<Inbox>> {
+            override suspend fun createCall(): Flow<ApiResponse<List<Inbox>>> {
                 return remoteDataSource
                     .getInbox(
                         userId = userId
@@ -284,7 +291,7 @@ class MessageRepositoryImpl(
                     )
             }
 
-        }.result()
+        }.result().toCommonFlow()
 
     override suspend fun updateInbox(
         inboxId: String,

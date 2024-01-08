@@ -9,12 +9,13 @@
 import SwiftUI
 
 struct ProfileBottomBar: View {
+    let id: String
     let onAddReviewClick: () -> Void
     
     var body: some View {
         HStack(spacing: 16) {
             NavigationLink {
-                Text("Message")
+                MessageScreen(userId: id)
             } label: {
                 NavigationButtonOutlined(
                     label: "Message",
@@ -38,6 +39,7 @@ struct ProfileBottomBar: View {
 
 #Preview {
     ProfileBottomBar(
+        id: "1",
         onAddReviewClick: {  }
     )
 }

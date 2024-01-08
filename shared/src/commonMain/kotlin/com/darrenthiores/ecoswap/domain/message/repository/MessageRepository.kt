@@ -3,6 +3,7 @@ package com.darrenthiores.ecoswap.domain.message.repository
 import com.darrenthiores.ecoswap.domain.message.model.Inbox
 import com.darrenthiores.ecoswap.domain.message.model.Message
 import com.darrenthiores.ecoswap.domain.utils.Resource
+import com.darrenthiores.ecoswap.utils.flow.CommonFlow
 
 interface MessageRepository {
     suspend fun getUnreadCount(
@@ -32,7 +33,7 @@ interface MessageRepository {
     suspend fun getInbox(
         userId: String,
         fetch: Boolean = false
-    ): Resource<List<Inbox>>
+    ): CommonFlow<Resource<List<Inbox>>>
 
     suspend fun updateInbox(
         inboxId: String,

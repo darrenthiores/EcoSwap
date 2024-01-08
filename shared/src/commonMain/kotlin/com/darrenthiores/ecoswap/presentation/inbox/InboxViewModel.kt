@@ -7,6 +7,7 @@ import com.darrenthiores.ecoswap.utils.flow.toCommonStateFlow
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
@@ -21,41 +22,45 @@ class InboxViewModel(
 
     init {
         viewModelScope.launch {
-            _state.value = state.value.copy(
-                isLoading = true
-            )
-
-            val result = getInbox(
+            getInbox(
                 userId = "1"
             )
+                .collectLatest { result ->
+                    when (result) {
+                        is Resource.Error -> {
+                            _state.update {
+                                it.copy(
+                                    inboxes = result.data ?: emptyList(),
+                                    isLoading = false,
+                                    error = result.message
+                                )
+                            }
+                        }
+                        is Resource.Loading -> {
+                            _state.update {
+                                it.copy(
+                                    isLoading = true
+                                )
+                            }
+                        }
+                        is Resource.Success -> {
+                            _state.update {
+                                it.copy(
+                                    inboxes = result.data ?: emptyList(),
+                                    isLoading = false
+                                )
+                            }
 
-            when (result) {
-                is Resource.Error -> {
-                    _state.update {
-                        it.copy(
-                            isLoading = false,
-                            error = result.message
-                        )
-                    }
-                }
-                is Resource.Loading -> Unit
-                is Resource.Success -> {
-                    _state.update {
-                        it.copy(
-                            inboxes = result.data ?: emptyList(),
-                            isLoading = false
-                        )
-                    }
-
-                    if (result.data.isNullOrEmpty()) {
-                        _state.update {
-                            it.copy(
-                                inboxes = Dummy.inboxes
-                            )
+                            if (result.data.isNullOrEmpty()) {
+                                _state.update {
+                                    it.copy(
+                                        inboxes = Dummy.inboxes
+                                    )
+                                }
+                            }
                         }
                     }
                 }
-            }
         }
     }
 }

@@ -61,4 +61,8 @@ extension Color {
     static var Gray2: Color {
         Color("Gray2")
     }
+    
+    static var YellowMessage: Color {
+        Color("YellowMessage")
+    }
 }

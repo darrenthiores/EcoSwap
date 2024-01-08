@@ -21,7 +21,9 @@ struct InboxScreen: View {
                     
                     ForEach(viewModel.state.inboxes, id: \.id) { inbox in
                         NavigationLink {
-                            Text("Message")
+                            MessageScreen(
+                                userId: inbox.sentToId
+                            )
                         } label: {
                             InboxItem(
                                 inbox: inbox
