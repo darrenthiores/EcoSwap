@@ -56,6 +56,9 @@
 		C74FDA862B4818AA001D732A /* ItemGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FDA852B4818AA001D732A /* ItemGrid.swift */; };
 		C74FDA882B48190E001D732A /* ReviewGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FDA872B48190E001D732A /* ReviewGrid.swift */; };
 		C74FDA8B2B48211A001D732A /* TextEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FDA8A2B48211A001D732A /* TextEmpty.swift */; };
+		C75187862B4BB6D900C0FD78 /* InboxScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75187852B4BB6D900C0FD78 /* InboxScreen.swift */; };
+		C75187882B4BB6E300C0FD78 /* IosInboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75187872B4BB6E300C0FD78 /* IosInboxViewModel.swift */; };
+		C751878B2B4BB75100C0FD78 /* InboxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C751878A2B4BB75100C0FD78 /* InboxItem.swift */; };
 		C75F85AC2B3DE3EA005943A5 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75F85AB2B3DE3EA005943A5 /* DependencyInjector.swift */; };
 		C75F85AE2B3DE3FB005943A5 /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75F85AD2B3DE3FB005943A5 /* KeychainSwift.swift */; };
 		C75F85B22B3DE432005943A5 /* IosTokenPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75F85B12B3DE432005943A5 /* IosTokenPreferences.swift */; };
@@ -205,6 +208,9 @@
 		C74FDA852B4818AA001D732A /* ItemGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemGrid.swift; sourceTree = "<group>"; };
 		C74FDA872B48190E001D732A /* ReviewGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewGrid.swift; sourceTree = "<group>"; };
 		C74FDA8A2B48211A001D732A /* TextEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEmpty.swift; sourceTree = "<group>"; };
+		C75187852B4BB6D900C0FD78 /* InboxScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxScreen.swift; sourceTree = "<group>"; };
+		C75187872B4BB6E300C0FD78 /* IosInboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosInboxViewModel.swift; sourceTree = "<group>"; };
+		C751878A2B4BB75100C0FD78 /* InboxItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxItem.swift; sourceTree = "<group>"; };
 		C75F85AB2B3DE3EA005943A5 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
 		C75F85AD2B3DE3FB005943A5 /* KeychainSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainSwift.swift; sourceTree = "<group>"; };
 		C75F85B12B3DE432005943A5 /* IosTokenPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosTokenPreferences.swift; sourceTree = "<group>"; };
@@ -362,6 +368,7 @@
 		C708D0BE2AC3E20A00ECE707 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C75187842B4BB6CE00C0FD78 /* Inbox */,
 				C719678D2B4B034A003CFDD9 /* AddItem */,
 				C791B8022B49D1460084E4BC /* StoreProfile */,
 				C791B7F22B49B48B0084E4BC /* OtherProfile */,
@@ -547,6 +554,24 @@
 				C74FDA8A2B48211A001D732A /* TextEmpty.swift */,
 			);
 			path = Empty;
+			sourceTree = "<group>";
+		};
+		C75187842B4BB6CE00C0FD78 /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				C75187892B4BB6E600C0FD78 /* Components */,
+				C75187852B4BB6D900C0FD78 /* InboxScreen.swift */,
+				C75187872B4BB6E300C0FD78 /* IosInboxViewModel.swift */,
+			);
+			path = Inbox;
+			sourceTree = "<group>";
+		};
+		C75187892B4BB6E600C0FD78 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C751878A2B4BB75100C0FD78 /* InboxItem.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		C75F85A92B3DDE17005943A5 /* Domain */ = {
@@ -1095,9 +1120,11 @@
 				C75F85E52B3DED1E005943A5 /* ReviewUseCasesModule.swift in Sources */,
 				C75F85B22B3DE432005943A5 /* IosTokenPreferences.swift in Sources */,
 				C76779FD2B3EBEFD00B51EFE /* SettingHeader.swift in Sources */,
+				C75187882B4BB6E300C0FD78 /* IosInboxViewModel.swift in Sources */,
 				C78766A92B440416001C92DD /* ItemList.swift in Sources */,
 				C78766BB2B446EB7001C92DD /* ReviewItem.swift in Sources */,
 				C78766C42B447360001C92DD /* IosHomeViewModel.swift in Sources */,
+				C751878B2B4BB75100C0FD78 /* InboxItem.swift in Sources */,
 				C78766BF2B44709C001C92DD /* ReviewList.swift in Sources */,
 				C7677A092B3EC97900B51EFE /* MultilineTextField.swift in Sources */,
 				C74FDA712B48106D001D732A /* StoreItemDetailScreen.swift in Sources */,
@@ -1177,6 +1204,7 @@
 				C78766C62B447380001C92DD /* HomeScreen.swift in Sources */,
 				C75F85D72B3DEA4F005943A5 /* ItemUseCases.swift in Sources */,
 				C74FDA5C2B47F3AA001D732A /* TabButton.swift in Sources */,
+				C75187862B4BB6D900C0FD78 /* InboxScreen.swift in Sources */,
 				C719678F2B4B0353003CFDD9 /* AddItemScreen.swift in Sources */,
 				C7677A072B3EC76900B51EFE /* PasswordTextField.swift in Sources */,
 				C75F85C92B3DE82A005943A5 /* AuthUseCasesModule.swift in Sources */,

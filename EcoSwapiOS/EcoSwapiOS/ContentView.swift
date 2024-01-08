@@ -29,14 +29,14 @@ struct ContentView: View {
                 Text("Sustainability")
                     .tabItem {
                         Label(
-                            "Search",
+                            "Sustainability",
                             systemImage: selectedTab == .Sustainability ? "chart.bar.fill" : "chart.bar"
                         )
                         .labelStyle(.iconOnly)
                     }
                     .tag(TopLevelDestination.Sustainability)
                 
-                Text("Message")
+                InboxScreen()
                     .tabItem {
                         Label(
                             "History",
