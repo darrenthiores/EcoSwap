@@ -39,10 +39,7 @@ struct SearchScreen: View {
                 )
                 
                 TabView(selection: $currentTab) {
-                    if viewModel.state.items.isLoading {
-                        Text("Items loading")
-                            .tag(SearchTab.items)
-                    } else if viewModel.state.items.items.isEmpty {
+                    if viewModel.state.items.items.isEmpty {
                         Text("Items not found")
                             .tag(SearchTab.items)
                     } else {
@@ -50,7 +47,7 @@ struct SearchScreen: View {
                             items: viewModel.state.items.items as? [Item] ?? [],
                             geo: geo,
                             onAppear: {
-                                if !viewModel.state.items.endReached {
+                                if !viewModel.state.items.endReached && !viewModel.state.items.isLoading {
                                     viewModel.onEvent(event: .LoadItemNextPage())
                                 }
                             },
@@ -60,10 +57,7 @@ struct SearchScreen: View {
                         .tag(SearchTab.items)
                     }
                     
-                    if viewModel.state.stores.isLoading {
-                        Text("Stores loading")
-                            .tag(SearchTab.stores)
-                    } else if viewModel.state.stores.items.isEmpty {
+                    if viewModel.state.stores.items.isEmpty {
                         Text("Stores not found")
                             .tag(SearchTab.stores)
                     } else {
@@ -71,7 +65,7 @@ struct SearchScreen: View {
                             stores: viewModel.state.stores.items as? [Store] ?? [],
                             geo: geo,
                             onAppear: {
-                                if !viewModel.state.stores.endReached {
+                                if !viewModel.state.stores.endReached && !viewModel.state.stores.isLoading {
                                     viewModel.onEvent(event: .LoadStoreNextPage())
                                 }
                             },

@@ -63,7 +63,7 @@ struct OtherProfileScreen: View {
                                     .background(Color.clear)
                                     .contentShape(Rectangle())
                                 } else {
-                                    ReviewGrid(
+                                    LazyReview(
                                         reviews: viewModel.state.reviews.items as? [Review] ?? [],
                                         geo: geo,
                                         onAppear: {

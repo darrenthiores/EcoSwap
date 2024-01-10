@@ -1,5 +1,6 @@
 package com.darrenthiores.ecoswap.android.presentation.model_components.challenge
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -22,7 +23,8 @@ fun SelectableChallengeList(
         modifier = modifier
             .fillMaxSize(),
         state = state,
-        contentPadding = padding
+        contentPadding = padding,
+        verticalArrangement = Arrangement.spacedBy(24.dp)
     ) {
         items(
             items = items,

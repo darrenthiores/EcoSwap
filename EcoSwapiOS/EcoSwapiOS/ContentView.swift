@@ -26,7 +26,7 @@ struct ContentView: View {
                     }
                     .tag(TopLevelDestination.Home)
                 
-                Text("Sustainability")
+                SustainabilityScreen()
                     .tabItem {
                         Label(
                             "Sustainability",

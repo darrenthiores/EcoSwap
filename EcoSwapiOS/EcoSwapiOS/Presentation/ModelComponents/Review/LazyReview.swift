@@ -1,16 +1,16 @@
 //
-//  StoreReviewGrid.swift
+//  ReviewGrid.swift
 //  EcoSwapiOS
 //
-//  Created by Darren Thiores on 07/01/24.
+//  Created by Darren Thiores on 05/01/24.
 //  Copyright © 2024 orgName. All rights reserved.
 //
 
 import SwiftUI
 import shared
 
-struct StoreReviewGrid: View {
-    let reviews: [StoreReview]
+struct LazyReview: View {
+    let reviews: [Review]
     let geo: GeometryProxy
     let onAppear: () -> Void
     var spaceToTop: CGFloat = 0
@@ -21,7 +21,7 @@ struct StoreReviewGrid: View {
             spacing: 32
         ) {
             ForEach(reviews, id: \.id) { review in
-                StoreReviewItem(
+                ReviewItem(
                     review: review,
                     geo: geo
                 )
@@ -49,8 +49,8 @@ struct StoreReviewGrid: View {
 
 #Preview {
     GeometryReader { geo in
-        StoreReviewGrid(
-            reviews: Dummy().storeReviews,
+        LazyReview(
+            reviews: Dummy().reviews,
             geo: geo,
             onAppear: { }
         )

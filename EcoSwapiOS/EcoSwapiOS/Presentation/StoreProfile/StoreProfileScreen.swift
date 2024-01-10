@@ -63,7 +63,7 @@ struct StoreProfileScreen: View {
                                     .background(Color.clear)
                                     .contentShape(Rectangle())
                                 } else {
-                                    StoreReviewGrid(
+                                    LazyStoreReview(
                                         reviews: viewModel.state.reviews.items as? [StoreReview] ?? [],
                                         geo: geo,
                                         onAppear: {

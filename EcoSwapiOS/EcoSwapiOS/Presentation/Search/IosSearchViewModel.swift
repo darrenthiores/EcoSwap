@@ -53,10 +53,6 @@ extension SearchScreen {
         func onIosEvent(event: IosSearchEvent) {
             switch event {
             case .OnSearch:
-                if searchText.isEmpty {
-                    return
-                }
-                
                 viewModel.onEvent(
                     event: .OnSearch(text: searchText)
                 )
