@@ -122,6 +122,12 @@
 		C78052DD2B4E7F9A00F24058 /* IosSustainabilityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78052DC2B4E7F9A00F24058 /* IosSustainabilityViewModel.swift */; };
 		C78052E02B4E821D00F24058 /* CarbonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78052DF2B4E821D00F24058 /* CarbonItem.swift */; };
 		C78052E22B4E85B400F24058 /* SustainabilityTrackingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78052E12B4E85B400F24058 /* SustainabilityTrackingContent.swift */; };
+		C78052E52B4EF41200F24058 /* ChallengeDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78052E42B4EF41200F24058 /* ChallengeDetailScreen.swift */; };
+		C78052E72B4EF41D00F24058 /* IosChallengeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78052E62B4EF41D00F24058 /* IosChallengeDetailViewModel.swift */; };
+		C78052EA2B4EF61600F24058 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78052E92B4EF61600F24058 /* TaskItem.swift */; };
+		C78052EC2B4EF6D200F24058 /* AccountLeaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78052EB2B4EF6D200F24058 /* AccountLeaderboard.swift */; };
+		C78052EE2B4EF89E00F24058 /* ChallengeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78052ED2B4EF89E00F24058 /* ChallengeCard.swift */; };
+		C78052F22B4EFC2A00F24058 /* ChallengeDetailContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78052F12B4EFC2A00F24058 /* ChallengeDetailContent.swift */; };
 		C78766A12B43FC53001C92DD /* FixedItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78766A02B43FC53001C92DD /* FixedItemCard.swift */; };
 		C78766A32B43FD7A001C92DD /* UserHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78766A22B43FD7A001C92DD /* UserHorizontal.swift */; };
 		C78766A52B4401DB001C92DD /* ItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78766A42B4401DB001C92DD /* ItemCard.swift */; };
@@ -298,6 +304,12 @@
 		C78052DC2B4E7F9A00F24058 /* IosSustainabilityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosSustainabilityViewModel.swift; sourceTree = "<group>"; };
 		C78052DF2B4E821D00F24058 /* CarbonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonItem.swift; sourceTree = "<group>"; };
 		C78052E12B4E85B400F24058 /* SustainabilityTrackingContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SustainabilityTrackingContent.swift; sourceTree = "<group>"; };
+		C78052E42B4EF41200F24058 /* ChallengeDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailScreen.swift; sourceTree = "<group>"; };
+		C78052E62B4EF41D00F24058 /* IosChallengeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosChallengeDetailViewModel.swift; sourceTree = "<group>"; };
+		C78052E92B4EF61600F24058 /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
+		C78052EB2B4EF6D200F24058 /* AccountLeaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountLeaderboard.swift; sourceTree = "<group>"; };
+		C78052ED2B4EF89E00F24058 /* ChallengeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCard.swift; sourceTree = "<group>"; };
+		C78052F12B4EFC2A00F24058 /* ChallengeDetailContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailContent.swift; sourceTree = "<group>"; };
 		C78766A02B43FC53001C92DD /* FixedItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedItemCard.swift; sourceTree = "<group>"; };
 		C78766A22B43FD7A001C92DD /* UserHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHorizontal.swift; sourceTree = "<group>"; };
 		C78766A42B4401DB001C92DD /* ItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCard.swift; sourceTree = "<group>"; };
@@ -416,6 +428,7 @@
 		C708D0BE2AC3E20A00ECE707 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C78052E32B4EF40400F24058 /* ChallengeDetail */,
 				C78052D92B4E7F8300F24058 /* Sustainability */,
 				C751878C2B4BBC2500C0FD78 /* Message */,
 				C75187842B4BB6CE00C0FD78 /* Inbox */,
@@ -923,6 +936,27 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		C78052E32B4EF40400F24058 /* ChallengeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C78052E82B4EF42000F24058 /* Components */,
+				C78052E42B4EF41200F24058 /* ChallengeDetailScreen.swift */,
+				C78052E62B4EF41D00F24058 /* IosChallengeDetailViewModel.swift */,
+			);
+			path = ChallengeDetail;
+			sourceTree = "<group>";
+		};
+		C78052E82B4EF42000F24058 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C78052E92B4EF61600F24058 /* TaskItem.swift */,
+				C78052EB2B4EF6D200F24058 /* AccountLeaderboard.swift */,
+				C78052ED2B4EF89E00F24058 /* ChallengeCard.swift */,
+				C78052F12B4EFC2A00F24058 /* ChallengeDetailContent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		C787669A2B43F98D001C92DD /* ModelComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -1237,7 +1271,9 @@
 				C719679E2B4B16F4003CFDD9 /* LoadImages.swift in Sources */,
 				C78052CA2B4D402700F24058 /* ProgressArc.swift in Sources */,
 				C74FDA8B2B48211A001D732A /* TextEmpty.swift in Sources */,
+				C78052E52B4EF41200F24058 /* ChallengeDetailScreen.swift in Sources */,
 				C75187A22B4BCE7300C0FD78 /* Stack.swift in Sources */,
+				C78052EC2B4EF6D200F24058 /* AccountLeaderboard.swift in Sources */,
 				C74DE17E2B427ADE00E2EBB3 /* BoardingSection.swift in Sources */,
 				C71967962B4B06B6003CFDD9 /* IosAddItemEvent.swift in Sources */,
 				C78052CC2B4E72E000F24058 /* AccountImageRow.swift in Sources */,
@@ -1247,11 +1283,13 @@
 				C76779FD2B3EBEFD00B51EFE /* SettingHeader.swift in Sources */,
 				C75187882B4BB6E300C0FD78 /* IosInboxViewModel.swift in Sources */,
 				C78766A92B440416001C92DD /* ItemList.swift in Sources */,
+				C78052E72B4EF41D00F24058 /* IosChallengeDetailViewModel.swift in Sources */,
 				C78766BB2B446EB7001C92DD /* ReviewItem.swift in Sources */,
 				C78766C42B447360001C92DD /* IosHomeViewModel.swift in Sources */,
 				C751878B2B4BB75100C0FD78 /* InboxItem.swift in Sources */,
 				C78052D62B4E7EE600F24058 /* SelectableChallengeList.swift in Sources */,
 				C78766BF2B44709C001C92DD /* ReviewList.swift in Sources */,
+				C78052EA2B4EF61600F24058 /* TaskItem.swift in Sources */,
 				C7677A092B3EC97900B51EFE /* MultilineTextField.swift in Sources */,
 				C78052D42B4E7DD400F24058 /* ChallengeList.swift in Sources */,
 				C75187992B4BC72D00C0FD78 /* MessageBottomBar.swift in Sources */,
@@ -1288,6 +1326,7 @@
 				C78766AF2B441C59001C92DD /* HorizontalUserCard.swift in Sources */,
 				C791B7F42B49B4950084E4BC /* OtherProfileScreen.swift in Sources */,
 				C75F85DB2B3DECE2005943A5 /* MessageNetworkModule.swift in Sources */,
+				C78052EE2B4EF89E00F24058 /* ChallengeCard.swift in Sources */,
 				C78766AB2B4419FE001C92DD /* StoreItemList.swift in Sources */,
 				C751878E2B4BBC2E00C0FD78 /* MessageScreen.swift in Sources */,
 				C76779ED2B3EB46000B51EFE /* ButtonFill.swift in Sources */,
@@ -1346,6 +1385,7 @@
 				C78766C62B447380001C92DD /* HomeScreen.swift in Sources */,
 				C75F85D72B3DEA4F005943A5 /* ItemUseCases.swift in Sources */,
 				C74FDA5C2B47F3AA001D732A /* TabButton.swift in Sources */,
+				C78052F22B4EFC2A00F24058 /* ChallengeDetailContent.swift in Sources */,
 				C78052D02B4E78AF00F24058 /* ProgressColor.swift in Sources */,
 				C75187862B4BB6D900C0FD78 /* InboxScreen.swift in Sources */,
 				C75187932B4BC25200C0FD78 /* MessageHeader.swift in Sources */,

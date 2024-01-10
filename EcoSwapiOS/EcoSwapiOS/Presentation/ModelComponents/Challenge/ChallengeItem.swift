@@ -22,7 +22,7 @@ struct ChallengeItem: View {
                 Spacer()
                 
                 NavigationLink {
-                    Text("Challenge Detail")
+                    ChallengeDetailScreen(challengeId: challenge.id)
                 } label: {
                     NavigationButtonFill(
                         label: "See Details",

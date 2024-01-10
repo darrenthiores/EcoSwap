@@ -20,9 +20,9 @@ struct AccountImageRow: View {
         ZStack(alignment: .leading) {
             Color.clear
             
-            if let image = try? images[0] {
+            if images.count >= 1 {
                 AsyncImage(
-                    url: URL(string: image),
+                    url: URL(string: images[0]),
                     content: { image in
                         image
                             .resizable()
@@ -57,9 +57,9 @@ struct AccountImageRow: View {
                 )
             }
             
-            if let image = try? images[1] {
+            if images.count >= 2 {
                 AsyncImage(
-                    url: URL(string: image),
+                    url: URL(string: images[1]),
                     content: { image in
                         image
                             .resizable()
@@ -97,9 +97,9 @@ struct AccountImageRow: View {
                 )
             }
             
-            if let image = try? images[2] {
+            if images.count >= 3 {
                 AsyncImage(
-                    url: URL(string: image),
+                    url: URL(string: images[2]),
                     content: { image in
                         image
                             .resizable()
@@ -147,7 +147,7 @@ struct AccountImageRow: View {
 #Preview {
     AccountImageRow(
         images: [
-            "", "", ""
+            "", ""
         ]
     )
     .background(Color.Primary)

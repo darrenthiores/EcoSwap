@@ -15,10 +15,16 @@ struct ProgressBarInfo: View {
     var strokeWidth: CGFloat = 8
     
     var progress: Int {
-        Int(((value / total) * 100))
+        if value < total && total != 0.0 {
+            Int(((value / total) * 100))
+        } else {
+            0
+        }
     }
     
-    @State var angleRatio: CGFloat = 0
+    var angleRatio: CGFloat {
+        (value > 0 && total > 0) ? CGFloat(value/total) : 0
+    }
     
     var body: some View {
         GeometryReader { geo in
@@ -48,19 +54,12 @@ struct ProgressBarInfo: View {
             }
         }
         .padding(strokeWidth/2)
-        .onAppear {
-            angleRatio = 0
-            
-            withAnimation {
-                angleRatio = (value > 0 && total > 0) ? CGFloat(value/total) : 0
-            }
-        }
     }
 }
 
 #Preview {
     ProgressBarInfo(
-        value: 200.0,
+        value: 230.0,
         total: 300.0,
         color: .Secondary
     )
