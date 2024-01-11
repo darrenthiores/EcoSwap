@@ -5,6 +5,9 @@ import com.darrenthiores.ecoswap.domain.carbon.model.CarbonCategory
 import com.darrenthiores.ecoswap.domain.carbon.model.Challenge
 
 sealed class AddProgressEvent {
+    data class InitByChallenge(
+        val challengeId: String
+    ): AddProgressEvent()
     data class OnSelectCategory(
         val category: CarbonCategory
     ): AddProgressEvent()

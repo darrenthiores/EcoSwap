@@ -45,8 +45,8 @@ struct SelectableChallengeList: View {
                             }
                         }
                     }
-                    .padding(.horizontal, 1)
                 }
+                .padding(.horizontal, 1)
             }
             
             Spacer()

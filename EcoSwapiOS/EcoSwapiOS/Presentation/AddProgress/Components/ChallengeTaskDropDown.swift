@@ -1,32 +1,32 @@
 //
-//  ItemCategoryDropDown.swift
+//  ChallengeTaskDropDown.swift
 //  EcoSwapiOS
 //
-//  Created by Darren Thiores on 07/01/24.
+//  Created by Darren Thiores on 11/01/24.
 //  Copyright © 2024 orgName. All rights reserved.
 //
 
 import SwiftUI
 import shared
 
-struct ItemCategoryDropDown: View {
-    var categories: [ItemCategory] = Constant().categories
-    let category: ItemCategory?
+struct ChallengeTaskDropDown: View {
+    let tasks: [Challenge.Task]
+    let task: Challenge.Task?
     let isOpen: Bool
-    let selectCategory: (ItemCategory) -> Void
+    let selectTask: (Challenge.Task) -> Void
     let toggleIsOpen: () -> Void
     
     var body: some View {
         Menu {
             VStack {
                 ForEach(
-                    categories,
+                    tasks,
                     id: \.id
-                ) { category in
+                ) { task in
                     Button {
-                        selectCategory(category)
+                        selectTask(task)
                     } label: {
-                        Text(category.display)
+                        Text(task.task)
                             .font(.SubHeadlineR)
                     }
                     .buttonStyle(.plain)
@@ -34,7 +34,7 @@ struct ItemCategoryDropDown: View {
             }
         } label: {
             HStack {
-                Text(category?.display ?? "Select Category")
+                Text(task?.task ?? "Select Task")
                     .font(.SubHeadlineR)
                 
                 Spacer()
@@ -61,11 +61,11 @@ struct ItemCategoryDropDown: View {
 }
 
 #Preview {
-    ItemCategoryDropDown(
-        categories: Constant().categories,
-        category: nil,
+    ChallengeTaskDropDown(
+        tasks: Dummy().challenges[0].tasks,
+        task: nil,
         isOpen: false,
-        selectCategory: { _ in },
+        selectTask: { _ in },
         toggleIsOpen: {  }
     )
 }

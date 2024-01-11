@@ -32,12 +32,6 @@ struct ItemConditionDropDown: View {
                     .buttonStyle(.plain)
                 }
             }
-            .onAppear {
-                toggleIsOpen()
-            }
-            .onDisappear {
-                toggleIsOpen()
-            }
         } label: {
             HStack {
                 Text(condition?.display ?? "Select Condition")
@@ -58,6 +52,11 @@ struct ItemConditionDropDown: View {
             )
         }
         .buttonStyle(.plain)
+        .simultaneousGesture(
+            TapGesture().onEnded {
+                toggleIsOpen()
+            }
+        )
     }
 }
 

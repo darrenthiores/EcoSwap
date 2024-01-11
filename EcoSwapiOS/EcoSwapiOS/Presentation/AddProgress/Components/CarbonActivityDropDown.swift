@@ -1,32 +1,32 @@
 //
-//  ItemCategoryDropDown.swift
+//  CarbonActivityDropDown.swift
 //  EcoSwapiOS
 //
-//  Created by Darren Thiores on 07/01/24.
+//  Created by Darren Thiores on 11/01/24.
 //  Copyright © 2024 orgName. All rights reserved.
 //
 
 import SwiftUI
 import shared
 
-struct ItemCategoryDropDown: View {
-    var categories: [ItemCategory] = Constant().categories
-    let category: ItemCategory?
+struct CarbonActivityDropDown: View {
+    let activities: [CarbonActivity]
+    let activity: CarbonActivity?
     let isOpen: Bool
-    let selectCategory: (ItemCategory) -> Void
+    let selectActivity: (CarbonActivity) -> Void
     let toggleIsOpen: () -> Void
     
     var body: some View {
         Menu {
             VStack {
                 ForEach(
-                    categories,
+                    activities,
                     id: \.id
-                ) { category in
+                ) { activity in
                     Button {
-                        selectCategory(category)
+                        selectActivity(activity)
                     } label: {
-                        Text(category.display)
+                        Text(activity.display)
                             .font(.SubHeadlineR)
                     }
                     .buttonStyle(.plain)
@@ -34,7 +34,7 @@ struct ItemCategoryDropDown: View {
             }
         } label: {
             HStack {
-                Text(category?.display ?? "Select Category")
+                Text(activity?.display ?? "Select Activity")
                     .font(.SubHeadlineR)
                 
                 Spacer()
@@ -61,11 +61,11 @@ struct ItemCategoryDropDown: View {
 }
 
 #Preview {
-    ItemCategoryDropDown(
-        categories: Constant().categories,
-        category: nil,
+    CarbonActivityDropDown(
+        activities: Constant().energyActivities,
+        activity: nil,
         isOpen: false,
-        selectCategory: { _ in },
+        selectActivity: { _ in },
         toggleIsOpen: {  }
     )
 }

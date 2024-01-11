@@ -12,6 +12,7 @@ import shared
 struct ChallengeList: View {
     let challenges: [Challenge]
     let onAppear: () -> Void
+    @Binding var shouldRefresh: Bool
     var spaceToTop: CGFloat = 0
     var spaceToBottom: CGFloat = 0
     
@@ -23,7 +24,8 @@ struct ChallengeList: View {
             LazyVStack(spacing: 24) {
                 ForEach(challenges, id: \.id) { challenge in
                     ChallengeItem(
-                        challenge: challenge
+                        challenge: challenge,
+                        shouldRefresh: $shouldRefresh
                     )
                     .onAppear {
                         let index = challenges.firstIndex(
@@ -54,6 +56,7 @@ struct ChallengeList: View {
 #Preview {
     ChallengeList(
         challenges: Dummy().challenges,
-        onAppear: {  }
+        onAppear: {  },
+        shouldRefresh: .constant(false)
     )
 }

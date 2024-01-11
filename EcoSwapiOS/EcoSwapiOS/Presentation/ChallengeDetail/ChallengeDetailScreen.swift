@@ -11,6 +11,7 @@ import shared
 
 struct ChallengeDetailScreen: View {
     let challengeId: String
+    @Binding var shouldRefresh: Bool
     
     @Environment(\.dismiss) private var dismiss
     @StateObject private var viewModel = IosChallengeDetailViewModel()
@@ -76,13 +77,17 @@ struct ChallengeDetailScreen: View {
             }
         }
         .navigationDestination(isPresented: $showAdd) {
-            Text("Add Progress")
+            AddProgressScreen(
+                challengeId: challengeId,
+                shouldRefresh: $shouldRefresh
+            )
         }
     }
 }
 
 #Preview {
     ChallengeDetailScreen(
-        challengeId: "1"
+        challengeId: "1",
+        shouldRefresh: .constant(false)
     )
 }

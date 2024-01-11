@@ -1,5 +1,6 @@
 package com.darrenthiores.ecoswap.presentation.add_progress
 
+import com.darrenthiores.ecoswap.domain.carbon.use_cases.GetChallengeById
 import com.darrenthiores.ecoswap.domain.carbon.use_cases.GetChallenges
 import com.darrenthiores.ecoswap.domain.carbon.use_cases.InsertCarbonReduction
 import com.darrenthiores.ecoswap.domain.core.utils.Constant
@@ -20,6 +21,7 @@ import kotlin.math.max
 class AddProgressViewModel(
     private val addProgress: InsertCarbonReduction,
     private val getChallenges: GetChallenges,
+    private val getChallengeById: GetChallengeById,
     coroutineScope: CoroutineScope? = null
 ) {
     private val viewModelScope = coroutineScope ?: CoroutineScope(Dispatchers.Main)
@@ -83,6 +85,48 @@ class AddProgressViewModel(
 
     fun onEvent(event: AddProgressEvent) {
         when (event) {
+            is AddProgressEvent.InitByChallenge -> {
+                val category = Constant.carbonCategoryById(
+                    id = "3"
+                ) ?: return
+
+                _state.update {
+                    it.copy(
+                        category = category,
+                        categoryDropDownOpen = false,
+                        activities = Constant.getActivitiesByCategoryId(
+                            id = category.id
+                        ),
+                        challenge = null,
+                        activity = null,
+                        task = null
+                    )
+                }
+
+                viewModelScope.launch {
+                    val result = getChallengeById(
+                        challengeId = event.challengeId
+                    )
+
+                    when (result) {
+                        is Resource.Error -> {
+                            _state.update {
+                                it.copy(
+                                    error = result.message
+                                )
+                            }
+                        }
+                        is Resource.Loading -> Unit
+                        is Resource.Success -> {
+                            _state.update {
+                                it.copy(
+                                    challenge = result.data
+                                )
+                            }
+                        }
+                    }
+                }
+            }
             is AddProgressEvent.OnNumberChange -> {
                 _state.update {
                     it.copy(

@@ -13,6 +13,7 @@ struct SustainabilityScreen: View {
     @StateObject private var viewModel = IosSustainabilityViewModel()
     @State private var currentTab: SustainabilityTab = .tracking
     @State private var showAdd: Bool = false
+    @State private var shouldRefresh: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -58,6 +59,7 @@ struct SustainabilityScreen: View {
                                         viewModel.onEvent(event: .LoadChallengeNextPage())
                                     }
                                 },
+                                shouldRefresh: $shouldRefresh,
                                 spaceToTop: 24,
                                 spaceToBottom: 24 + 56
                             )
@@ -95,12 +97,22 @@ struct SustainabilityScreen: View {
             }
             .onAppear {
                 viewModel.startObserving()
+                
+                if shouldRefresh {
+                    viewModel.onEvent(
+                        event: .Refresh()
+                    )
+                    
+                    shouldRefresh = false
+                }
             }
             .onDisappear {
                 viewModel.dispose()
             }
             .navigationDestination(isPresented: $showAdd) {
-                Text("Add Progress")
+                AddProgressScreen(
+                    shouldRefresh: $shouldRefresh
+                )
             }
         }
     }

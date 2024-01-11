@@ -1,19 +1,19 @@
 //
-//  ItemCategoryDropDown.swift
+//  CarbonCategoryDropDown.swift
 //  EcoSwapiOS
 //
-//  Created by Darren Thiores on 07/01/24.
+//  Created by Darren Thiores on 11/01/24.
 //  Copyright © 2024 orgName. All rights reserved.
 //
 
 import SwiftUI
 import shared
 
-struct ItemCategoryDropDown: View {
-    var categories: [ItemCategory] = Constant().categories
-    let category: ItemCategory?
+struct CarbonCategoryDropDown: View {
+    var categories: [CarbonCategory] = Constant().carbonCategories
+    let category: CarbonCategory?
     let isOpen: Bool
-    let selectCategory: (ItemCategory) -> Void
+    let selectCategory: (CarbonCategory) -> Void
     let toggleIsOpen: () -> Void
     
     var body: some View {
@@ -61,8 +61,7 @@ struct ItemCategoryDropDown: View {
 }
 
 #Preview {
-    ItemCategoryDropDown(
-        categories: Constant().categories,
+    CarbonCategoryDropDown(
         category: nil,
         isOpen: false,
         selectCategory: { _ in },

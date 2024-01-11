@@ -11,6 +11,7 @@ import shared
 
 struct ChallengeItem: View {
     let challenge: Challenge
+    @Binding var shouldRefresh: Bool
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -22,7 +23,10 @@ struct ChallengeItem: View {
                 Spacer()
                 
                 NavigationLink {
-                    ChallengeDetailScreen(challengeId: challenge.id)
+                    ChallengeDetailScreen(
+                        challengeId: challenge.id,
+                        shouldRefresh: $shouldRefresh
+                    )
                 } label: {
                     NavigationButtonFill(
                         label: "See Details",
@@ -92,6 +96,7 @@ struct ChallengeItem: View {
 
 #Preview {
     ChallengeItem(
-        challenge: Dummy().challenges[0]
+        challenge: Dummy().challenges[0],
+        shouldRefresh: .constant(false)
     )
 }

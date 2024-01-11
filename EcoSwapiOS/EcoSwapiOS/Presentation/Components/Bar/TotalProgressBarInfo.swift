@@ -14,9 +14,15 @@ struct TotalProgressBarInfo: View {
     let colors: [Color]
     var strokeWidth: CGFloat = 56
     
-    @State var angleRatioTransport: CGFloat = 0
-    @State var angleRatioEnergy: CGFloat = 0
-    @State var angleRatioChallenge: CGFloat = 0
+    var angleRatioTransport: CGFloat {
+        (values[0] > 0 && total > 0) ? CGFloat(values[0]/total) : 0
+    }
+    var angleRatioEnergy: CGFloat {
+        (values[1] > 0 && total > 0) ? CGFloat(values[1]/total) : 0
+    }
+    var angleRatioChallenge: CGFloat {
+        (values[2] > 0 && total > 0) ? CGFloat(values[2]/total) : 0
+    }
     
     var body: some View {
         GeometryReader { geo in
@@ -65,19 +71,6 @@ struct TotalProgressBarInfo: View {
             }
         }
         .padding(strokeWidth/2)
-        .onAppear {
-            angleRatioTransport = 0
-            angleRatioEnergy = 0
-            angleRatioChallenge = 0
-            
-            withAnimation {
-                angleRatioTransport = (values[0] > 0 && total > 0) ? CGFloat(values[0]/total) : 0
-                
-                angleRatioEnergy = (values[1] > 0 && total > 0) ? CGFloat(values[1]/total) : 0
-                
-                angleRatioChallenge = (values[2] > 0 && total > 0) ? CGFloat(values[2]/total) : 0
-            }
-        }
     }
 }
 
