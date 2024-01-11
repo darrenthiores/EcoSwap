@@ -1,3 +1,5 @@
+
+https://github.com/darrenthiores/EcoSwap/assets/69592810/4a9ccb71-eb64-440a-8a42-636b18ec6b95
 **EcoSwap**
 
 "EcoSwap" is a mobile app designed to promote responsible consumption and sustainable living. It encourages users to reduce waste, make eco-friendly choices, and contribute to the conservation of biodiversity. Here are some key features:
@@ -64,6 +66,7 @@ Bug:
 <br>
 
 Note:
+- Carbon Tracker feature calculation is not valid (assume it is random number)
 - User and Store is different (account)
 - Items is posted by User, and Store Item is owned by Store (just a showcase)
 - To use add features (items, review, progress) make sure to fill every form and choice.
