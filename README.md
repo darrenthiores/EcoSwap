@@ -1,5 +1,3 @@
-
-https://github.com/darrenthiores/EcoSwap/assets/69592810/4a9ccb71-eb64-440a-8a42-636b18ec6b95
 **EcoSwap**
 
 "EcoSwap" is a mobile app designed to promote responsible consumption and sustainable living. It encourages users to reduce waste, make eco-friendly choices, and contribute to the conservation of biodiversity. Here are some key features:
