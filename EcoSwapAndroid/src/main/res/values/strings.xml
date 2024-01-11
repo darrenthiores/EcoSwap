@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Eco Swap</string>
+    <string name="app_name">EcoSwap</string>
     <string name="ecoswap_logo">EcoSwap Logo</string>
     <string name="boarding_cd">boarding %d</string>
     <string name="boarding_label">Boarding Content</string>
