@@ -85,7 +85,10 @@ fun PhotoSection(
                     }
                     .clickable {
                         onAdd()
-                    },
+                    }
+                    .padding(
+                        horizontal = 1.dp
+                    ),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(

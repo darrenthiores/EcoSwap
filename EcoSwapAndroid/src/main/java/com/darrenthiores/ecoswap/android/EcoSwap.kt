@@ -180,7 +180,7 @@ fun EcoSwap(
                         navController.navigate(Route.Search.name + "?categoryId=$it")
                     },
                     onSearch = {
-                        navController.navigate(Route.Search.name + "?searchText=$it")
+                        navController.navigate(Route.Search.name + "?searchText=$searchText")
                     },
                     onItemClick = { id ->
                         navController.navigate(Route.ItemDetail.name + "/$id")

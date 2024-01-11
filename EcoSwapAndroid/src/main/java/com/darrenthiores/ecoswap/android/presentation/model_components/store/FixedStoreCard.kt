@@ -126,8 +126,7 @@ fun FixedStoreCard(
                     Text(
                         modifier = Modifier
                             .weight(
-                                weight = 1f,
-                                fill = false
+                                weight = 1f
                             ),
                         text = store.location,
                         style = Caption2R.copy(
@@ -145,6 +144,11 @@ fun FixedStoreCard(
                     )
 
                     Row(
+                        modifier = Modifier
+                            .weight(
+                                weight = 1f,
+                                fill = false
+                            ),
                         horizontalArrangement = Arrangement.spacedBy(2.dp),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
@@ -160,7 +164,8 @@ fun FixedStoreCard(
                             text = store.rating.toString(),
                             style = Caption2R.copy(
                                 color = Color.Gray
-                            )
+                            ),
+                            maxLines = 1
                         )
                     }
                 }

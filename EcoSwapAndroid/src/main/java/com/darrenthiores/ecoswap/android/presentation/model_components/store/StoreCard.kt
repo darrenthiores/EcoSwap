@@ -106,6 +106,8 @@ fun StoreCard(
                 Spacer(modifier = Modifier.height(4.dp))
 
                 Row(
+                    modifier = Modifier
+                        .fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(4.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
@@ -118,6 +120,10 @@ fun StoreCard(
                     )
 
                     Text(
+                        modifier = Modifier
+                            .weight(
+                                weight = 1f
+                            ),
                         text = store.location,
                         style = Caption2R.copy(
                             color = Color.LightGray
@@ -134,6 +140,11 @@ fun StoreCard(
                     )
 
                     Row(
+                        modifier = Modifier
+                            .weight(
+                                weight = 1f,
+                                fill = false
+                            ),
                         horizontalArrangement = Arrangement.spacedBy(2.dp),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
@@ -149,7 +160,8 @@ fun StoreCard(
                             text = store.rating.toString(),
                             style = Caption2R.copy(
                                 color = Color.Gray
-                            )
+                            ),
+                            maxLines = 1
                         )
                     }
                 }

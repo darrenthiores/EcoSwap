@@ -217,6 +217,8 @@ struct AddProgressScreen: View {
                     viewModel.onEvent(
                         event: .OnSelectChallenge(challenge: challenge)
                     )
+                    
+                    showSheet = false
                 },
                 onAppear: {
                     if !viewModel.state.challenges.endReached && !viewModel.state.challenges.isLoading {

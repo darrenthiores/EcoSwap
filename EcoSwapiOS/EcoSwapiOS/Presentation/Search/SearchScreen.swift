@@ -83,13 +83,13 @@ struct SearchScreen: View {
         .onAppear {
             viewModel.startObserving()
             
-            if !searchText.isEmpty {
+            if !searchText.isEmpty && !viewModel.initHasRun {
                 viewModel.onIosEvent(
                     event: .OnUpdateAndSearch(searchText: searchText)
                 )
             }
             
-            if selectedCategory != nil {
+            if selectedCategory != nil && !viewModel.initHasRun {
                 viewModel.onIosEvent(
                     event: .OnSelectCategory(category: selectedCategory)
                 )

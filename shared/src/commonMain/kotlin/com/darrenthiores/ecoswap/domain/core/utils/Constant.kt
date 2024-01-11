@@ -22,6 +22,22 @@ object Constant {
         ItemCategory(
             id = "4",
             display = "Furniture"
+        ),
+        ItemCategory(
+            id = "5",
+            display = "Game"
+        ),
+        ItemCategory(
+            id = "6",
+            display = "Sport"
+        ),
+        ItemCategory(
+            id = "7",
+            display = "Edible"
+        ),
+        ItemCategory(
+            id = "8",
+            display = "Living"
         )
     )
 
@@ -55,37 +71,37 @@ object Constant {
         CarbonActivity(
             id = "1",
             display = "Walking",
-            carbon = 100.0
+            carbon = 10.0
         ),
         CarbonActivity(
             id = "2",
             display = "Public Transport (Bus)",
-            carbon = 50.0
+            carbon = 5.0
         ),
         CarbonActivity(
             id = "3",
             display = "Public Transport (Electric Bus)",
-            carbon = 80.0
+            carbon = 8.0
         ),
         CarbonActivity(
             id = "4",
             display = "Public Transport (Train)",
-            carbon = 30.0
+            carbon = 3.0
         ),
         CarbonActivity(
             id = "5",
             display = "Public Transport (Electric Train)",
-            carbon = 90.0
+            carbon = 9.0
         ),
         CarbonActivity(
             id = "6",
             display = "Bike",
-            carbon = 100.0
+            carbon = 10.0
         ),
         CarbonActivity(
             id = "7",
             display = "Electric Car",
-            carbon = 70.0
+            carbon = 7.0
         )
     )
 
@@ -93,12 +109,12 @@ object Constant {
         CarbonActivity(
             id = "1",
             display = "Switch Off Lights",
-            carbon = 30.0
+            carbon = 3.0
         ),
         CarbonActivity(
             id = "2",
             display = "Unplug Unused Electronics",
-            carbon = 20.0
+            carbon = 2.0
         )
     )
 

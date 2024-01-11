@@ -20,6 +20,14 @@ extension ItemCategory {
             return "books_icon"
         case "4":
             return "furniture_icon"
+        case "5":
+            return "gaming_icon"
+        case "6":
+            return "sport_icon"
+        case "7":
+            return "edible_icon"
+        case "8":
+            return "living_icon"
         default:
             return "ic_no_picture"
         }

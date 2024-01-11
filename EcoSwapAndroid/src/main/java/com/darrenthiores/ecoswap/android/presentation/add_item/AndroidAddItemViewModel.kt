@@ -46,7 +46,9 @@ class AndroidAddItemViewModel @Inject constructor(
             return
         }
 
-        photos.add(uri)
+        if (!photos.contains(uri)) {
+            photos.add(uri)
+        }
     }
 
     fun onSelectPhoto(

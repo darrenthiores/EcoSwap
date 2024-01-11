@@ -39,7 +39,7 @@ struct ContentView: View {
                 InboxScreen()
                     .tabItem {
                         Label(
-                            "History",
+                            "Message",
                             systemImage: selectedTab == .Message ? "envelope.fill" : "envelope"
                         )
                         .labelStyle(.iconOnly)

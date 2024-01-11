@@ -32,6 +32,7 @@ extension SearchScreen {
             )
         )
         @Published var searchText: String = ""
+        @Published var initHasRun: Bool = false
         
         private var handle: DisposableHandle?
         
@@ -57,12 +58,14 @@ extension SearchScreen {
                     event: .OnSearch(text: searchText)
                 )
             case .OnUpdateAndSearch(searchText: let searchText):
+                initHasRun = true
                 self.searchText = searchText
                 
                 viewModel.onEvent(
                     event: .OnSearch(text: searchText)
                 )
             case .OnSelectCategory(category: let category):
+                initHasRun = true
                 viewModel.onEvent(
                     event: .OnSelectCategory(
                         category: category

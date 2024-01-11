@@ -34,14 +34,11 @@ class KtorCarbonService(
     }
 
     override suspend fun getChallenges(request: GetChallengesRequest, page: Int): List<Challenge> {
-        return Dummy
+        return if (!request.isJoined) Dummy
+            .challenges else Dummy
             .challenges
             .filter {
-                if (request.isJoined) {
-                    it.participants.firstOrNull { participant ->
-                        participant.id == "U1"
-                    } != null
-                } else true
+                it.isJoined
             }
     }
 
