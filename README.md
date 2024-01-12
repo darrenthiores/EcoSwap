@@ -20,7 +20,7 @@ EcoSwap available on two platforms:
 
 - Android & iOS
 
-There is no any requirements to launch the app, currently the app still using Dummies and Local Database on some features (carbon tracker & chat)
+There is no any requirements to launch the app, currently the app still using Dummies and Local Database on some features (carbon tracker & chat), just make sure to use the "main" branch.
 
 <br>
 
