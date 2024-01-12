@@ -35,7 +35,7 @@ struct OtherProfileScreen: View {
                                 if viewModel.state.items.items.isEmpty {
                                     TextEmpty(
                                         title: "Nothing posted",
-                                        description: "All the items that you posted will be shown here."
+                                        description: "All the items that this user posted will be shown here."
                                     )
                                     .background(Color.clear)
                                     .contentShape(Rectangle())
@@ -57,8 +57,8 @@ struct OtherProfileScreen: View {
                             case .reviews:
                                 if viewModel.state.reviews.items.isEmpty {
                                     TextEmpty(
-                                        title: "Nothing reviewed",
-                                        description: "All the reviews that you posted will be shown here."
+                                        title: "No Review",
+                                        description: "All the reviews torwards this user will be shown here."
                                     )
                                     .background(Color.clear)
                                     .contentShape(Rectangle())

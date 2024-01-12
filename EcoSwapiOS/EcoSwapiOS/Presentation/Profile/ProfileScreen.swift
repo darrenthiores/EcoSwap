@@ -56,7 +56,7 @@ struct ProfileScreen: View {
                                     if viewModel.state.reviews.items.isEmpty {
                                         TextEmpty(
                                             title: "Nothing reviewed",
-                                            description: "All the reviews that you posted will be shown here."
+                                            description: "All the reviews torwards you will be shown here."
                                         )
                                         .background(Color.clear)
                                         .contentShape(Rectangle())
