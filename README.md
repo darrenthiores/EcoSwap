@@ -40,6 +40,12 @@ password: abcde12345
 
 <br>
 
+<b>Screenshots:</b>
+
+![ecoswap_both_ss](https://github.com/darrenthiores/EcoSwap/assets/69592810/ac2bc62d-3dac-4f1c-bd41-0b54402fb317)
+
+<br>
+
 EcoSwap features:
 - Register
 - Login
